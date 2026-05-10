@@ -1,0 +1,111 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contact Messages - Warsha{% endblock %}
+
+{% block content %}
+
+<section class="contact-section">
+    <div class="container">
+        <h1 class="section-heading">Contact Messages</h1>
+        
+        {% if messages_list %}
+            <div class="messages-list">
+                {% for msg in messages_list %}
+                    <div class="message-card {% if msg.is_read %}read{% else %}unread{% endif %}">
+                        <div class="message-header">
+                            <h3>{{ msg.name }}</h3>
+                            <span class="message-date">{{ msg.created_at|date:"F d, Y - H:i" }}</span>
+                        </div>
+                        <div class="message-email">
+                            <strong>Email:</strong> {{ msg.email }}
+                        </div>
+                        <div class="message-content">
+                            {{ msg.message }}
+                        </div>
+                        <div class="message-status">
+                            {% if msg.is_read %}
+                                <span class="badge badge-read">Read</span>
+                            {% else %}
+                                <span class="badge badge-unread">Unread</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="section-text">No messages yet.</p>
+        {% endif %}
+    </div>
+</section>
+
+<style>
+.messages-list {
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.message-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #d4a373;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.message-card.unread {
+    border-left-color: #dc3545;
+    background: #fff9f9;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.message-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.message-date {
+    color: #666;
+    font-size: 14px;
+}
+
+.message-email {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.message-content {
+    color: #333;
+    line-height: 1.6;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge-read {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-unread {
+    background: #f8d7da;
+    color: #721c24;
+}
+</style>
+
+{% endblock %}

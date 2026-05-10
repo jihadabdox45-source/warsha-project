@@ -1,0 +1,83 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+{% load video_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="title">{% trans "Riyadh Region Crafts" %}</h1>
+
+    <p class="intro">
+        {% trans "Riyadh is the capital of Saudi Arabia and represents the heart of Najdi culture. Traditional crafts in Riyadh reflect desert life, simplicity, and strong cultural identity." %}
+    </p>
+
+    <!-- Main Image -->
+    <div class="main-image">
+        <img src="{% static 'crafts/images/riyadh/1.jpg' %}" alt="{% trans 'Riyadh' %}">
+    </div>
+
+    <!-- Gallery -->
+    <h2>{% trans "Gallery" %}</h2>
+    <div class="gallery">
+        <img src="{% static 'crafts/images/riyadh/2.jpg' %}">
+        <img src="{% static 'crafts/images/riyadh/3.jpg' %}">
+        <img src="{% static 'crafts/images/riyadh/4.jpg' %}">
+    </div>
+
+    <!-- Crafts Section -->
+    <h2>{% trans "Famous Crafts" %}</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>{% trans "Sadu Weaving" %}</h3>
+            <p>
+                {% trans "A traditional Bedouin craft used to create carpets, tents, and decorations. It uses natural wool and geometric patterns." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Pottery" %}</h3>
+            <p>
+                {% trans "Clay pottery has been used for centuries in Riyadh for storing water and food. Handmade techniques are still preserved today." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Wood Carving" %}</h3>
+            <p>
+                {% trans "Wood carving is used in doors and furniture, showing detailed Najdi designs." %}
+            </p>
+        </div>
+
+    </div>
+
+    <!-- History -->
+    <div class="history-section">
+        <h2>{% trans "History" %}</h2>
+        <p>
+            {% trans "Najdi heritage is deeply connected to desert survival and simplicity. Crafts were not only decorative but also essential for daily life." %}
+        </p>
+    </div>
+
+    <!-- Events -->
+    <div class="events-section">
+        <h2>{% trans "Events" %}</h2>
+        <ul>
+            <li>{% trans "Janadriyah Festival" %}</li>
+            <li>{% trans "Riyadh Season Heritage Areas" %}</li>
+            <li>{% trans "Traditional Markets Exhibitions" %}</li>
+        </ul>
+    </div>
+
+    <!-- Video Player -->
+    {% if region.video_url %}
+        {% video_player region.video_url region.name %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

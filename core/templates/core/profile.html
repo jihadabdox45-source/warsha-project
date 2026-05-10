@@ -1,0 +1,132 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Profile" %} - Warsha{% endblock %}
+
+{% block content %}
+
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <h1 class="profile-name">{{ user.get_full_name|default:user.username }}</h1>
+            <p class="profile-username">@{{ user.username }}</p>
+        </div>
+
+        <div class="profile-info">
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div class="info-content">
+                    <span class="info-label">{% trans "Email" %}</span>
+                    <span class="info-value">{{ user.email }}</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-calendar-alt"></i>
+                <div class="info-content">
+                    <span class="info-label">{% trans "Member Since" %}</span>
+                    <span class="info-value">{{ user.date_joined|date:"F Y" }}</span>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fas fa-clock"></i>
+                <div class="info-content">
+                    <span class="info-label">{% trans "Last Login" %}</span>
+                    <span class="info-value">{{ user.last_login|date:"d M Y, H:i" }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile-actions">
+            <a href="#" class="profile-btn">
+                <i class="fas fa-edit"></i> {% trans "Edit Profile" %}
+            </a>
+            <a href="{% url 'core:logout' %}" class="profile-btn logout-btn">
+                <i class="fas fa-sign-out-alt"></i> {% trans "Logout" %}
+            </a>
+        </div>
+    </div>
+
+    <div class="profile-stats">
+        <div class="stat-card">
+            <i class="fas fa-heart"></i>
+            <h3>{{ favorites_count }}</h3>
+            <p>{% trans "Favorite Crafts" %}</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-comment"></i>
+            <h3>{{ comments_count }}</h3>
+            <p>{% trans "Comments" %}</p>
+        </div>
+
+        <div class="stat-card">
+            <i class="fas fa-star"></i>
+            <h3>{{ ratings_count }}</h3>
+            <p>{% trans "Reviews" %}</p>
+        </div>
+    </div>
+</div>
+
+<!-- قسم الحرف المفضلة -->
+{% if favorite_crafts %}
+<div class="profile-section">
+    <h2 class="section-title">
+        <i class="fas fa-heart"></i> {% trans "My Favorite Crafts" %}
+    </h2>
+    
+    <div class="favorites-grid">
+        {% for favorite in favorite_crafts %}
+            <a href="{% url 'crafts:craft_detail' favorite.craft.id %}" class="favorite-item">
+                <img src="{% static favorite.craft.image %}" alt="{{ favorite.craft.name }}">
+                <div class="favorite-info">
+                    <h4>{{ favorite.craft.name }}</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> {{ favorite.craft.region.name }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    
+    {% if favorites_count > 6 %}
+        <div class="view-all">
+            <a href="{% url 'core:favorites' %}" class="view-all-btn">
+                {% trans "View All Favorites" %} ({{ favorites_count }})
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endif %}
+
+<!-- قسم آخر التعليقات -->
+{% if recent_comments %}
+<div class="profile-section">
+    <h2 class="section-title">
+        <i class="fas fa-comment"></i> {% trans "Recent Comments" %}
+    </h2>
+    
+    <div class="comments-list-profile">
+        {% for comment in recent_comments %}
+            <div class="comment-item-profile">
+                <div class="comment-craft">
+                    <i class="fas fa-hammer"></i>
+                    <a href="{% url 'crafts:craft_detail' comment.craft.id %}">{{ comment.craft.name }}</a>
+                </div>
+                <div class="comment-text-preview">
+                    {{ comment.text|truncatewords:20 }}
+                </div>
+                <div class="comment-date-profile">
+                    <i class="far fa-clock"></i>
+                    {{ comment.created_at|date:"d M Y" }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,522 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Privacy Policy" %} - Warsha{% endblock %}
+
+{% block content %}
+
+<div class="privacy-container">
+    <!-- Header -->
+    <div class="privacy-header">
+        <div class="header-icon">
+            <i class="fas fa-shield-alt"></i>
+        </div>
+        <h1 class="page-title">{% trans "Privacy Policy" %}</h1>
+        <p class="last-updated">{% trans "Last Updated" %}: {% trans "April 2026" %}</p>
+    </div>
+
+    <!-- Content -->
+    <div class="privacy-content">
+        <!-- Introduction -->
+        <section class="privacy-section">
+            <h2>{% trans "Introduction" %}</h2>
+            <p>
+                {% trans "At Warsha platform, we are committed to protecting your privacy and personal data. This policy explains how we collect, use, and protect the information you provide to us when using our platform." %}
+            </p>
+        </section>
+
+        <!-- Information We Collect -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <h2>{% trans "Information We Collect" %}</h2>
+            
+            <div class="subsection">
+                <h3>{% trans "1. Personal Information" %}</h3>
+                <ul>
+                    <li>{% trans "Full name" %}</li>
+                    <li>{% trans "Email address" %}</li>
+                    <li>{% trans "Username" %}</li>
+                    <li>{% trans "Password (encrypted)" %}</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>{% trans "2. Usage Information" %}</h3>
+                <ul>
+                    <li>{% trans "Crafts you browse" %}</li>
+                    <li>{% trans "Comments and ratings you add" %}</li>
+                    <li>{% trans "Your favorite crafts" %}</li>
+                    <li>{% trans "Visit date and time" %}</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>{% trans "3. Technical Information" %}</h3>
+                <ul>
+                    <li>{% trans "IP address" %}</li>
+                    <li>{% trans "Browser type" %}</li>
+                    <li>{% trans "Operating system" %}</li>
+                    <li>{% trans "Device information" %}</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- How We Use Information -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-cogs"></i>
+            </div>
+            <h2>{% trans "How We Use Your Information" %}</h2>
+            <ul>
+                <li>{% trans "Provide and improve our services" %}</li>
+                <li>{% trans "Manage your account and personalize your experience" %}</li>
+                <li>{% trans "Communicate with you regarding your account or inquiries" %}</li>
+                <li>{% trans "Protect the platform from unauthorized use" %}</li>
+                <li>{% trans "Analyze platform usage to improve services" %}</li>
+                <li>{% trans "Comply with legal requirements" %}</li>
+            </ul>
+        </section>
+
+        <!-- Data Protection -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-lock"></i>
+            </div>
+            <h2>{% trans "Data Protection" %}</h2>
+            <p>{% trans "We take strict security measures to protect your personal information:" %}</p>
+            <ul>
+                <li>{% trans "Password encryption using secure algorithms" %}</li>
+                <li>{% trans "Using HTTPS protocol to secure connections" %}</li>
+                <li>{% trans "Restricting data access to authorized personnel only" %}</li>
+                <li>{% trans "Performing regular data backups" %}</li>
+                <li>{% trans "Monitoring systems to detect any suspicious activity" %}</li>
+            </ul>
+        </section>
+
+        <!-- Data Sharing -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-share-alt"></i>
+            </div>
+            <h2>{% trans "Data Sharing" %}</h2>
+            <p>{% trans "We do not sell or rent your personal information to third parties. We may share your information only in the following cases:" %}</p>
+            <ul>
+                <li>{% trans "When we obtain your explicit consent" %}</li>
+                <li>{% trans "To comply with legal requirements or court orders" %}</li>
+                <li>{% trans "To protect our rights or user safety" %}</li>
+                <li>{% trans "With service providers who help us operate the platform (under confidentiality agreements)" %}</li>
+            </ul>
+        </section>
+
+        <!-- Cookies -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-cookie-bite"></i>
+            </div>
+            <h2>{% trans "Cookies" %}</h2>
+            <p>{% trans "We use cookies to improve your experience on the platform:" %}</p>
+            <ul>
+                <li><strong>{% trans "Essential Cookies" %}:</strong> {% trans "Required for the platform to function properly" %}</li>
+                <li><strong>{% trans "Performance Cookies" %}:</strong> {% trans "Help us understand how the platform is used" %}</li>
+                <li><strong>{% trans "Preference Cookies" %}:</strong> {% trans "Save your settings such as language and dark mode" %}</li>
+            </ul>
+            <p>{% trans "You can control cookies through your browser settings." %}</p>
+        </section>
+
+        <!-- Your Rights -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <h2>{% trans "Your Rights" %}</h2>
+            <p>{% trans "You have the following rights regarding your personal data:" %}</p>
+            <ul>
+                <li><strong>{% trans "Access" %}:</strong> {% trans "You can request a copy of your personal data" %}</li>
+                <li><strong>{% trans "Correction" %}:</strong> {% trans "You can update or correct your information" %}</li>
+                <li><strong>{% trans "Deletion" %}:</strong> {% trans "You can request deletion of your account and data" %}</li>
+                <li><strong>{% trans "Objection" %}:</strong> {% trans "You can object to data processing in certain cases" %}</li>
+                <li><strong>{% trans "Data Portability" %}:</strong> {% trans "You can request to transfer your data to another service" %}</li>
+            </ul>
+            <p>{% trans "To exercise any of these rights, please contact us through the contact page." %}</p>
+        </section>
+
+        <!-- Children's Privacy -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-child"></i>
+            </div>
+            <h2>{% trans "Children's Privacy" %}</h2>
+            <p>
+                {% trans "Our platform is not directed to children under 13 years of age. We do not knowingly collect personal information from children. If we learn that we have collected information from a child under 13, we will delete it immediately." %}
+            </p>
+        </section>
+
+        <!-- Data Retention -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h2>{% trans "Data Retention" %}</h2>
+            <p>{% trans "We retain your personal information as long as your account is active or as needed to provide our services. When you delete your account:" %}</p>
+            <ul>
+                <li>{% trans "Your personal information will be deleted within 30 days" %}</li>
+                <li>{% trans "We may retain some data to comply with legal requirements" %}</li>
+                <li>{% trans "Public comments and ratings may remain anonymized" %}</li>
+            </ul>
+        </section>
+
+        <!-- Third-Party Links -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-external-link-alt"></i>
+            </div>
+            <h2>{% trans "Third-Party Links" %}</h2>
+            <p>
+                {% trans "Our platform may contain links to other websites. We are not responsible for the privacy practices of these sites. We advise you to read the privacy policies of each site you visit." %}
+            </p>
+        </section>
+
+        <!-- Changes to Policy -->
+        <section class="privacy-section">
+            <div class="section-icon">
+                <i class="fas fa-sync-alt"></i>
+            </div>
+            <h2>{% trans "Changes to This Policy" %}</h2>
+            <p>
+                {% trans "We may update this privacy policy from time to time. We will notify you of any material changes via email or through a prominent notice on the platform. We recommend reviewing this page periodically." %}
+            </p>
+        </section>
+
+        <!-- Contact -->
+        <section class="privacy-section contact-section">
+            <div class="section-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h2>{% trans "Contact Us" %}</h2>
+            <p>{% trans "If you have any questions or inquiries about the privacy policy, please contact us:" %}</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>privacy@warsha.sa</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-link"></i>
+                    <a href="{% url 'core:contact' %}">{% trans "Contact Page" %}</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<style>
+    /* Force center alignment for all text elements */
+    .privacy-container,
+    .privacy-container *,
+    .privacy-header,
+    .privacy-header *,
+    .page-title,
+    .last-updated,
+    .header-icon,
+    .privacy-section h2,
+    .section-icon {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .privacy-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 120px 40px 60px;
+    }
+    
+    /* Header */
+    .privacy-header {
+        text-align: center;
+        margin-bottom: 60px;
+        padding-bottom: 40px;
+        border-bottom: 2px solid rgba(212, 165, 116, 0.3);
+    }
+    
+    body.light .privacy-header {
+        border-bottom-color: rgba(139, 111, 71, 0.3);
+    }
+    
+    .header-icon {
+        font-size: 80px;
+        color: #D4AF37;
+        margin-bottom: 25px;
+    }
+    
+    body.light .header-icon {
+        color: #8B6F47;
+    }
+    
+    .page-title {
+        font-size: 48px;
+        font-weight: 900;
+        color: #D4AF37;
+        margin-bottom: 15px;
+        letter-spacing: 2px;
+    }
+    
+    body.light .page-title {
+        color: #8B6F47;
+    }
+    
+    .last-updated {
+        font-size: 14px;
+        color: rgba(245, 245, 220, 0.6);
+        font-style: italic;
+    }
+    
+    body.light .last-updated {
+        color: rgba(44, 36, 22, 0.6);
+    }
+    
+    /* Content */
+    .privacy-content {
+        line-height: 1.9;
+    }
+    
+    .privacy-section {
+        margin-bottom: 50px;
+        padding: 40px;
+        background: rgba(212, 165, 116, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 2px solid rgba(212, 165, 116, 0.25);
+    }
+    
+    body.light .privacy-section {
+        background: rgba(139, 111, 71, 0.06);
+        border-color: rgba(139, 111, 71, 0.25);
+    }
+    
+    .section-icon {
+        font-size: 40px;
+        color: #D4AF37;
+        margin-bottom: 20px;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .section-icon i {
+        display: inline-block !important;
+    }
+    
+    body.light .section-icon {
+        color: #8B6F47;
+    }
+    
+    .privacy-section h2 {
+        font-size: 32px;
+        font-weight: 800;
+        color: #D4AF37;
+        margin-bottom: 20px;
+        display: block !important;
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+    }
+    
+    body.light .privacy-section h2 {
+        color: #8B6F47;
+    }
+    
+    .privacy-section h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #D4A574;
+        margin: 25px 0 15px;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    body.light .privacy-section h3 {
+        color: #8B6F47;
+    }
+    
+    .privacy-section p {
+        font-size: 17px;
+        color: rgba(245, 245, 220, 0.9);
+        margin-bottom: 20px;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    body.light .privacy-section p {
+        color: rgba(44, 36, 22, 0.85);
+    }
+    
+    .privacy-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+    }
+    
+    .privacy-section ul li {
+        padding: 12px 20px;
+        margin: 10px 0;
+        background: rgba(212, 165, 116, 0.1);
+        border-radius: 12px;
+        border-left: 4px solid #D4AF37;
+        font-size: 16px;
+        color: rgba(245, 245, 220, 0.9);
+        transition: all 0.3s ease;
+    }
+    
+    body.light .privacy-section ul li {
+        background: rgba(139, 111, 71, 0.08);
+        border-left-color: #8B6F47;
+        color: rgba(44, 36, 22, 0.85);
+    }
+    
+    [dir="rtl"] .privacy-section ul li {
+        border-left: none;
+        border-right: 4px solid #D4AF37;
+    }
+    
+    body.light[dir="rtl"] .privacy-section ul li {
+        border-right-color: #8B6F47;
+    }
+    
+    .privacy-section ul li:hover {
+        transform: translateX(5px);
+        background: rgba(212, 165, 116, 0.15);
+    }
+    
+    body.light .privacy-section ul li:hover {
+        background: rgba(139, 111, 71, 0.12);
+    }
+    
+    [dir="rtl"] .privacy-section ul li:hover {
+        transform: translateX(-5px);
+    }
+    
+    .privacy-section ul li strong {
+        color: #D4AF37;
+        font-weight: 700;
+    }
+    
+    body.light .privacy-section ul li strong {
+        color: #8B6F47;
+    }
+    
+    .subsection {
+        margin: 30px 0;
+        padding: 25px;
+        background: rgba(212, 165, 116, 0.05);
+        border-radius: 15px;
+    }
+    
+    body.light .subsection {
+        background: rgba(139, 111, 71, 0.05);
+    }
+    
+    /* Contact Section */
+    .contact-section {
+        background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(139, 111, 71, 0.15) 100%);
+        border-color: #D4AF37;
+    }
+    
+    body.light .contact-section {
+        background: linear-gradient(135deg, rgba(139, 111, 71, 0.1) 0%, rgba(139, 111, 71, 0.05) 100%);
+        border-color: #8B6F47;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 25px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 15px 20px;
+        background: rgba(212, 165, 116, 0.1);
+        border-radius: 12px;
+        font-size: 16px;
+        color: rgba(245, 245, 220, 0.9);
+    }
+    
+    body.light .contact-item {
+        background: rgba(139, 111, 71, 0.08);
+        color: rgba(44, 36, 22, 0.85);
+    }
+    
+    .contact-item i {
+        font-size: 20px;
+        color: #D4AF37;
+    }
+    
+    body.light .contact-item i {
+        color: #8B6F47;
+    }
+    
+    .contact-item a {
+        color: #D4AF37;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+    }
+    
+    body.light .contact-item a {
+        color: #8B6F47;
+    }
+    
+    .contact-item a:hover {
+        text-decoration: underline;
+        color: #B8860B;
+    }
+    
+    body.light .contact-item a:hover {
+        color: #6B5435;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+        .privacy-container {
+            padding: 100px 20px 40px;
+        }
+        
+        .page-title {
+            font-size: 32px;
+        }
+        
+        .privacy-section {
+            padding: 25px 20px;
+        }
+        
+        .privacy-section h2 {
+            font-size: 24px;
+        }
+        
+        .privacy-section h3 {
+            font-size: 18px;
+        }
+        
+        .privacy-section p,
+        .privacy-section ul li {
+            font-size: 15px;
+        }
+    }
+</style>
+
+{% endblock %}

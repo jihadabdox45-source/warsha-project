@@ -1,0 +1,735 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "About Us" %} - Warsha{% endblock %}
+
+{% block content %}
+
+<div class="about-container">
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="hero-content">
+            <div class="hero-icon">
+                <i class="fas fa-hands-helping"></i>
+            </div>
+            <h1 class="page-title">{% trans "About Us" %}</h1>
+            <p class="page-subtitle">
+                {% trans "A digital platform celebrating Saudi heritage and connecting artisans with craft enthusiasts" %}
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="about-section">
+        <div class="section-content">
+            <div class="section-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+            <h2 class="section-title">{% trans "Our Mission" %}</h2>
+            <p class="section-text">
+                {% trans "At Warsha platform, we strive to preserve the rich Saudi heritage by documenting traditional handicrafts and introducing them to new generations. We believe that every craft carries a story and history that deserves to be told and preserved for future generations." %}
+            </p>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="about-section alternate">
+        <div class="section-content">
+            <div class="section-icon">
+                <i class="fas fa-eye"></i>
+            </div>
+            <h2 class="section-title">{% trans "Our Vision" %}</h2>
+            <p class="section-text">
+                {% trans "To be the leading platform in Saudi Arabia for documenting and promoting traditional handicrafts, and to contribute to reviving Saudi cultural heritage and strengthening national identity by connecting the past with the present." %}
+            </p>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <h2 class="section-title centered">{% trans "Our Values" %}</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>{% trans "Authenticity" %}</h3>
+                <p>{% trans "We preserve the authenticity of traditional crafts and document them with precision and respect" %}</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>{% trans "Community" %}</h3>
+                <p>{% trans "We build a community of heritage and handicraft enthusiasts" %}</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>{% trans "Innovation" %}</h3>
+                <p>{% trans "We use modern technology to preserve and promote heritage" %}</p>
+            </div>
+
+            <div class="value-card">
+                <div class="value-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>{% trans "Quality" %}</h3>
+                <p>{% trans "We commit to the highest standards of quality in content and service" %}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section class="features-section">
+        <h2 class="section-title centered">{% trans "What We Offer" %}</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3>{% trans "Comprehensive Documentation" %}</h3>
+                <p>{% trans "We document handicrafts from all regions of the Kingdom with precise details and high-quality images" %}</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <h3>{% trans "Geographic Coverage" %}</h3>
+                <p>{% trans "We cover all regions of the Kingdom and highlight the uniqueness of each region and its distinctive crafts" %}</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>{% trans "Community Interaction" %}</h3>
+                <p>{% trans "We enable users to interact through comments, ratings, and favorites" %}</p>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>{% trans "Educational Content" %}</h3>
+                <p>{% trans "We provide historical and cultural information about each craft and its origins" %}</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <h2 class="section-title centered">{% trans "Our Achievements" %}</h2>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="stat-number">50+</div>
+                <div class="stat-label">{% trans "Documented Crafts" %}</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="stat-number">7</div>
+                <div class="stat-label">{% trans "Covered Regions" %}</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number">1000+</div>
+                <div class="stat-label">{% trans "Active Users" %}</div>
+            </div>
+
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-images"></i>
+                </div>
+                <div class="stat-number">500+</div>
+                <div class="stat-label">{% trans "High-Quality Images" %}</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>{% trans "Join Our Community" %}</h2>
+            <p>{% trans "Contribute to preserving Saudi heritage by interacting with content and sharing your experience" %}</p>
+            <div class="cta-buttons">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'crafts:all_crafts' %}" class="cta-btn primary">
+                        <i class="fas fa-compass"></i>
+                        {% trans "Explore Crafts" %}
+                    </a>
+                {% else %}
+                    <a href="{% url 'core:register' %}" class="cta-btn primary">
+                        <i class="fas fa-user-plus"></i>
+                        {% trans "Register Now" %}
+                    </a>
+                    <a href="{% url 'crafts:all_crafts' %}" class="cta-btn secondary">
+                        <i class="fas fa-compass"></i>
+                        {% trans "Explore Crafts" %}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    /* Force center alignment for all text elements */
+    .about-container,
+    .about-container *,
+    .about-hero,
+    .about-hero *,
+    .hero-content,
+    .hero-content *,
+    .page-title,
+    .page-subtitle,
+    .about-section,
+    .about-section *,
+    .section-content,
+    .section-content *,
+    .section-title,
+    .section-text,
+    .section-icon {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    .about-container {
+        padding-top: 100px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    /* Hero Section */
+    .about-hero {
+        background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(139, 111, 71, 0.15) 100%);
+        padding: 50px 40px;
+        text-align: center;
+        border-radius: 0 0 30px 30px;
+        margin-bottom: 50px;
+    }
+    
+    body.light .about-hero {
+        background: linear-gradient(135deg, rgba(139, 111, 71, 0.1) 0%, rgba(139, 111, 71, 0.05) 100%);
+    }
+    
+    .hero-icon {
+        font-size: 50px;
+        color: #D4AF37;
+        margin-bottom: 20px;
+        animation: float 3s ease-in-out infinite;
+        text-align: center;
+    }
+    
+    body.light .hero-icon {
+        color: #8B6F47;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    
+    .page-title {
+        font-size: 42px;
+        font-weight: 800;
+        color: #D4AF37;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        text-align: center !important;
+    }
+    
+    body.light .page-title {
+        color: #8B6F47;
+    }
+    
+    .page-subtitle {
+        font-size: 18px;
+        color: rgba(245, 245, 220, 0.85);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.7;
+        text-align: center !important;
+    }
+    
+    body.light .page-subtitle {
+        color: rgba(44, 36, 22, 0.75);
+    }
+    
+    /* About Sections */
+    .about-section {
+        max-width: 900px;
+        margin: 0 auto 50px;
+        padding: 45px 40px;
+        background: rgba(212, 165, 116, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 2px solid rgba(212, 165, 116, 0.25);
+        text-align: center;
+    }
+    
+    body.light .about-section {
+        background: rgba(139, 111, 71, 0.06);
+        border-color: rgba(139, 111, 71, 0.25);
+    }
+    
+    .about-section.alternate {
+        background: rgba(139, 111, 71, 0.08);
+    }
+    
+    body.light .about-section.alternate {
+        background: rgba(212, 165, 116, 0.06);
+    }
+    
+    .section-icon {
+        font-size: 45px;
+        color: #D4AF37;
+        margin-bottom: 20px;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    
+    .section-icon i {
+        display: inline-block !important;
+    }
+    
+    body.light .section-icon {
+        color: #8B6F47;
+    }
+    
+    .section-title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #D4AF37;
+        margin-bottom: 20px;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+    
+    body.light .section-title {
+        color: #8B6F47;
+    }
+    
+    .section-title.centered {
+        text-align: center !important;
+        margin-bottom: 40px;
+    }
+    
+    .section-text {
+        font-size: 17px;
+        line-height: 1.9;
+        color: rgba(245, 245, 220, 0.9);
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center !important;
+    }
+    
+    body.light .section-text {
+        color: rgba(44, 36, 22, 0.85);
+    }
+    
+    /* Values Section */
+    .values-section {
+        padding: 60px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+    
+    .value-card {
+        background: rgba(212, 165, 116, 0.08);
+        backdrop-filter: blur(10px);
+        padding: 35px 25px;
+        border-radius: 18px;
+        border: 2px solid rgba(212, 165, 116, 0.25);
+        text-align: center;
+        transition: all 0.4s ease;
+    }
+    
+    body.light .value-card {
+        background: rgba(139, 111, 71, 0.06);
+        border-color: rgba(139, 111, 71, 0.25);
+    }
+    
+    .value-card:hover {
+        transform: translateY(-8px);
+        border-color: #D4AF37;
+        box-shadow: 0 12px 35px rgba(212, 175, 55, 0.3);
+    }
+    
+    body.light .value-card:hover {
+        border-color: #8B6F47;
+        box-shadow: 0 12px 35px rgba(139, 111, 71, 0.3);
+    }
+    
+    .value-icon {
+        font-size: 40px;
+        color: #D4AF37;
+        margin-bottom: 18px;
+    }
+    
+    body.light .value-icon {
+        color: #8B6F47;
+    }
+    
+    .value-card h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #D4AF37;
+        margin-bottom: 12px;
+    }
+    
+    body.light .value-card h3 {
+        color: #8B6F47;
+    }
+    
+    .value-card p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(245, 245, 220, 0.8);
+    }
+    
+    body.light .value-card p {
+        color: rgba(44, 36, 22, 0.7);
+    }
+    
+    /* Features Section */
+    .features-section {
+        padding: 60px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        background: rgba(212, 165, 116, 0.05);
+        border-radius: 25px;
+    }
+    
+    body.light .features-section {
+        background: rgba(139, 111, 71, 0.05);
+    }
+    
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 40px;
+    }
+    
+    .feature-item {
+        text-align: center;
+        padding: 25px 20px;
+    }
+    
+    .feature-icon {
+        font-size: 40px;
+        color: #D4AF37;
+        margin-bottom: 18px;
+    }
+    
+    body.light .feature-icon {
+        color: #8B6F47;
+    }
+    
+    .feature-item h3 {
+        font-size: 20px;
+        font-weight: 700;
+        color: #D4AF37;
+        margin-bottom: 12px;
+    }
+    
+    body.light .feature-item h3 {
+        color: #8B6F47;
+    }
+    
+    .feature-item p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(245, 245, 220, 0.8);
+    }
+    
+    body.light .feature-item p {
+        color: rgba(44, 36, 22, 0.7);
+    }
+    
+    /* Statistics Section */
+    .stats-section {
+        padding: 60px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .stat-item {
+        text-align: center;
+        padding: 35px 20px;
+        background: rgba(212, 165, 116, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 18px;
+        border: 2px solid rgba(212, 165, 116, 0.25);
+        transition: all 0.4s ease;
+    }
+    
+    body.light .stat-item {
+        background: rgba(139, 111, 71, 0.06);
+        border-color: rgba(139, 111, 71, 0.25);
+    }
+    
+    .stat-item:hover {
+        transform: scale(1.05);
+        border-color: #D4AF37;
+        box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+    }
+    
+    body.light .stat-item:hover {
+        border-color: #8B6F47;
+        box-shadow: 0 10px 30px rgba(139, 111, 71, 0.3);
+    }
+    
+    .stat-icon {
+        font-size: 35px;
+        color: #D4AF37;
+        margin-bottom: 12px;
+    }
+    
+    body.light .stat-icon {
+        color: #8B6F47;
+    }
+    
+    .stat-number {
+        font-size: 40px;
+        font-weight: 800;
+        color: #D4AF37;
+        margin-bottom: 8px;
+    }
+    
+    body.light .stat-number {
+        color: #8B6F47;
+    }
+    
+    .stat-label {
+        font-size: 15px;
+        color: rgba(245, 245, 220, 0.8);
+        font-weight: 600;
+    }
+    
+    body.light .stat-label {
+        color: rgba(44, 36, 22, 0.7);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 60px 40px;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(212, 165, 116, 0.15) 0%, rgba(139, 111, 71, 0.15) 100%);
+        border-radius: 25px;
+        margin: 50px 40px 40px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    body.light .cta-section {
+        background: linear-gradient(135deg, rgba(139, 111, 71, 0.1) 0%, rgba(139, 111, 71, 0.05) 100%);
+    }
+    
+    .cta-content h2 {
+        font-size: 36px;
+        font-weight: 800;
+        color: #D4AF37;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+    
+    body.light .cta-content h2 {
+        color: #8B6F47;
+    }
+    
+    .cta-content p {
+        font-size: 17px;
+        color: rgba(245, 245, 220, 0.85);
+        margin-bottom: 35px;
+        max-width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+        text-align: center;
+    }
+    
+    body.light .cta-content p {
+        color: rgba(44, 36, 22, 0.75);
+    }
+    
+    .cta-buttons {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .cta-btn {
+        padding: 14px 35px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cta-btn.primary {
+        background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+        color: #1a1410;
+        border: 2px solid #D4AF37;
+    }
+    
+    body.light .cta-btn.primary {
+        background: linear-gradient(135deg, #8B6F47 0%, #6B5435 100%);
+        color: #F5F5DC;
+        border: 2px solid #8B6F47;
+    }
+    
+    .cta-btn.secondary {
+        background: rgba(212, 165, 116, 0.15);
+        color: #D4AF37;
+        border: 2px solid rgba(212, 165, 116, 0.5);
+    }
+    
+    body.light .cta-btn.secondary {
+        background: rgba(139, 111, 71, 0.15);
+        color: #8B6F47;
+        border: 2px solid rgba(139, 111, 71, 0.5);
+    }
+    
+    .cta-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    }
+    
+    body.light .cta-btn:hover {
+        box-shadow: 0 8px 25px rgba(139, 111, 71, 0.4);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .about-container {
+            padding-top: 90px;
+        }
+        
+        .page-title {
+            font-size: 36px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .about-container {
+            padding-top: 80px;
+        }
+        
+        .about-hero {
+            padding: 40px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .hero-icon {
+            font-size: 40px;
+        }
+        
+        .page-title {
+            font-size: 30px;
+        }
+        
+        .page-subtitle {
+            font-size: 16px;
+        }
+        
+        .about-section {
+            padding: 35px 20px;
+            margin-bottom: 35px;
+        }
+        
+        .section-icon {
+            font-size: 38px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+        }
+        
+        .section-text {
+            font-size: 16px;
+        }
+        
+        .values-section,
+        .features-section,
+        .stats-section {
+            padding: 40px 20px;
+        }
+        
+        .values-grid,
+        .features-grid,
+        .stats-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .cta-section {
+            padding: 40px 20px;
+            margin: 40px 20px 30px;
+        }
+        
+        .cta-content h2 {
+            font-size: 28px;
+        }
+        
+        .cta-content p {
+            font-size: 16px;
+        }
+        
+        .cta-buttons {
+            flex-direction: column;
+            align-items: stretch;
+        }
+        
+        .cta-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
+
+{% endblock %}

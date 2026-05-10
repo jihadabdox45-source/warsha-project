@@ -1,0 +1,109 @@
+{% extends 'core/dashboard/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}إدارة الرسائل - لوحة التحكم{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <h1 class="dashboard-title">
+        <i class="fas fa-envelope"></i>
+        {% trans "إدارة رسائل التواصل" %}
+    </h1>
+    <p class="dashboard-subtitle">{% trans "عرض وإدارة جميع رسائل التواصل" %}</p>
+</div>
+
+<div class="dashboard-table-wrapper">
+    <div class="table-header">
+        <h3 class="table-title">
+            <i class="fas fa-list"></i>
+            {% trans "قائمة الرسائل" %} ({{ messages_list.count }})
+        </h3>
+        
+        <div class="table-actions">
+            <form method="get" class="search-box" style="display: flex; gap: 10px;">
+                <select name="status" style="padding: 10px 15px; border-radius: 20px; border: 2px solid rgba(212, 165, 116, 0.3); background: rgba(212, 165, 116, 0.1); color: #F5F5DC; font-size: 14px;">
+                    <option value="">{% trans "جميع الحالات" %}</option>
+                    <option value="read" {% if status_filter == 'read' %}selected{% endif %}>
+                        {% trans "مقروءة" %}
+                    </option>
+                    <option value="unread" {% if status_filter == 'unread' %}selected{% endif %}>
+                        {% trans "غير مقروءة" %}
+                    </option>
+                </select>
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fas fa-filter"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>{% trans "الاسم" %}</th>
+                <th>{% trans "البريد الإلكتروني" %}</th>
+                <th>{% trans "الرسالة" %}</th>
+                <th>{% trans "التاريخ" %}</th>
+                <th>{% trans "الحالة" %}</th>
+                <th>{% trans "الإجراءات" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for message in messages_list %}
+            <tr style="{% if not message.is_read %}background: rgba(212, 165, 116, 0.05);{% endif %}">
+                <td>
+                    <strong>{{ message.name }}</strong>
+                </td>
+                <td>{{ message.email }}</td>
+                <td style="max-width: 350px;">
+                    {{ message.message|truncatewords:20 }}
+                </td>
+                <td>{{ message.created_at|date:"Y-m-d H:i" }}</td>
+                <td>
+                    {% if message.is_read %}
+                    <span style="color: #28a745; font-weight: 600;">
+                        <i class="fas fa-check-circle"></i> {% trans "مقروءة" %}
+                    </span>
+                    {% else %}
+                    <span style="color: #ffc107; font-weight: 600;">
+                        <i class="fas fa-envelope"></i> {% trans "جديدة" %}
+                    </span>
+                    {% endif %}
+                </td>
+                <td>
+                    <div style="display: flex; gap: 5px;">
+                        {% if not message.is_read %}
+                        <form method="post" action="{% url 'core:dashboard_message_mark_read' message.id %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-success btn-sm" title="{% trans 'تعليم كمقروءة' %}">
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </form>
+                        {% endif %}
+                        
+                        <form method="post" action="{% url 'core:dashboard_message_delete' message.id %}" style="display: inline;" onsubmit="return confirm('{% trans 'هل أنت متأكد من حذف هذه الرسالة؟' %}');">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm" title="{% trans 'حذف' %}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                        
+                        <button type="button" class="btn btn-primary btn-sm" onclick="alert('{{ message.message|escapejs }}')" title="{% trans 'عرض الرسالة كاملة' %}">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" style="text-align: center; padding: 40px;">
+                    <i class="fas fa-envelope" style="font-size: 48px; color: rgba(212, 165, 116, 0.3); margin-bottom: 15px;"></i>
+                    <p>{% trans "لا توجد رسائل" %}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

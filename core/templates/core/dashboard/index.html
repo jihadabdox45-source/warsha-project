@@ -1,0 +1,279 @@
+{% extends 'core/dashboard/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}الإحصائيات - لوحة التحكم{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <h1 class="dashboard-title">
+        <i class="fas fa-chart-line"></i>
+        {% trans "الإحصائيات العامة" %}
+    </h1>
+    <p class="dashboard-subtitle">{% trans "نظرة شاملة على أداء المنصة" %}</p>
+</div>
+
+<!-- بطاقات الإحصائيات الرئيسية -->
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div class="stat-card-icon">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{ total_users }}</div>
+        <div class="stat-card-label">{% trans "إجمالي المستخدمين" %}</div>
+        {% if new_users > 0 %}
+        <div style="margin-top: 10px; font-size: 12px; color: #28a745;">
+            <i class="fas fa-arrow-up"></i> +{{ new_users }} {% trans "هذا الأسبوع" %}
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div class="stat-card-icon">
+                <i class="fas fa-hand-sparkles"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{ total_crafts }}</div>
+        <div class="stat-card-label">{% trans "الحرف اليدوية" %}</div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div class="stat-card-icon">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{ total_regions }}</div>
+        <div class="stat-card-label">{% trans "المناطق" %}</div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div class="stat-card-icon">
+                <i class="fas fa-comments"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{ total_comments }}</div>
+        <div class="stat-card-label">{% trans "التعليقات" %}</div>
+        {% if pending_comments > 0 %}
+        <div style="margin-top: 10px; font-size: 12px; color: #ffc107;">
+            <i class="fas fa-clock"></i> {{ pending_comments }} {% trans "بانتظار الموافقة" %}
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div class="stat-card-icon">
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{ total_ratings }}</div>
+        <div class="stat-card-label">{% trans "التقييمات" %}</div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-card-header">
+            <div class="stat-card-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+        <div class="stat-card-value">{{ total_favorites }}</div>
+        <div class="stat-card-label">{% trans "المفضلات" %}</div>
+    </div>
+</div>
+
+<!-- الحرف الأكثر تقييماً -->
+{% if top_rated_crafts %}
+<div class="dashboard-table-wrapper">
+    <div class="table-header">
+        <h3 class="table-title">
+            <i class="fas fa-trophy"></i>
+            {% trans "الحرف الأكثر تقييماً" %}
+        </h3>
+    </div>
+    
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>{% trans "الحرفة" %}</th>
+                <th>{% trans "المنطقة" %}</th>
+                <th>{% trans "متوسط التقييم" %}</th>
+                <th>{% trans "عدد التقييمات" %}</th>
+                <th>{% trans "الإجراءات" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for craft in top_rated_crafts %}
+            <tr>
+                <td>
+                    <strong>{{ craft.name }}</strong>
+                </td>
+                <td>{{ craft.region.name }}</td>
+                <td>
+                    <span style="color: #D4AF37; font-weight: 700;">
+                        {{ craft.avg_rating|floatformat:1 }} <i class="fas fa-star"></i>
+                    </span>
+                </td>
+                <td>{{ craft.rating_count }}</td>
+                <td>
+                    <a href="{% url 'crafts:craft_detail' craft.id %}" class="btn btn-primary btn-sm" target="_blank">
+                        <i class="fas fa-eye"></i>
+                        {% trans "عرض" %}
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+<!-- الحرف الأكثر تفضيلاً -->
+{% if most_favorited_crafts %}
+<div class="dashboard-table-wrapper">
+    <div class="table-header">
+        <h3 class="table-title">
+            <i class="fas fa-heart"></i>
+            {% trans "الحرف الأكثر تفضيلاً" %}
+        </h3>
+    </div>
+    
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>{% trans "الحرفة" %}</th>
+                <th>{% trans "المنطقة" %}</th>
+                <th>{% trans "عدد المفضلات" %}</th>
+                <th>{% trans "الإجراءات" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for craft in most_favorited_crafts %}
+            <tr>
+                <td>
+                    <strong>{{ craft.name }}</strong>
+                </td>
+                <td>{{ craft.region.name }}</td>
+                <td>
+                    <span style="color: #dc3545; font-weight: 700;">
+                        {{ craft.favorites_count }} <i class="fas fa-heart"></i>
+                    </span>
+                </td>
+                <td>
+                    <a href="{% url 'crafts:craft_detail' craft.id %}" class="btn btn-primary btn-sm" target="_blank">
+                        <i class="fas fa-eye"></i>
+                        {% trans "عرض" %}
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+<!-- آخر التعليقات -->
+{% if recent_comments %}
+<div class="dashboard-table-wrapper">
+    <div class="table-header">
+        <h3 class="table-title">
+            <i class="fas fa-comments"></i>
+            {% trans "آخر التعليقات" %}
+        </h3>
+        <a href="{% url 'core:dashboard_comments' %}" class="btn btn-primary btn-sm">
+            {% trans "عرض الكل" %}
+        </a>
+    </div>
+    
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>{% trans "المستخدم" %}</th>
+                <th>{% trans "الحرفة" %}</th>
+                <th>{% trans "التعليق" %}</th>
+                <th>{% trans "التاريخ" %}</th>
+                <th>{% trans "الحالة" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for comment in recent_comments %}
+            <tr>
+                <td>{{ comment.user.username }}</td>
+                <td>{{ comment.craft.name }}</td>
+                <td>{{ comment.text|truncatewords:10 }}</td>
+                <td>{{ comment.created_at|date:"Y-m-d H:i" }}</td>
+                <td>
+                    {% if comment.is_approved %}
+                    <span style="color: #28a745; font-weight: 600;">
+                        <i class="fas fa-check-circle"></i> {% trans "موافق عليه" %}
+                    </span>
+                    {% else %}
+                    <span style="color: #ffc107; font-weight: 600;">
+                        <i class="fas fa-clock"></i> {% trans "بانتظار الموافقة" %}
+                    </span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+
+<!-- آخر المستخدمين -->
+{% if recent_users %}
+<div class="dashboard-table-wrapper">
+    <div class="table-header">
+        <h3 class="table-title">
+            <i class="fas fa-user-plus"></i>
+            {% trans "آخر المستخدمين المسجلين" %}
+        </h3>
+        <a href="{% url 'core:dashboard_users' %}" class="btn btn-primary btn-sm">
+            {% trans "عرض الكل" %}
+        </a>
+    </div>
+    
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>{% trans "اسم المستخدم" %}</th>
+                <th>{% trans "البريد الإلكتروني" %}</th>
+                <th>{% trans "تاريخ التسجيل" %}</th>
+                <th>{% trans "الحالة" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in recent_users %}
+            <tr>
+                <td>
+                    <strong>{{ user.username }}</strong>
+                    {% if user.is_staff %}
+                    <span style="color: #D4AF37; margin-left: 5px;">
+                        <i class="fas fa-crown"></i>
+                    </span>
+                    {% endif %}
+                </td>
+                <td>{{ user.email|default:"—" }}</td>
+                <td>{{ user.date_joined|date:"Y-m-d H:i" }}</td>
+                <td>
+                    {% if user.is_active %}
+                    <span style="color: #28a745; font-weight: 600;">
+                        <i class="fas fa-check-circle"></i> {% trans "نشط" %}
+                    </span>
+                    {% else %}
+                    <span style="color: #dc3545; font-weight: 600;">
+                        <i class="fas fa-times-circle"></i> {% trans "غير نشط" %}
+                    </span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}
+{% endblock %}

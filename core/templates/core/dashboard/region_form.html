@@ -1,0 +1,387 @@
+{% extends 'core/dashboard/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% if action == 'add' %}
+{% trans "إضافة منطقة جديدة" %}
+{% else %}
+{% trans "تعديل منطقة" %}
+{% endif %}
+- لوحة التحكم
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <h1 class="dashboard-title">
+        <i class="fas fa-{% if action == 'add' %}plus{% else %}edit{% endif %}"></i>
+        {% if action == 'add' %}
+        {% trans "إضافة منطقة جديدة" %}
+        {% else %}
+        {% trans "تعديل منطقة" %}
+        {% endif %}
+    </h1>
+    <p class="dashboard-subtitle">
+        {% if action == 'add' %}
+        {% trans "أضف منطقة سعودية جديدة للمنصة" %}
+        {% else %}
+        {% trans "قم بتعديل معلومات المنطقة" %}
+        {% endif %}
+    </p>
+</div>
+
+<div class="dashboard-table-wrapper">
+    <form method="post" class="region-form" id="regionForm">
+        {% csrf_token %}
+        
+        <h3 class="section-title">
+            <i class="fas fa-info-circle"></i>
+            {% trans "المعلومات الأساسية" %}
+        </h3>
+        
+        <div class="form-row-grid">
+            <div class="form-group">
+                <label for="name">
+                    <i class="fas fa-map-marker-alt"></i>
+                    {% trans "اسم المنطقة" %} *
+                </label>
+                <input type="text" id="name" name="name" class="form-control" 
+                       value="{% if region %}{{ region.name }}{% endif %}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="slug">
+                    <i class="fas fa-link"></i>
+                    {% trans "الرابط (Slug)" %} *
+                </label>
+                <input type="text" id="slug" name="slug" class="form-control" 
+                       value="{% if region %}{{ region.slug }}{% endif %}" required>
+                <small class="form-hint">{% trans "استخدم أحرف إنجليزية صغيرة فقط (مثال: riyadh)" %}</small>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="tagline">
+                <i class="fas fa-quote-right"></i>
+                {% trans "الشعار" %} *
+            </label>
+            <input type="text" id="tagline" name="tagline" class="form-control" 
+                   value="{% if region %}{{ region.tagline }}{% endif %}" required>
+            <small class="form-hint">{% trans "شعار قصير يصف المنطقة" %}</small>
+        </div>
+        
+        <div class="form-group">
+            <label for="brief">
+                <i class="fas fa-align-left"></i>
+                {% trans "نبذة مختصرة" %} *
+            </label>
+            <textarea id="brief" name="brief" class="form-control" rows="4" required>{% if region %}{{ region.brief }}{% endif %}</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="top_attraction">
+                <i class="fas fa-star"></i>
+                {% trans "أبرز معلم" %} *
+            </label>
+            <input type="text" id="top_attraction" name="top_attraction" class="form-control" 
+                   value="{% if region %}{{ region.top_attraction }}{% endif %}" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="history">
+                <i class="fas fa-book"></i>
+                {% trans "التاريخ" %} *
+            </label>
+            <textarea id="history" name="history" class="form-control" rows="6" required>{% if region %}{{ region.history }}{% endif %}</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="video_url">
+                <i class="fas fa-video"></i>
+                {% trans "رابط الفيديو" %}
+            </label>
+            <input type="url" id="video_url" name="video_url" class="form-control" 
+                   value="{% if region %}{{ region.video_url }}{% endif %}">
+            <small class="form-hint">{% trans "رابط فيديو YouTube (اختياري)" %}</small>
+        </div>
+        
+        <hr class="section-divider">
+        
+        <h3 class="section-title">
+            <i class="fas fa-calendar-alt"></i>
+            {% trans "الفعاليات" %}
+        </h3>
+        
+        <div id="eventsContainer">
+            {% if region %}
+                {% for event in region.events.all %}
+                <div class="dynamic-field">
+                    <input type="text" name="events[]" class="form-control" value="{{ event.name }}" placeholder="{% trans 'اسم الفعالية' %}">
+                    <button type="button" class="btn-remove" onclick="removeField(this)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="dynamic-field">
+                    <input type="text" name="events[]" class="form-control" placeholder="{% trans 'اسم الفعالية' %}">
+                    <button type="button" class="btn-remove" onclick="removeField(this)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            {% endif %}
+        </div>
+        
+        <button type="button" class="btn btn-secondary btn-sm" onclick="addEvent()">
+            <i class="fas fa-plus"></i>
+            {% trans "إضافة فعالية" %}
+        </button>
+        
+        <hr class="section-divider">
+        
+        <h3 class="section-title">
+            <i class="fas fa-images"></i>
+            {% trans "الصور" %}
+        </h3>
+        
+        <div id="imagesContainer">
+            {% if region %}
+                {% for image in region.images.all %}
+                <div class="dynamic-field">
+                    <input type="text" name="images[]" class="form-control" value="{{ image.image }}" placeholder="{% trans 'مسار الصورة' %}">
+                    <button type="button" class="btn-remove" onclick="removeField(this)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                {% endfor %}
+            {% else %}
+                <div class="dynamic-field">
+                    <input type="text" name="images[]" class="form-control" placeholder="{% trans 'مسار الصورة (مثال: /static/crafts/images/riyadh/1.jpg)' %}">
+                    <button type="button" class="btn-remove" onclick="removeField(this)">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            {% endif %}
+        </div>
+        
+        <button type="button" class="btn btn-secondary btn-sm" onclick="addImage()">
+            <i class="fas fa-plus"></i>
+            {% trans "إضافة صورة" %}
+        </button>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i>
+                {% if action == 'add' %}
+                {% trans "إضافة المنطقة" %}
+                {% else %}
+                {% trans "حفظ التعديلات" %}
+                {% endif %}
+            </button>
+            <a href="{% url 'core:dashboard_regions' %}" class="btn btn-secondary">
+                <i class="fas fa-times"></i>
+                {% trans "إلغاء" %}
+            </a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .region-form {
+        max-width: 900px;
+    }
+    
+    .section-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: #D4AF37;
+        margin: 30px 0 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgba(212, 165, 116, 0.3);
+    }
+    
+    body.light .section-title {
+        color: #8B6F47;
+        border-bottom-color: rgba(139, 111, 71, 0.3);
+    }
+    
+    .section-divider {
+        border: none;
+        border-top: 2px solid rgba(212, 165, 116, 0.2);
+        margin: 30px 0;
+    }
+    
+    body.light .section-divider {
+        border-top-color: rgba(139, 111, 71, 0.2);
+    }
+    
+    .form-row-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .form-group {
+        margin-bottom: 25px;
+    }
+    
+    .form-group label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 15px;
+        color: #D4A574;
+    }
+    
+    body.light .form-group label {
+        color: #8B6F47;
+    }
+    
+    .form-control {
+        width: 100%;
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: 2px solid rgba(212, 165, 116, 0.3);
+        font-size: 15px;
+        background: rgba(212, 165, 116, 0.1);
+        color: #F5F5DC;
+        transition: all 0.3s ease;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body.light .form-control {
+        background: rgba(139, 111, 71, 0.08);
+        color: #2c2416;
+        border-color: rgba(139, 111, 71, 0.3);
+    }
+    
+    .form-control:focus {
+        outline: none;
+        border-color: #D4AF37;
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+        transform: translateY(-2px);
+    }
+    
+    body.light .form-control:focus {
+        border-color: #8B6F47;
+        box-shadow: 0 0 0 4px rgba(139, 111, 71, 0.15);
+    }
+    
+    textarea.form-control {
+        resize: vertical;
+    }
+    
+    .form-hint {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+        color: rgba(245, 245, 220, 0.6);
+        font-style: italic;
+    }
+    
+    body.light .form-hint {
+        color: rgba(44, 36, 22, 0.6);
+    }
+    
+    .dynamic-field {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+        align-items: center;
+    }
+    
+    .dynamic-field input {
+        flex: 1;
+    }
+    
+    .btn-remove {
+        padding: 10px 15px;
+        background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-size: 14px;
+    }
+    
+    .btn-remove:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(220, 53, 69, 0.4);
+    }
+    
+    .form-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 2px solid rgba(212, 165, 116, 0.2);
+    }
+    
+    body.light .form-actions {
+        border-top-color: rgba(139, 111, 71, 0.2);
+    }
+    
+    .btn-secondary {
+        background: rgba(108, 117, 125, 0.2);
+        color: rgba(245, 245, 220, 0.8);
+        border: 2px solid rgba(108, 117, 125, 0.3);
+    }
+    
+    body.light .btn-secondary {
+        background: rgba(108, 117, 125, 0.1);
+        color: rgba(44, 36, 22, 0.8);
+    }
+    
+    .btn-secondary:hover {
+        background: #6c757d;
+        color: white;
+        border-color: #6c757d;
+    }
+    
+    @media (max-width: 768px) {
+        .form-row-grid {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+    }
+</style>
+
+<script>
+    function addEvent() {
+        const container = document.getElementById('eventsContainer');
+        const newField = document.createElement('div');
+        newField.className = 'dynamic-field';
+        newField.innerHTML = `
+            <input type="text" name="events[]" class="form-control" placeholder="{% trans 'اسم الفعالية' %}">
+            <button type="button" class="btn-remove" onclick="removeField(this)">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        container.appendChild(newField);
+    }
+    
+    function addImage() {
+        const container = document.getElementById('imagesContainer');
+        const newField = document.createElement('div');
+        newField.className = 'dynamic-field';
+        newField.innerHTML = `
+            <input type="text" name="images[]" class="form-control" placeholder="{% trans 'مسار الصورة (مثال: /static/crafts/images/riyadh/1.jpg)' %}">
+            <button type="button" class="btn-remove" onclick="removeField(this)">
+                <i class="fas fa-times"></i>
+            </button>
+        `;
+        container.appendChild(newField);
+    }
+    
+    function removeField(button) {
+        button.parentElement.remove();
+    }
+</script>
+{% endblock %}

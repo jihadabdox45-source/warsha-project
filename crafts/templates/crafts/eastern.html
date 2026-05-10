@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+{% load video_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="title">{% trans "Eastern Region Crafts" %}</h1>
+
+    <p class="intro">
+        {% trans "The Eastern Region combines coastal traditions with urban heritage. Its crafts reflect sea life, trade history, and diverse cultural influences." %}
+    </p>
+
+    <div class="main-image">
+        <img src="{% static 'crafts/images/eastern/1.jpg' %}" alt="{% trans 'Eastern Region' %}">
+    </div>
+
+    <h2>{% trans "Gallery" %}</h2>
+    <div class="gallery">
+        <img src="{% static 'crafts/images/eastern/2.jpg' %}">
+        <img src="{% static 'crafts/images/eastern/3.jpg' %}">
+        <img src="{% static 'crafts/images/eastern/4.jpg' %}">
+    </div>
+
+    <h2>{% trans "Famous Crafts" %}</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>{% trans "Fishing Net Craft" %}</h3>
+            <p>
+                {% trans "Coastal communities created handmade tools and nets connected to sea life and fishing." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Boat-Related Woodwork" %}</h3>
+            <p>
+                {% trans "Wooden craftsmanship was used in traditional boats and marine tools." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Decorative Shell Crafts" %}</h3>
+            <p>
+                {% trans "Shells and sea materials inspired local decorative crafts." %}
+            </p>
+        </div>
+
+    </div>
+
+    <div class="history-section">
+        <h2>{% trans "History" %}</h2>
+        <p>
+            {% trans "The Eastern Region inherited many crafts from trade ports and fishing villages, creating a unique coastal identity." %}
+        </p>
+    </div>
+
+    <div class="events-section">
+        <h2>{% trans "Events" %}</h2>
+        <ul>
+            <li>{% trans "Sea heritage festivals" %}</li>
+            <li>{% trans "Traditional market exhibitions" %}</li>
+            <li>{% trans "Craft and culture events" %}</li>
+        </ul>
+    </div>
+
+    <!-- Video Player -->
+    {% if region.video_url %}
+        {% video_player region.video_url region.name %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

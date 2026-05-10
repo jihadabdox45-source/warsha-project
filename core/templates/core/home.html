@@ -1,0 +1,69 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Home" %} - Warsha{% endblock %}
+
+{% block content %}
+
+<section class="hero-section">
+    <div class="hero-overlay">
+        <div class="container hero-content">
+            <h1>Warsha</h1>
+            <p>
+                {% trans "Discover the beauty of traditional crafts across the regions of Saudi Arabia. This project presents local heritage, handmade products, and cultural identity through dedicated pages for each region." %}
+            </p>
+            <a href="{% url 'crafts:all_crafts' %}" class="main-btn">{% trans "Explore Crafts" %}</a>
+        </div>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="container">
+        <h2 class="section-heading">{% trans "About the Project" %}</h2>
+        <p class="section-text">
+            {% trans "Warsha is a Django project about Saudi traditional crafts and regional heritage. Each region has its own page with a short introduction, gallery, top crafts, historical background, major events, and related cultural information." %}
+        </p>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="container">
+        <h2 class="section-heading">{% trans "Regions" %}</h2>
+
+        <div class="region-links">
+            <a href="{% url 'crafts:riyadh' %}" class="region-link">{% trans "Riyadh" %}</a>
+            <a href="{% url 'crafts:makkah' %}" class="region-link">{% trans "Makkah" %}</a>
+            <a href="{% url 'crafts:madinah' %}" class="region-link">{% trans "Madinah" %}</a>
+            <a href="{% url 'crafts:asir' %}" class="region-link">{% trans "Asir" %}</a>
+            <a href="{% url 'crafts:qassim' %}" class="region-link">{% trans "Qassim" %}</a>
+            <a href="{% url 'crafts:eastern' %}" class="region-link">{% trans "Eastern Region" %}</a>
+            <a href="{% url 'crafts:tabuk' %}" class="region-link">{% trans "Tabuk" %}</a>
+        </div>
+    </div>
+</section>
+
+<section class="home-section">
+    <div class="container">
+        <h2 class="section-heading">{% trans "Featured Crafts" %}</h2>
+
+        <div class="feature-boxes">
+            <div class="feature-box">
+                <h3>{% trans "Sadu Weaving" %}</h3>
+                <p>{% trans "A well-known traditional weaving craft connected to desert culture and Bedouin identity." %}</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>{% trans "Al Qatt Al Asiri" %}</h3>
+                <p>{% trans "A distinctive wall art from Asir known for geometric patterns and vibrant colors." %}</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>{% trans "Palm Leaf Crafts" %}</h3>
+                <p>{% trans "Handmade baskets and products made from palm leaves in many Saudi regions." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

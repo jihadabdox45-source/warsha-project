@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+{% load video_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="title">{% trans "Qassim Region Crafts" %}</h1>
+
+    <p class="intro">
+        {% trans "Qassim Region is known for agricultural heritage and traditional handmade products. Its crafts reflect daily life, natural resources, and family traditions." %}
+    </p>
+
+    <div class="main-image">
+        <img src="{% static 'crafts/images/qassim/1.jpg' %}" alt="{% trans 'Qassim' %}">
+    </div>
+
+    <h2>{% trans "Gallery" %}</h2>
+    <div class="gallery">
+        <img src="{% static 'crafts/images/qassim/2.jpg' %}">
+        <img src="{% static 'crafts/images/qassim/3.jpg' %}">
+        <img src="{% static 'crafts/images/qassim/4.jpg' %}">
+    </div>
+
+    <h2>{% trans "Famous Crafts" %}</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>{% trans "Palm Frond Products" %}</h3>
+            <p>
+                {% trans "Palm leaves are used to make baskets, containers, and traditional household items." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Clay Pottery" %}</h3>
+            <p>
+                {% trans "Pottery remains an important traditional craft in the region." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Traditional Food Tools" %}</h3>
+            <p>
+                {% trans "Handmade tools and wooden kitchen items are part of local culture." %}
+            </p>
+        </div>
+
+    </div>
+
+    <div class="history-section">
+        <h2>{% trans "History" %}</h2>
+        <p>
+            {% trans "Qassim crafts developed from agricultural life and local market traditions, where handmade products served everyday needs." %}
+        </p>
+    </div>
+
+    <div class="events-section">
+        <h2>{% trans "Events" %}</h2>
+        <ul>
+            <li>{% trans "Date festivals" %}</li>
+            <li>{% trans "Traditional craft markets" %}</li>
+            <li>{% trans "Regional heritage events" %}</li>
+        </ul>
+    </div>
+
+    <!-- Video Player -->
+    {% if region.video_url %}
+        {% video_player region.video_url region.name %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

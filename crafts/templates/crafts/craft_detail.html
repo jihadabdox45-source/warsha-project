@@ -1,0 +1,154 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+
+{% block title %}{{ craft|get_translated_field:'name' }} - Warsha{% endblock %}
+
+{% block content %}
+
+<div class="craft-detail-container">
+    <!-- معلومات الحرفة -->
+    <div class="craft-header">
+        <h1 class="craft-title">{{ craft|get_translated_field:'name' }}</h1>
+        
+        <div class="craft-meta">
+            <span class="craft-region">
+                <i class="fas fa-map-marker-alt"></i>
+                <a href="{% url 'crafts:region_detail' craft.region.slug %}">{{ craft.region|get_translated_field:'name' }}</a>
+            </span>
+            
+            <span class="craft-rating-display">
+                <i class="fas fa-star"></i>
+                {{ craft.get_average_rating }} ({{ craft.get_rating_count }} {% trans "ratings" %})
+            </span>
+            
+            <span class="craft-comments-count">
+                <i class="fas fa-comment"></i>
+                {{ craft.get_comments_count }} {% trans "comments" %}
+            </span>
+        </div>
+    </div>
+
+    <!-- صورة الحرفة -->
+    <div class="craft-image-wrapper">
+        <img src="{% static craft.image %}" alt="{{ craft.name }}" class="craft-main-image">
+        
+        <!-- زر المفضلة -->
+        {% if user.is_authenticated %}
+            <form method="post" action="{% url 'crafts:toggle_favorite' craft.id %}" class="favorite-form">
+                {% csrf_token %}
+                <button type="submit" class="favorite-btn {% if user_has_favorited %}favorited{% endif %}">
+                    <i class="{% if user_has_favorited %}fas{% else %}far{% endif %} fa-heart"></i>
+                </button>
+            </form>
+        {% endif %}
+    </div>
+
+    <!-- وصف الحرفة -->
+    <div class="craft-description">
+        <h2><i class="fas fa-info-circle"></i> {% trans "About this Craft" %}</h2>
+        <p>{{ craft|get_translated_field:'description' }}</p>
+    </div>
+
+    <!-- قسم التقييم -->
+    <div class="rating-section">
+        <h2><i class="fas fa-star"></i> {% trans "Rate this Craft" %}</h2>
+        
+        {% if user.is_authenticated %}
+            <form method="post" class="rating-form">
+                {% csrf_token %}
+                <input type="hidden" name="rating_submit" value="1">
+                
+                <div class="star-rating">
+                    {% for i in "12345" %}
+                        <input type="radio" name="stars" value="{{ forloop.counter }}" id="star{{ forloop.counter }}" 
+                               {% if user_rating and user_rating.stars == forloop.counter %}checked{% endif %}>
+                        <label for="star{{ forloop.counter }}">
+                            <i class="fas fa-star"></i>
+                        </label>
+                    {% endfor %}
+                </div>
+                
+                <button type="submit" class="submit-rating-btn">
+                    <i class="fas fa-check"></i> {% trans "Submit Rating" %}
+                </button>
+            </form>
+            
+            {% if user_rating %}
+                <p class="user-rating-info">
+                    <i class="fas fa-info-circle"></i> 
+                    {% trans "You rated this craft" %} {{ user_rating.stars }}★
+                </p>
+            {% endif %}
+        {% else %}
+            <p class="login-prompt">
+                <i class="fas fa-sign-in-alt"></i>
+                <a href="{% url 'core:login' %}?next={{ request.path }}">{% trans "Login" %}</a> 
+                {% trans "to rate this craft" %}
+            </p>
+        {% endif %}
+    </div>
+
+    <!-- قسم التعليقات -->
+    <div class="comments-section">
+        <h2><i class="fas fa-comments"></i> {% trans "Comments" %} ({{ comments.count }})</h2>
+        
+        <!-- نموذج إضافة تعليق -->
+        {% if user.is_authenticated %}
+            <form method="post" class="comment-form">
+                {% csrf_token %}
+                <input type="hidden" name="comment_submit" value="1">
+                
+                <div class="form-group">
+                    <label for="{{ comment_form.text.id_for_label }}">
+                        <i class="fas fa-comment-dots"></i> {{ comment_form.text.label }}
+                    </label>
+                    {{ comment_form.text }}
+                </div>
+                
+                <button type="submit" class="submit-comment-btn">
+                    <i class="fas fa-paper-plane"></i> {% trans "Post Comment" %}
+                </button>
+            </form>
+        {% else %}
+            <p class="login-prompt">
+                <i class="fas fa-sign-in-alt"></i>
+                <a href="{% url 'core:login' %}?next={{ request.path }}">{% trans "Login" %}</a> 
+                {% trans "to leave a comment" %}
+            </p>
+        {% endif %}
+
+        <!-- عرض التعليقات -->
+        <div class="comments-list">
+            {% if comments %}
+                {% for comment in comments %}
+                    <div class="comment-item">
+                        <div class="comment-header">
+                            <div class="comment-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span class="author-name">{{ comment.user.get_full_name|default:comment.user.username }}</span>
+                            </div>
+                            <div class="comment-meta">
+                                <span class="comment-date">
+                                    <i class="far fa-clock"></i>
+                                    {{ comment.created_at|date:"d M Y, H:i" }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="comment-text">
+                            {{ comment.text }}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="no-comments">
+                    <i class="fas fa-comment-slash"></i>
+                    {% trans "No comments yet. Be the first to comment!" %}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

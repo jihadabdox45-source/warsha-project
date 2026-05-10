@@ -1,0 +1,80 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+{% load video_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="title">{% trans "Makkah Region Crafts" %}</h1>
+
+    <p class="intro">
+        {% trans "Makkah Region holds a rich cultural and spiritual value in Saudi Arabia. Traditional crafts in Makkah reflect history, pilgrimage traditions, and local identity." %}
+    </p>
+
+    <div class="main-image">
+        <img src="{% static 'crafts/images/makkah/1.jpg' %}" alt="{% trans 'Makkah' %}">
+    </div>
+
+    <h2>{% trans "Gallery" %}</h2>
+    <div class="gallery">
+        <img src="{% static 'crafts/images/makkah/2.jpg' %}">
+        <img src="{% static 'crafts/images/makkah/3.jpg' %}">
+        <img src="{% static 'crafts/images/makkah/4.jpg' %}">
+    </div>
+
+    <h2>{% trans "Famous Crafts" %}</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>{% trans "Handmade Textiles" %}</h3>
+            <p>
+                {% trans "Traditional fabrics and garments in Makkah represent local heritage and Islamic identity." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Perfume and Incense Craft" %}</h3>
+            <p>
+                {% trans "Makkah is known for traditional perfume blends and incense preparation using oud and musk." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Decorative Calligraphy" %}</h3>
+            <p>
+                {% trans "Arabic calligraphy has long been part of decorative crafts in the region." %}
+            </p>
+        </div>
+
+    </div>
+
+    <!-- History -->
+    <div class="history-section">
+        <h2>{% trans "History" %}</h2>
+        <p>
+            {% trans "Makkah has always welcomed people from different cultures, which enriched its local crafts and artistic styles." %}
+        </p>
+    </div>
+
+    <!-- Events -->
+    <div class="events-section">
+        <h2>{% trans "Events" %}</h2>
+        <ul>
+            <li>{% trans "Makkah cultural exhibitions" %}</li>
+            <li>{% trans "Traditional heritage events" %}</li>
+            <li>{% trans "Seasonal local markets" %}</li>
+        </ul>
+    </div>
+
+    <!-- Video Player -->
+    {% if region.video_url %}
+        {% video_player region.video_url region.name %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

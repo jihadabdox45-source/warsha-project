@@ -1,0 +1,82 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+{% load video_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="title">{% trans "Asir Region Crafts" %}</h1>
+   <h2>{% trans "Gallery" %}</h2>
+
+
+    <p class="intro">
+        {% trans "Asir Region is one of the richest cultural regions in Saudi Arabia. Its crafts are colorful, artistic, and strongly connected to local architecture and identity." %}
+    </p>
+
+    <div class="main-image">
+        <img src="{% static 'crafts/images/asir/1.jpg' %}" alt="{% trans 'Asir' %}">
+    </div>
+
+    <h2>{% trans "Gallery" %}</h2>
+    <div class="gallery">
+        <img src="{% static 'crafts/images/asir/2.jpg' %}">
+        <img src="{% static 'crafts/images/asir/3.jpg' %}">
+        <img src="{% static 'crafts/images/asir/4.jpg' %}">
+    </div>
+
+    <h2>{% trans "Famous Crafts" %}</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>{% trans "Al Qatt Al Asiri" %}</h3>
+            <p>
+                {% trans "A famous traditional wall art known for geometric patterns and bright colors." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Basket Weaving" %}</h3>
+            <p>
+                {% trans "Handmade baskets are crafted using local natural materials." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Traditional Clothing Decoration" %}</h3>
+            <p>
+                {% trans "Decorative stitching and textile patterns are part of the Asiri visual identity." %}
+            </p>
+        </div>
+
+    </div>
+
+    <!-- History -->
+    <div class="history-section">
+        <h2>{% trans "History" %}</h2>
+        <p>
+            {% trans "Asiri crafts are strongly influenced by mountain life, local materials, and women-led artistic traditions." %}
+        </p>
+    </div>
+
+    <!-- Events -->
+    <div class="events-section">
+        <h2>{% trans "Events" %}</h2>
+        <ul>
+            <li>{% trans "Abha cultural festivals" %}</li>
+            <li>{% trans "Art and heritage exhibitions" %}</li>
+            <li>{% trans "Traditional village celebrations" %}</li>
+        </ul>
+    </div>
+
+    <!-- Video Player -->
+    {% if region.video_url %}
+        {% video_player region.video_url region.name %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="page-container">
+
+    <h1 class="region-title">{% trans "Search" %}</h1>
+
+    <!-- الفورم -->
+    <form method="get" action="{% url 'crafts:search' %}" class="search-form">
+        <input type="text" name="q" placeholder="{% trans 'Search for craft or region' %}" value="{{ query }}">
+        <button type="submit">{% trans "Search" %}</button>
+    </form>
+
+    <!-- النتائج -->
+    {% if query %}
+        <h2 class="section-title">{% blocktrans %}Results for "{{ query }}"{% endblocktrans %}</h2>
+
+        {% if results %}
+            <div class="crafts-grid">
+                {% for item in results %}
+                    <div class="craft-card">
+                        <img src="{% static item.image %}" alt="{{ item.name }}">
+
+                        <div class="craft-content">
+                            <h3>{{ item.name }}</h3>
+                            <p>{{ item.description }}</p>
+
+                            <!-- لو كرافت -->
+                            {% if item.id != 0 %}
+                                <a href="{% url 'crafts:craft_detail' item.id %}" class="craft-link">
+                                    {% trans "View Details" %}
+                                </a>
+
+                            <!-- لو منطقة -->
+                            {% else %}
+                                <a href="{% url 'crafts:region_detail' item.region %}" class="craft-link">
+                                    {% trans "View Region" %}
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+        {% else %}
+            <p>{% trans "No results found" %}</p>
+        {% endif %}
+
+    {% endif %}
+
+</div>
+
+{% endblock %}

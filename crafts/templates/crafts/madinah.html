@@ -1,0 +1,80 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+{% load video_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="title">{% trans "Madinah Region Crafts" %}</h1>
+
+    <p class="intro">
+        {% trans "Madinah Region is known for its deep historical significance and beautiful traditional identity. Crafts in Madinah reflect elegance, simplicity, and cultural continuity." %}
+    </p>
+
+    <div class="main-image">
+        <img src="{% static 'crafts/images/madinah/1.jpg' %}" alt="{% trans 'Madinah' %}">
+    </div>
+
+    <h2>{% trans "Gallery" %}</h2>
+    <div class="gallery">
+        <img src="{% static 'crafts/images/madinah/2.jpg' %}">
+        <img src="{% static 'crafts/images/madinah/3.jpg' %}">
+        <img src="{% static 'crafts/images/madinah/4.jpg' %}">
+    </div>
+
+    <h2>{% trans "Famous Crafts" %}</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>{% trans "Palm Leaf Crafts" %}</h3>
+            <p>
+                {% trans "Palm leaves are used to create baskets, mats, and daily-use items with traditional techniques." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Embroidery" %}</h3>
+            <p>
+                {% trans "Traditional embroidery is used in garments and decorative textiles." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Wooden Handicrafts" %}</h3>
+            <p>
+                {% trans "Wooden products and engraved decorative pieces are part of local artisan culture." %}
+            </p>
+        </div>
+
+    </div>
+
+    <!-- History -->
+    <div class="history-section">
+        <h2>{% trans "History" %}</h2>
+        <p>
+            {% trans "Madinah has preserved its heritage through generations, where practical handmade items became part of local culture." %}
+        </p>
+    </div>
+
+    <!-- Events -->
+    <div class="events-section">
+        <h2>{% trans "Events" %}</h2>
+        <ul>
+            <li>{% trans "Local heritage festivals" %}</li>
+            <li>{% trans "Date and palm product exhibitions" %}</li>
+            <li>{% trans "Traditional artisan markets" %}</li>
+        </ul>
+    </div>
+
+    <!-- Video Player -->
+    {% if region.video_url %}
+        {% video_player region.video_url region.name %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

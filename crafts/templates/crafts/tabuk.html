@@ -1,0 +1,78 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+{% load video_tags %}
+
+{% block content %}
+
+<div class="container">
+
+    <h1 class="title">{% trans "Tabuk Region Crafts" %}</h1>
+
+    <p class="intro">
+        {% trans "Tabuk Region is known for desert and northern heritage. Traditional crafts in Tabuk are connected to Bedouin life, practical tools, and cultural expression." %}
+    </p>
+
+    <div class="main-image">
+        <img src="{% static 'crafts/images/tabuk/1.jpg' %}" alt="{% trans 'Tabuk' %}">
+    </div>
+
+    <h2>{% trans "Gallery" %}</h2>
+    <div class="gallery">
+        <img src="{% static 'crafts/images/tabuk/2.jpg' %}">
+        <img src="{% static 'crafts/images/tabuk/3.jpg' %}">
+        <img src="{% static 'crafts/images/tabuk/4.jpg' %}">
+    </div>
+
+    <h2>{% trans "Famous Crafts" %}</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>{% trans "Bedouin Textile Craft" %}</h3>
+            <p>
+                {% trans "Handmade woven products were essential in desert life for tents and household use." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Leather Craft" %}</h3>
+            <p>
+                {% trans "Leather was used for bags, tools, and riding equipment." %}
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>{% trans "Traditional Accessories" %}</h3>
+            <p>
+                {% trans "Handmade ornaments and decorative items remain part of local heritage identity." %}
+            </p>
+        </div>
+
+    </div>
+
+    <div class="history-section">
+        <h2>{% trans "History" %}</h2>
+        <p>
+            {% trans "Tabuk crafts reflect resilience, mobility, and practical Bedouin traditions shaped by the northern environment." %}
+        </p>
+    </div>
+
+    <div class="events-section">
+        <h2>{% trans "Events" %}</h2>
+        <ul>
+            <li>{% trans "Heritage village events" %}</li>
+            <li>{% trans "Traditional markets" %}</li>
+            <li>{% trans "Seasonal craft activities" %}</li>
+        </ul>
+    </div>
+
+    <!-- Video Player -->
+    {% if region.video_url %}
+        {% video_player region.video_url region.name %}
+    {% endif %}
+
+</div>
+
+{% endblock %}

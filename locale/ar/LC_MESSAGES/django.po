@@ -1,0 +1,2378 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Warsha 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-04-25 23:13+0300\n"
+"PO-Revision-Date: 2026-04-24 23:51+0300\n"
+"Last-Translator: Warsha Team\n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: .\core\forms.py:10 .\core\templates\core\contact.html:30
+#: .\core\templates\core\favorites.html:58
+msgid "Name"
+msgstr "الاسم"
+
+#: .\core\forms.py:12
+msgid "Enter your name"
+msgstr "أدخل اسمك"
+
+#: .\core\forms.py:16
+msgid "Please enter your name."
+msgstr "يرجى إدخال اسمك."
+
+#: .\core\forms.py:17
+msgid "Name is too long (maximum 100 characters)."
+msgstr "الاسم طويل جداً (الحد الأقصى 100 حرف)."
+
+#: .\core\forms.py:22 .\core\forms.py:52 .\core\templates\core\contact.html:38
+#: .\core\templates\core\profile.html:23
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: .\core\forms.py:24 .\core\forms.py:55
+msgid "Enter your email"
+msgstr "أدخل بريدك الإلكتروني"
+
+#: .\core\forms.py:28
+msgid "Please enter your email address."
+msgstr "يرجى إدخال عنوان بريدك الإلكتروني."
+
+#: .\core\forms.py:29
+msgid "Please enter a valid email address."
+msgstr "يرجى إدخال عنوان بريد إلكتروني صحيح."
+
+#: .\core\forms.py:35
+msgid "Enter your message"
+msgstr "أدخل رسالتك"
+
+#: .\core\forms.py:39 .\core\templates\core\contact.html:46
+msgid "Message"
+msgstr "الرسالة"
+
+#: .\core\forms.py:42
+msgid "Please enter your message."
+msgstr "يرجى إدخال رسالتك."
+
+#: .\core\forms.py:43
+msgid "Message is too short (minimum 10 characters)."
+msgstr "الرسالة قصيرة جداً (الحد الأدنى 10 أحرف)."
+
+#: .\core\forms.py:61
+msgid "First Name"
+msgstr "الاسم الأول"
+
+#: .\core\forms.py:64
+msgid "Enter your first name"
+msgstr "أدخل اسمك الأول"
+
+#: .\core\forms.py:70
+msgid "Last Name"
+msgstr "الاسم الأخير"
+
+#: .\core\forms.py:73
+msgid "Enter your last name"
+msgstr "أدخل اسمك الأخير"
+
+#: .\core\forms.py:83 .\core\forms.py:91
+msgid "Choose a username"
+msgstr "اختر اسم مستخدم"
+
+#: .\core\forms.py:95
+msgid "Enter password"
+msgstr "أدخل كلمة المرور"
+
+#: .\core\forms.py:99
+msgid "Confirm password"
+msgstr "تأكيد كلمة المرور"
+
+#: .\core\forms.py:101 .\core\forms.py:115
+#: .\core\templates\core\privacy.html:41
+msgid "Username"
+msgstr "اسم المستخدم"
+
+#: .\core\forms.py:102 .\core\forms.py:122
+msgid "Password"
+msgstr "كلمة المرور"
+
+#: .\core\forms.py:103
+msgid "Confirm Password"
+msgstr "تأكيد كلمة المرور"
+
+#: .\core\forms.py:108
+msgid "This email is already registered"
+msgstr "هذا البريد الإلكتروني مسجل بالفعل"
+
+#: .\core\forms.py:118
+msgid "Enter your username"
+msgstr "أدخل اسم المستخدم"
+
+#: .\core\forms.py:125
+msgid "Enter your password"
+msgstr "أدخل كلمة المرور"
+
+#: .\core\templates\core\about.html:5 .\core\templates\core\about.html:16
+#: .\core\templates\core\base.html:56 .\core\templates\core\base.html:105
+msgid "About Us"
+msgstr "من نحن"
+
+#: .\core\templates\core\about.html:18
+msgid ""
+"A digital platform celebrating Saudi heritage and connecting artisans with "
+"craft enthusiasts"
+msgstr "منصة رقمية تحتفي بالتراث السعودي وتربط الحرفيين بعشاق الحرف اليدوية"
+
+#: .\core\templates\core\about.html:29
+msgid "Our Mission"
+msgstr "رسالتنا"
+
+#: .\core\templates\core\about.html:31
+msgid ""
+"At Warsha platform, we strive to preserve the rich Saudi heritage by "
+"documenting traditional handicrafts and introducing them to new generations. "
+"We believe that every craft carries a story and history that deserves to be "
+"told and preserved for future generations."
+msgstr ""
+"نسعى في منصة ورشة إلى الحفاظ على التراث السعودي العريق من خلال توثيق الحرف "
+"اليدوية التقليدية وتعريف الأجيال الجديدة بها. نؤمن بأن كل حرفة تحمل قصة "
+"وتاريخاً يستحق أن يُروى ويُحفظ للأجيال القادمة."
+
+#: .\core\templates\core\about.html:42
+msgid "Our Vision"
+msgstr "رؤيتنا"
+
+#: .\core\templates\core\about.html:44
+msgid ""
+"To be the leading platform in Saudi Arabia for documenting and promoting "
+"traditional handicrafts, and to contribute to reviving Saudi cultural "
+"heritage and strengthening national identity by connecting the past with the "
+"present."
+msgstr ""
+"أن نكون المنصة الرائدة في المملكة العربية السعودية لتوثيق ونشر الحرف اليدوية "
+"التقليدية، وأن نساهم في إحياء التراث الثقافي السعودي وتعزيز الهوية الوطنية "
+"من خلال ربط الماضي بالحاضر."
+
+#: .\core\templates\core\about.html:51
+msgid "Our Values"
+msgstr "قيمنا"
+
+#: .\core\templates\core\about.html:57
+msgid "Authenticity"
+msgstr "الأصالة"
+
+#: .\core\templates\core\about.html:58
+msgid ""
+"We preserve the authenticity of traditional crafts and document them with "
+"precision and respect"
+msgstr "نحافظ على أصالة الحرف التقليدية ونوثقها بدقة واحترام"
+
+#: .\core\templates\core\about.html:65
+msgid "Community"
+msgstr "المجتمع"
+
+#: .\core\templates\core\about.html:66
+msgid "We build a community of heritage and handicraft enthusiasts"
+msgstr "نبني مجتمعاً من عشاق التراث والحرف اليدوية"
+
+#: .\core\templates\core\about.html:73
+msgid "Innovation"
+msgstr "الابتكار"
+
+#: .\core\templates\core\about.html:74
+msgid "We use modern technology to preserve and promote heritage"
+msgstr "نستخدم التقنية الحديثة لحفظ ونشر التراث"
+
+#: .\core\templates\core\about.html:81
+msgid "Quality"
+msgstr "الجودة"
+
+#: .\core\templates\core\about.html:82
+msgid "We commit to the highest standards of quality in content and service"
+msgstr "نلتزم بأعلى معايير الجودة في المحتوى والخدمة"
+
+#: .\core\templates\core\about.html:89
+msgid "What We Offer"
+msgstr "ماذا نقدم"
+
+#: .\core\templates\core\about.html:95
+msgid "Comprehensive Documentation"
+msgstr "توثيق شامل"
+
+#: .\core\templates\core\about.html:96
+msgid ""
+"We document handicrafts from all regions of the Kingdom with precise details "
+"and high-quality images"
+msgstr ""
+"نوثق الحرف اليدوية من جميع مناطق المملكة بتفاصيل دقيقة وصور عالية الجودة"
+
+#: .\core\templates\core\about.html:103
+msgid "Geographic Coverage"
+msgstr "تغطية جغرافية"
+
+#: .\core\templates\core\about.html:104
+msgid ""
+"We cover all regions of the Kingdom and highlight the uniqueness of each "
+"region and its distinctive crafts"
+msgstr "نغطي جميع مناطق المملكة ونبرز خصوصية كل منطقة وحرفها الفريدة"
+
+#: .\core\templates\core\about.html:111
+msgid "Community Interaction"
+msgstr "تفاعل مجتمعي"
+
+#: .\core\templates\core\about.html:112
+msgid "We enable users to interact through comments, ratings, and favorites"
+msgstr "نتيح للمستخدمين التفاعل من خلال التعليقات والتقييمات والمفضلات"
+
+#: .\core\templates\core\about.html:119
+msgid "Educational Content"
+msgstr "محتوى تعليمي"
+
+#: .\core\templates\core\about.html:120
+msgid ""
+"We provide historical and cultural information about each craft and its "
+"origins"
+msgstr "نوفر معلومات تاريخية وثقافية عن كل حرفة وأصولها"
+
+#: .\core\templates\core\about.html:127
+msgid "Our Achievements"
+msgstr "إنجازاتنا"
+
+#: .\core\templates\core\about.html:134
+msgid "Documented Crafts"
+msgstr "حرفة موثقة"
+
+#: .\core\templates\core\about.html:142
+msgid "Covered Regions"
+msgstr "مناطق مغطاة"
+
+#: .\core\templates\core\about.html:150
+msgid "Active Users"
+msgstr "مستخدم نشط"
+
+#: .\core\templates\core\about.html:158
+msgid "High-Quality Images"
+msgstr "صورة عالية الجودة"
+
+#: .\core\templates\core\about.html:166
+msgid "Join Our Community"
+msgstr "انضم إلى مجتمعنا"
+
+#: .\core\templates\core\about.html:167
+msgid ""
+"Contribute to preserving Saudi heritage by interacting with content and "
+"sharing your experience"
+msgstr ""
+"ساهم في الحفاظ على التراث السعودي من خلال التفاعل مع المحتوى ومشاركة تجربتك"
+
+#: .\core\templates\core\about.html:172 .\core\templates\core\about.html:181
+#: .\core\templates\core\favorites.html:142 .\core\templates\core\home.html:16
+msgid "Explore Crafts"
+msgstr "استكشف الحرف"
+
+#: .\core\templates\core\about.html:177
+msgid "Register Now"
+msgstr "سجل الآن"
+
+#: .\core\templates\core\base.html:25 .\core\templates\core\home.html:5
+msgid "Home"
+msgstr "الرئيسية"
+
+#: .\core\templates\core\base.html:26
+#: .\crafts\templates\crafts\all_crafts.html:5
+#: .\crafts\templates\crafts\all_crafts.html:10
+msgid "All Crafts"
+msgstr "جميع الحرف"
+
+#: .\core\templates\core\base.html:32 .\core\templates\core\home.html:32
+msgid "Regions"
+msgstr "المناطق"
+
+#: .\core\templates\core\base.html:36 .\core\templates\core\home.html:35
+#: .\crafts\templates\crafts\riyadh.html:17
+msgid "Riyadh"
+msgstr "الرياض"
+
+#: .\core\templates\core\base.html:37 .\core\templates\core\home.html:36
+#: .\crafts\templates\crafts\makkah.html:16
+msgid "Makkah"
+msgstr "مكة"
+
+#: .\core\templates\core\base.html:38 .\core\templates\core\home.html:37
+#: .\crafts\templates\crafts\madinah.html:16
+msgid "Madinah"
+msgstr "المدينة"
+
+#: .\core\templates\core\base.html:39 .\core\templates\core\home.html:38
+#: .\crafts\templates\crafts\asir.html:18
+msgid "Asir"
+msgstr "عسير"
+
+#: .\core\templates\core\base.html:40 .\core\templates\core\home.html:39
+#: .\crafts\templates\crafts\qassim.html:16
+msgid "Qassim"
+msgstr "القصيم"
+
+#: .\core\templates\core\base.html:41
+msgid "Eastern"
+msgstr "الشرقية"
+
+#: .\core\templates\core\base.html:42 .\core\templates\core\home.html:41
+#: .\crafts\templates\crafts\tabuk.html:16
+msgid "Tabuk"
+msgstr "تبوك"
+
+#: .\core\templates\core\base.html:46 .\crafts\forms.py:7
+#: .\crafts\templates\crafts\search.html:9
+#: .\crafts\templates\crafts\search.html:14
+msgid "Search"
+msgstr "البحث"
+
+#: .\core\templates\core\base.html:52
+msgid "More"
+msgstr ""
+
+#: .\core\templates\core\base.html:57 .\core\templates\core\base.html:107
+#: .\core\templates\core\faq.html:5
+msgid "FAQ"
+msgstr "الأسئلة الشائعة"
+
+#: .\core\templates\core\base.html:58 .\core\templates\core\base.html:109
+#: .\core\templates\core\privacy.html:5 .\core\templates\core\privacy.html:15
+msgid "Privacy Policy"
+msgstr "سياسة الخصوصية"
+
+#: .\core\templates\core\base.html:59 .\core\templates\core\base.html:111
+#: .\core\templates\core\contact.html:4 .\core\templates\core\contact.html:10
+msgid "Contact"
+msgstr "تواصل معنا"
+
+#: .\core\templates\core\base.html:66
+msgid "المفضلة"
+msgstr ""
+
+#: .\core\templates\core\base.html:67 .\core\templates\core\profile.html:50
+msgid "Logout"
+msgstr ""
+
+#: .\core\templates\core\base.html:69 .\core\templates\core\login.html:5
+#: .\core\templates\core\login.html:49
+#: .\crafts\templates\crafts\craft_detail.html:86
+#: .\crafts\templates\crafts\craft_detail.html:116
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: .\core\templates\core\base.html:70 .\core\templates\core\register.html:5
+msgid "Register"
+msgstr "تسجيل"
+
+#: .\core\templates\core\base.html:113
+msgid "Warsha - Saudi Crafts Heritage Project"
+msgstr "ورشة - مشروع الحرف اليدوية السعودية"
+
+#: .\core\templates\core\contact.html:12
+msgid "Use this form to contact the website team."
+msgstr "استخدم هذا النموذج للتواصل مع فريق الموقع."
+
+#: .\core\templates\core\contact.html:53
+msgid "Send"
+msgstr "إرسال"
+
+#: .\core\templates\core\dashboard\base.html:497
+#: .\core\templates\core\dashboard\base.html:724
+msgid "لوحة التحكم"
+msgstr ""
+
+#: .\core\templates\core\dashboard\base.html:506
+msgid "الموقع"
+msgstr ""
+
+#: .\core\templates\core\dashboard\base.html:510
+msgid "خروج"
+msgstr ""
+
+#: .\core\templates\core\dashboard\base.html:732
+msgid "الإحصائيات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\base.html:738
+msgid "المستخدمون"
+msgstr ""
+
+#: .\core\templates\core\dashboard\base.html:744
+#: .\core\templates\core\dashboard\index.html:40
+msgid "الحرف اليدوية"
+msgstr ""
+
+#: .\core\templates\core\dashboard\base.html:750
+#: .\core\templates\core\dashboard\index.html:50
+msgid "المناطق"
+msgstr ""
+
+#: .\core\templates\core\dashboard\base.html:756
+#: .\core\templates\core\dashboard\crafts.html:53
+#: .\core\templates\core\dashboard\index.html:60
+#: .\core\templates\core\dashboard\users.html:37
+msgid "التعليقات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\base.html:765
+msgid "الرسائل"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:11
+msgid "إدارة التعليقات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:13
+msgid "عرض وإدارة جميع التعليقات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:20
+msgid "قائمة التعليقات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:26
+#: .\core\templates\core\dashboard\messages.html:26
+msgid "جميع الحالات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:28
+msgid "موافق عليها"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:31
+#: .\core\templates\core\dashboard\comments.html:72
+#: .\core\templates\core\dashboard\index.html:63
+#: .\core\templates\core\dashboard\index.html:216
+msgid "بانتظار الموافقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:35
+msgid "البحث..."
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:46
+#: .\core\templates\core\dashboard\index.html:195
+msgid "المستخدم"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:47
+#: .\core\templates\core\dashboard\crafts.html:50
+#: .\core\templates\core\dashboard\index.html:102
+#: .\core\templates\core\dashboard\index.html:148
+#: .\core\templates\core\dashboard\index.html:196
+msgid "الحرفة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:48
+#: .\core\templates\core\dashboard\index.html:197
+msgid "التعليق"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:49
+#: .\core\templates\core\dashboard\index.html:198
+#: .\core\templates\core\dashboard\messages.html:47
+#: .\core\templates\core\dashboard\region_form.html:93
+msgid "التاريخ"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:50
+#: .\core\templates\core\dashboard\index.html:199
+#: .\core\templates\core\dashboard\index.html:246
+#: .\core\templates\core\dashboard\messages.html:48
+#: .\core\templates\core\dashboard\users.html:41
+msgid "الحالة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:51
+#: .\core\templates\core\dashboard\crafts.html:57
+#: .\core\templates\core\dashboard\index.html:106
+#: .\core\templates\core\dashboard\index.html:151
+#: .\core\templates\core\dashboard\messages.html:49
+#: .\core\templates\core\dashboard\regions.html:35
+msgid "الإجراءات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:68
+#: .\core\templates\core\dashboard\index.html:212
+msgid "موافق عليه"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:81
+msgid "الموافقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:87
+msgid "هل أنت متأكد من حذف هذا التعليق؟"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:89
+#: .\core\templates\core\dashboard\crafts.html:109
+#: .\core\templates\core\dashboard\messages.html:87
+#: .\core\templates\core\dashboard\regions.html:63
+msgid "حذف"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:94
+msgid "عرض الحرفة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\comments.html:104
+msgid "لا توجد تعليقات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:7
+#: .\core\templates\core\dashboard\craft_form.html:19
+msgid "إضافة حرفة جديدة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:9
+#: .\core\templates\core\dashboard\craft_form.html:21
+msgid "تعديل حرفة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:26
+msgid "أضف حرفة يدوية جديدة للمنصة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:28
+msgid "قم بتعديل معلومات الحرفة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:41
+msgid "اسم الحرفة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:50
+#: .\core\templates\core\dashboard\region_form.html:55
+msgid "الرابط (Slug)"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:54
+msgid "استخدم أحرف إنجليزية صغيرة وشرطات فقط (مثال: leather-craft)"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:62
+#: .\core\templates\core\dashboard\crafts.html:51
+#: .\core\templates\core\dashboard\index.html:103
+#: .\core\templates\core\dashboard\index.html:149
+#: .\core\templates\core\dashboard\regions.html:31
+msgid "المنطقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:65
+msgid "اختر المنطقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:77
+#: .\core\templates\core\dashboard\region_form.html:151
+msgid "مسار الصورة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:81
+msgid "مثال: /static/crafts/images/riyadh/1.jpg"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:88
+msgid "الوصف"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:98
+msgid "حرفة مميزة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:107
+msgid "إضافة الحرفة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:109
+#: .\core\templates\core\dashboard\region_form.html:178
+msgid "حفظ التعديلات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\craft_form.html:114
+#: .\core\templates\core\dashboard\region_form.html:183
+msgid "إلغاء"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:11
+msgid "إدارة الحرف اليدوية"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:13
+msgid "عرض وإدارة جميع الحرف اليدوية"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:20
+msgid "قائمة الحرف"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:26
+msgid "إضافة حرفة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:31
+msgid "جميع المناطق"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:39
+msgid "البحث عن حرفة..."
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:52
+msgid "التقييم"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:54
+#: .\core\templates\core\dashboard\index.html:85
+#: .\core\templates\core\dashboard\users.html:39
+msgid "المفضلات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:55
+msgid "مميزة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:56
+#: .\core\templates\core\dashboard\regions.html:34
+msgid "تاريخ الإضافة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:92
+msgid "نعم"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:95
+msgid "لا"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:101
+#: .\core\templates\core\dashboard\index.html:125
+#: .\core\templates\core\dashboard\index.html:169
+#: .\core\templates\core\dashboard\regions.html:55
+msgid "عرض"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:104
+#: .\core\templates\core\dashboard\regions.html:58
+msgid "تعديل"
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:107
+msgid ""
+"هل أنت متأكد من حذف هذه الحرفة؟ سيتم حذف جميع التعليقات والتقييمات المرتبطة "
+"بها."
+msgstr ""
+
+#: .\core\templates\core\dashboard\crafts.html:120
+msgid "لا توجد حرف يدوية"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:11
+msgid "الإحصائيات العامة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:13
+msgid "نظرة شاملة على أداء المنصة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:25
+msgid "إجمالي المستخدمين"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:28
+msgid "هذا الأسبوع"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:75
+#: .\core\templates\core\dashboard\users.html:38
+msgid "التقييمات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:95
+msgid "الحرف الأكثر تقييماً"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:104
+msgid "متوسط التقييم"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:105
+msgid "عدد التقييمات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:141
+msgid "الحرف الأكثر تفضيلاً"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:150
+msgid "عدد المفضلات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:185
+msgid "آخر التعليقات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:188
+#: .\core\templates\core\dashboard\index.html:236
+msgid "عرض الكل"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:233
+msgid "آخر المستخدمين المسجلين"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:243
+#: .\core\templates\core\dashboard\users.html:34
+msgid "اسم المستخدم"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:244
+#: .\core\templates\core\dashboard\messages.html:45
+#: .\core\templates\core\dashboard\users.html:35
+msgid "البريد الإلكتروني"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:245
+#: .\core\templates\core\dashboard\users.html:40
+msgid "تاريخ التسجيل"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:265
+#: .\core\templates\core\dashboard\users.html:86
+msgid "نشط"
+msgstr ""
+
+#: .\core\templates\core\dashboard\index.html:269
+#: .\core\templates\core\dashboard\users.html:90
+msgid "غير نشط"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:11
+msgid "إدارة رسائل التواصل"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:13
+msgid "عرض وإدارة جميع رسائل التواصل"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:20
+msgid "قائمة الرسائل"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:28
+#: .\core\templates\core\dashboard\messages.html:66
+msgid "مقروءة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:31
+msgid "غير مقروءة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:44
+msgid "الاسم"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:46
+msgid "الرسالة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:70
+msgid "جديدة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:79
+msgid "تعليم كمقروءة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:85
+msgid "هل أنت متأكد من حذف هذه الرسالة؟"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:92
+msgid "عرض الرسالة كاملة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\messages.html:102
+msgid "لا توجد رسائل"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:7
+#: .\core\templates\core\dashboard\region_form.html:19
+msgid "إضافة منطقة جديدة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:9
+#: .\core\templates\core\dashboard\region_form.html:21
+msgid "تعديل منطقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:26
+msgid "أضف منطقة سعودية جديدة للمنصة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:28
+msgid "قم بتعديل معلومات المنطقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:39
+msgid "المعلومات الأساسية"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:46
+msgid "اسم المنطقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:59
+msgid "استخدم أحرف إنجليزية صغيرة فقط (مثال: riyadh)"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:66
+#: .\core\templates\core\dashboard\regions.html:32
+msgid "الشعار"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:70
+msgid "شعار قصير يصف المنطقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:76
+msgid "نبذة مختصرة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:84
+msgid "أبرز معلم"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:101
+msgid "رابط الفيديو"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:105
+msgid "رابط فيديو YouTube (اختياري)"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:112
+msgid "الفعاليات"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:119
+#: .\core\templates\core\dashboard\region_form.html:127
+#: .\core\templates\core\dashboard\region_form.html:362
+msgid "اسم الفعالية"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:137
+msgid "إضافة فعالية"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:144
+msgid "الصور"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:159
+#: .\core\templates\core\dashboard\region_form.html:375
+msgid "مسار الصورة (مثال: /static/crafts/images/riyadh/1.jpg)"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:169
+msgid "إضافة صورة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\region_form.html:176
+msgid "إضافة المنطقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\regions.html:11
+msgid "إدارة المناطق"
+msgstr ""
+
+#: .\core\templates\core\dashboard\regions.html:13
+msgid "عرض جميع المناطق السعودية"
+msgstr ""
+
+#: .\core\templates\core\dashboard\regions.html:20
+msgid "قائمة المناطق"
+msgstr ""
+
+#: .\core\templates\core\dashboard\regions.html:24
+msgid "إضافة منطقة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\regions.html:33
+msgid "عدد الحرف"
+msgstr ""
+
+#: .\core\templates\core\dashboard\regions.html:61
+msgid ""
+"هل أنت متأكد من حذف هذه المنطقة؟ سيتم حذف جميع الحرف والبيانات المرتبطة بها."
+msgstr ""
+
+#: .\core\templates\core\dashboard\regions.html:74
+msgid "لا توجد مناطق"
+msgstr ""
+
+#: .\core\templates\core\dashboard\users.html:11
+msgid "إدارة المستخدمين"
+msgstr ""
+
+#: .\core\templates\core\dashboard\users.html:13
+msgid "عرض وإدارة جميع مستخدمي المنصة"
+msgstr ""
+
+#: .\core\templates\core\dashboard\users.html:20
+msgid "قائمة المستخدمين"
+msgstr ""
+
+#: .\core\templates\core\dashboard\users.html:25
+msgid "البحث عن مستخدم..."
+msgstr ""
+
+#: .\core\templates\core\dashboard\users.html:36
+msgid "الاسم الكامل"
+msgstr ""
+
+#: .\core\templates\core\dashboard\users.html:50
+msgid "مدير عام"
+msgstr ""
+
+#: .\core\templates\core\dashboard\users.html:54
+msgid "مشرف"
+msgstr ""
+
+#: .\core\templates\core\dashboard\users.html:99
+msgid "لا توجد مستخدمين"
+msgstr ""
+
+#: .\core\templates\core\faq.html:15
+msgid "Frequently Asked Questions"
+msgstr "الأسئلة الشائعة"
+
+#: .\core\templates\core\faq.html:17
+msgid "Answers to the most common questions about Warsha platform"
+msgstr "إجابات على الأسئلة الأكثر شيوعاً حول منصة ورشة"
+
+#: .\core\templates\core\faq.html:27
+msgid "General Questions"
+msgstr "أسئلة عامة"
+
+#: .\core\templates\core\faq.html:33
+msgid "What is Warsha platform?"
+msgstr "ما هي منصة ورشة؟"
+
+#: .\core\templates\core\faq.html:37
+msgid ""
+"Warsha is a Saudi digital platform specialized in documenting and promoting "
+"traditional handicrafts from all regions of the Kingdom. We aim to preserve "
+"Saudi cultural heritage and introduce new generations to traditional crafts."
+msgstr ""
+"ورشة هي منصة رقمية سعودية متخصصة في توثيق ونشر الحرف اليدوية التقليدية من "
+"جميع مناطق المملكة. نهدف إلى الحفاظ على التراث الثقافي السعودي وتعريف "
+"الأجيال الجديدة بالحرف التقليدية."
+
+#: .\core\templates\core\faq.html:45
+msgid "Is the platform free?"
+msgstr "هل المنصة مجانية؟"
+
+#: .\core\templates\core\faq.html:49
+msgid ""
+"Yes, all platform services are completely free. You can register, browse "
+"crafts, add comments and ratings without any fees."
+msgstr ""
+"نعم، جميع خدمات المنصة مجانية بالكامل. يمكنك التسجيل وتصفح الحرف وإضافة "
+"التعليقات والتقييمات دون أي رسوم."
+
+#: .\core\templates\core\faq.html:57
+msgid "How many crafts are documented on the platform?"
+msgstr "كم عدد الحرف الموثقة في المنصة؟"
+
+#: .\core\templates\core\faq.html:61
+msgid ""
+"We currently have more than 50 documented handicrafts from 7 different "
+"regions in the Kingdom, and we are constantly working on adding more crafts."
+msgstr ""
+"لدينا حالياً أكثر من 50 حرفة يدوية موثقة من 7 مناطق مختلفة في المملكة، ونعمل "
+"باستمرار على إضافة المزيد من الحرف."
+
+#: .\core\templates\core\faq.html:71
+msgid "Account and Registration"
+msgstr "الحساب والتسجيل"
+
+#: .\core\templates\core\faq.html:77
+msgid "How do I create an account?"
+msgstr "كيف أقوم بإنشاء حساب؟"
+
+#: .\core\templates\core\faq.html:81
+msgid ""
+"Click the 'Register' button at the top of the page, then fill out the form "
+"with the required information (name, email, username, password). After "
+"registration, you can log in directly."
+msgstr ""
+"انقر على زر 'تسجيل' في أعلى الصفحة، ثم املأ النموذج بالمعلومات المطلوبة "
+"(الاسم، البريد الإلكتروني، اسم المستخدم، كلمة المرور). بعد التسجيل، يمكنك "
+"تسجيل الدخول مباشرة."
+
+#: .\core\templates\core\faq.html:89
+msgid "I forgot my password, what should I do?"
+msgstr "نسيت كلمة المرور، ماذا أفعل؟"
+
+#: .\core\templates\core\faq.html:93
+msgid ""
+"Click 'Forgot password?' on the login page, then enter your email. We will "
+"send you a link to reset your password."
+msgstr ""
+"انقر على 'نسيت كلمة المرور؟' في صفحة تسجيل الدخول، ثم أدخل بريدك الإلكتروني. "
+"سنرسل لك رابطاً لإعادة تعيين كلمة المرور."
+
+#: .\core\templates\core\faq.html:101
+msgid "How do I update my account information?"
+msgstr "كيف أقوم بتحديث معلومات حسابي؟"
+
+#: .\core\templates\core\faq.html:105
+msgid ""
+"After logging in, click 'Profile' in the top menu. You can update your "
+"information from there."
+msgstr ""
+"بعد تسجيل الدخول، انقر على 'الملف الشخصي' في القائمة العلوية. يمكنك تحديث "
+"معلوماتك من هناك."
+
+#: .\core\templates\core\faq.html:113
+msgid "How do I delete my account?"
+msgstr "كيف أحذف حسابي؟"
+
+#: .\core\templates\core\faq.html:117
+msgid ""
+"You can delete your account by contacting us through the contact page. All "
+"your personal data will be deleted within 30 days."
+msgstr ""
+"يمكنك حذف حسابك من خلال التواصل معنا عبر صفحة الاتصال. سيتم حذف جميع بياناتك "
+"الشخصية خلال 30 يوماً."
+
+#: .\core\templates\core\faq.html:127
+msgid "Features and Usage"
+msgstr "الميزات والاستخدام"
+
+#: .\core\templates\core\faq.html:133
+msgid "How do I add a craft to favorites?"
+msgstr "كيف أضيف حرفة إلى المفضلة؟"
+
+#: .\core\templates\core\faq.html:137
+msgid ""
+"On the craft details page, click the heart icon at the top of the image. You "
+"can view all favorite crafts through the 'Favorites' page in the top menu."
+msgstr ""
+"في صفحة تفاصيل الحرفة، انقر على أيقونة القلب في أعلى الصورة. يمكنك عرض جميع "
+"الحرف المفضلة من خلال صفحة 'المفضلات' في القائمة العلوية."
+
+#: .\core\templates\core\faq.html:145
+msgid "How do I add a comment or rating?"
+msgstr "كيف أضيف تعليق أو تقييم؟"
+
+#: .\core\templates\core\faq.html:149
+msgid ""
+"You must be logged in to add a comment or rating. On the craft details page, "
+"you will find the rating form (stars) and comment form at the bottom."
+msgstr ""
+"يجب أن تكون مسجل دخول لإضافة تعليق أو تقييم. في صفحة تفاصيل الحرفة، ستجد "
+"نموذج التقييم (النجوم) ونموذج التعليق في الأسفل."
+
+#: .\core\templates\core\faq.html:157
+msgid "Can I edit or delete my comment?"
+msgstr "هل يمكنني تعديل أو حذف تعليقي؟"
+
+#: .\core\templates\core\faq.html:161
+msgid ""
+"Currently, users cannot edit or delete their comments directly. If you want "
+"to delete a comment, please contact us through the contact page."
+msgstr ""
+"حالياً، لا يمكن للمستخدمين تعديل أو حذف تعليقاتهم مباشرة. إذا كنت ترغب في حذف "
+"تعليق، يرجى التواصل معنا عبر صفحة الاتصال."
+
+#: .\core\templates\core\faq.html:169
+msgid "How do I search for a specific craft?"
+msgstr "كيف أبحث عن حرفة معينة؟"
+
+#: .\core\templates\core\faq.html:173
+msgid ""
+"Use the search box at the top of the page. You can search by craft name or "
+"region. You can also browse crafts by region from the main menu."
+msgstr ""
+"استخدم مربع البحث في أعلى الصفحة. يمكنك البحث باسم الحرفة أو المنطقة. كما "
+"يمكنك تصفح الحرف حسب المنطقة من القائمة الرئيسية."
+
+#: .\core\templates\core\faq.html:183
+msgid "Technical Questions"
+msgstr "أسئلة تقنية"
+
+#: .\core\templates\core\faq.html:189
+msgid "Is the platform compatible with mobile devices?"
+msgstr "هل المنصة متوافقة مع الهواتف المحمولة؟"
+
+#: .\core\templates\core\faq.html:193
+msgid ""
+"Yes, the platform is designed responsively and works excellently on all "
+"devices (phones, tablets, computers)."
+msgstr ""
+"نعم، المنصة مصممة بشكل متجاوب وتعمل بشكل ممتاز على جميع الأجهزة (الهواتف، "
+"الأجهزة اللوحية، أجهزة الكمبيوتر)."
+
+#: .\core\templates\core\faq.html:201
+msgid "How do I change the language?"
+msgstr "كيف أغير اللغة؟"
+
+#: .\core\templates\core\faq.html:205
+msgid ""
+"You can change the language through the top menu. The platform supports both "
+"Arabic and English."
+msgstr ""
+"يمكنك تغيير اللغة من خلال القائمة العلوية. المنصة تدعم اللغتين العربية "
+"والإنجليزية."
+
+#: .\core\templates\core\faq.html:213
+msgid "How do I activate dark mode?"
+msgstr "كيف أفعّل الوضع الليلي؟"
+
+#: .\core\templates\core\faq.html:217
+msgid ""
+"Click the moon/sun icon at the top of the page to switch between dark and "
+"light mode."
+msgstr ""
+"انقر على أيقونة القمر/الشمس في أعلى الصفحة للتبديل بين الوضع الليلي والنهاري."
+
+#: .\core\templates\core\faq.html:225
+msgid "The platform is slow, what should I do?"
+msgstr "المنصة بطيئة، ماذا أفعل؟"
+
+#: .\core\templates\core\faq.html:229
+msgid ""
+"Try refreshing the page or clearing your browser cache. If the problem "
+"persists, please contact us."
+msgstr ""
+"جرب تحديث الصفحة أو مسح ذاكرة التخزين المؤقت للمتصفح. إذا استمرت المشكلة، "
+"يرجى التواصل معنا."
+
+#: .\core\templates\core\faq.html:239
+msgid "Privacy and Security"
+msgstr "الخصوصية والأمان"
+
+#: .\core\templates\core\faq.html:245
+msgid "Is my data safe?"
+msgstr "هل بياناتي آمنة؟"
+
+#: .\core\templates\core\faq.html:249
+msgid ""
+"Yes, we take strict security measures to protect your data. All passwords "
+"are encrypted, and we use HTTPS protocol to secure the connection. Review "
+"the privacy policy for more details."
+msgstr ""
+"نعم، نتخذ إجراءات أمنية صارمة لحماية بياناتك. جميع كلمات المرور مشفرة، "
+"ونستخدم بروتوكول HTTPS لتأمين الاتصال. راجع سياسة الخصوصية للمزيد من "
+"التفاصيل."
+
+#: .\core\templates\core\faq.html:257
+msgid "Do you share my data with third parties?"
+msgstr "هل تشاركون بياناتي مع أطراف ثالثة؟"
+
+#: .\core\templates\core\faq.html:261
+msgid ""
+"No, we do not sell or share your personal data with third parties. Review "
+"the privacy policy for more information."
+msgstr ""
+"لا، نحن لا نبيع أو نشارك بياناتك الشخصية مع أطراف ثالثة. راجع سياسة الخصوصية "
+"للمزيد من المعلومات."
+
+#: .\core\templates\core\faq.html:269
+msgid "What are cookies?"
+msgstr "ما هي ملفات تعريف الارتباط (Cookies)؟"
+
+#: .\core\templates\core\faq.html:273
+msgid ""
+"Cookies are small files stored on your device to improve your experience. We "
+"use them to save your preferences such as language and dark mode."
+msgstr ""
+"ملفات تعريف الارتباط هي ملفات صغيرة تُخزن على جهازك لتحسين تجربتك. نستخدمها "
+"لحفظ تفضيلاتك مثل اللغة والوضع الليلي."
+
+#: .\core\templates\core\faq.html:284
+msgid "Didn't find an answer to your question?"
+msgstr "لم تجد إجابة لسؤالك؟"
+
+#: .\core\templates\core\faq.html:285
+msgid ""
+"We are here to help you! Contact us and we will respond as soon as possible."
+msgstr "نحن هنا لمساعدتك! تواصل معنا وسنرد عليك في أقرب وقت ممكن."
+
+#: .\core\templates\core\faq.html:288 .\core\templates\core\privacy.html:198
+msgid "Contact Us"
+msgstr "اتصل بنا"
+
+#: .\core\templates\core\favorites.html:5
+msgid "Favorites"
+msgstr "المفضلات"
+
+#: .\core\templates\core\favorites.html:15
+#: .\core\templates\core\profile.html:80
+msgid "My Favorite Crafts"
+msgstr "حرفي المفضلة"
+
+#: .\core\templates\core\favorites.html:18
+msgid "All the handicrafts you've added to your favorites"
+msgstr "جميع الحرف اليدوية التي أضفتها إلى المفضلة"
+
+#: .\core\templates\core\favorites.html:23
+msgid "craft"
+msgstr "حرفة"
+
+#: .\core\templates\core\favorites.html:33
+msgid "Region"
+msgstr "المنطقة"
+
+#: .\core\templates\core\favorites.html:36
+msgid "All Regions"
+msgstr "جميع المناطق"
+
+#: .\core\templates\core\favorites.html:48
+msgid "Sort"
+msgstr "الترتيب"
+
+#: .\core\templates\core\favorites.html:52
+msgid "Most Recent"
+msgstr "الأحدث"
+
+#: .\core\templates\core\favorites.html:55
+msgid "Oldest"
+msgstr "الأقدم"
+
+#: .\core\templates\core\favorites.html:61
+msgid "Highest Rated"
+msgstr "الأعلى تقييماً"
+
+#: .\core\templates\core\favorites.html:69
+msgid "Reset"
+msgstr "إعادة تعيين"
+
+#: .\core\templates\core\favorites.html:85
+#: .\crafts\templates\crafts\all_crafts.html:24
+#: .\crafts\templates\crafts\region_detail.html:47
+#: .\crafts\templates\crafts\search.html:34
+msgid "View Details"
+msgstr "عرض التفاصيل"
+
+#: .\core\templates\core\favorites.html:90
+msgid "Remove from favorites"
+msgstr "إزالة من المفضلة"
+
+#: .\core\templates\core\favorites.html:132
+msgid "No favorite crafts"
+msgstr "لا توجد حرف مفضلة"
+
+#: .\core\templates\core\favorites.html:135
+msgid "No favorite crafts in this region"
+msgstr "لا توجد حرف مفضلة في هذه المنطقة"
+
+#: .\core\templates\core\favorites.html:137
+msgid "You haven't added any crafts to your favorites yet"
+msgstr "لم تقم بإضافة أي حرفة إلى المفضلة بعد"
+
+#: .\core\templates\core\home.html:14
+msgid ""
+"Discover the beauty of traditional crafts across the regions of Saudi "
+"Arabia. This project presents local heritage, handmade products, and "
+"cultural identity through dedicated pages for each region."
+msgstr ""
+"اكتشف جمال الحرف التقليدية عبر مناطق المملكة العربية السعودية. يقدم هذا "
+"المشروع التراث المحلي والمنتجات اليدوية والهوية الثقافية من خلال صفحات مخصصة "
+"لكل منطقة."
+
+#: .\core\templates\core\home.html:23
+msgid "About the Project"
+msgstr "عن المشروع"
+
+#: .\core\templates\core\home.html:25
+msgid ""
+"Warsha is a Django project about Saudi traditional crafts and regional "
+"heritage. Each region has its own page with a short introduction, gallery, "
+"top crafts, historical background, major events, and related cultural "
+"information."
+msgstr ""
+"ورشة هو مشروع Django عن الحرف التقليدية السعودية والتراث الإقليمي. كل منطقة "
+"لها صفحتها الخاصة مع مقدمة قصيرة ومعرض صور وأهم الحرف والخلفية التاريخية "
+"والفعاليات الرئيسية والمعلومات الثقافية ذات الصلة."
+
+#: .\core\templates\core\home.html:40 .\crafts\templates\crafts\eastern.html:16
+msgid "Eastern Region"
+msgstr "المنطقة الشرقية"
+
+#: .\core\templates\core\home.html:48
+msgid "Featured Crafts"
+msgstr "الحرف المميزة"
+
+#: .\core\templates\core\home.html:52 .\crafts\templates\crafts\riyadh.html:34
+msgid "Sadu Weaving"
+msgstr "نسيج السدو"
+
+#: .\core\templates\core\home.html:53
+msgid ""
+"A well-known traditional weaving craft connected to desert culture and "
+"Bedouin identity."
+msgstr "حرفة نسيج تقليدية معروفة مرتبطة بثقافة الصحراء والهوية البدوية."
+
+#: .\core\templates\core\home.html:57 .\crafts\templates\crafts\asir.html:33
+msgid "Al Qatt Al Asiri"
+msgstr "القط العسيري"
+
+#: .\core\templates\core\home.html:58
+msgid ""
+"A distinctive wall art from Asir known for geometric patterns and vibrant "
+"colors."
+msgstr "فن جداري مميز من عسير معروف بالأنماط الهندسية والألوان الزاهية."
+
+#: .\core\templates\core\home.html:62 .\crafts\templates\crafts\madinah.html:31
+msgid "Palm Leaf Crafts"
+msgstr "حرف السعف"
+
+#: .\core\templates\core\home.html:63
+msgid ""
+"Handmade baskets and products made from palm leaves in many Saudi regions."
+msgstr "سلال ومنتجات يدوية مصنوعة من سعف النخيل في العديد من المناطق السعودية."
+
+#: .\core\templates\core\login.html:13
+msgid "Welcome Back"
+msgstr "مرحباً بعودتك"
+
+#: .\core\templates\core\login.html:14
+msgid "Login to your account"
+msgstr "سجل الدخول إلى حسابك"
+
+#: .\core\templates\core\login.html:43
+msgid "Remember me"
+msgstr "تذكرني"
+
+#: .\core\templates\core\login.html:45
+msgid "Forgot password?"
+msgstr "نسيت كلمة المرور؟"
+
+#: .\core\templates\core\login.html:54
+msgid "Don't have an account?"
+msgstr "ليس لديك حساب؟"
+
+#: .\core\templates\core\login.html:54
+msgid "Register here"
+msgstr "سجل هنا"
+
+#: .\core\templates\core\privacy.html:16
+msgid "Last Updated"
+msgstr "آخر تحديث"
+
+#: .\core\templates\core\privacy.html:16
+msgid "April 2026"
+msgstr "أبريل 2026"
+
+#: .\core\templates\core\privacy.html:23
+msgid "Introduction"
+msgstr "مقدمة"
+
+#: .\core\templates\core\privacy.html:25
+msgid ""
+"At Warsha platform, we are committed to protecting your privacy and personal "
+"data. This policy explains how we collect, use, and protect the information "
+"you provide to us when using our platform."
+msgstr ""
+"نحن في منصة ورشة نلتزم بحماية خصوصيتك وبياناتك الشخصية. توضح هذه السياسة "
+"كيفية جمعنا واستخدامنا وحمايتنا للمعلومات التي تقدمها لنا عند استخدام منصتنا."
+
+#: .\core\templates\core\privacy.html:34
+msgid "Information We Collect"
+msgstr "المعلومات التي نجمعها"
+
+#: .\core\templates\core\privacy.html:37
+msgid "1. Personal Information"
+msgstr "1. المعلومات الشخصية"
+
+#: .\core\templates\core\privacy.html:39
+msgid "Full name"
+msgstr "الاسم الكامل"
+
+#: .\core\templates\core\privacy.html:40
+msgid "Email address"
+msgstr "عنوان البريد الإلكتروني"
+
+#: .\core\templates\core\privacy.html:42
+msgid "Password (encrypted)"
+msgstr "كلمة المرور (مشفرة)"
+
+#: .\core\templates\core\privacy.html:47
+msgid "2. Usage Information"
+msgstr "2. معلومات الاستخدام"
+
+#: .\core\templates\core\privacy.html:49
+msgid "Crafts you browse"
+msgstr "الحرف التي تتصفحها"
+
+#: .\core\templates\core\privacy.html:50
+msgid "Comments and ratings you add"
+msgstr "التعليقات والتقييمات التي تضيفها"
+
+#: .\core\templates\core\privacy.html:51
+msgid "Your favorite crafts"
+msgstr "الحرف المفضلة لديك"
+
+#: .\core\templates\core\privacy.html:52
+msgid "Visit date and time"
+msgstr "تاريخ ووقت الزيارات"
+
+#: .\core\templates\core\privacy.html:57
+msgid "3. Technical Information"
+msgstr "3. المعلومات التقنية"
+
+#: .\core\templates\core\privacy.html:59
+msgid "IP address"
+msgstr "عنوان IP"
+
+#: .\core\templates\core\privacy.html:60
+msgid "Browser type"
+msgstr "نوع المتصفح"
+
+#: .\core\templates\core\privacy.html:61
+msgid "Operating system"
+msgstr "نظام التشغيل"
+
+#: .\core\templates\core\privacy.html:62
+msgid "Device information"
+msgstr "معلومات الجهاز"
+
+#: .\core\templates\core\privacy.html:72
+msgid "How We Use Your Information"
+msgstr "كيف نستخدم معلوماتك"
+
+#: .\core\templates\core\privacy.html:74
+msgid "Provide and improve our services"
+msgstr "توفير وتحسين خدماتنا"
+
+#: .\core\templates\core\privacy.html:75
+msgid "Manage your account and personalize your experience"
+msgstr "إدارة حسابك وتخصيص تجربتك"
+
+#: .\core\templates\core\privacy.html:76
+msgid "Communicate with you regarding your account or inquiries"
+msgstr "التواصل معك بخصوص حسابك أو استفساراتك"
+
+#: .\core\templates\core\privacy.html:77
+msgid "Protect the platform from unauthorized use"
+msgstr "حماية المنصة من الاستخدام غير المشروع"
+
+#: .\core\templates\core\privacy.html:78
+msgid "Analyze platform usage to improve services"
+msgstr "تحليل استخدام المنصة لتحسين الخدمات"
+
+#: .\core\templates\core\privacy.html:79
+msgid "Comply with legal requirements"
+msgstr "الامتثال للمتطلبات القانونية"
+
+#: .\core\templates\core\privacy.html:88
+msgid "Data Protection"
+msgstr "حماية البيانات"
+
+#: .\core\templates\core\privacy.html:89
+msgid "We take strict security measures to protect your personal information:"
+msgstr "نتخذ إجراءات أمنية صارمة لحماية معلوماتك الشخصية:"
+
+#: .\core\templates\core\privacy.html:91
+msgid "Password encryption using secure algorithms"
+msgstr "تشفير كلمات المرور باستخدام خوارزميات آمنة"
+
+#: .\core\templates\core\privacy.html:92
+msgid "Using HTTPS protocol to secure connections"
+msgstr "استخدام بروتوكول HTTPS لتأمين الاتصال"
+
+#: .\core\templates\core\privacy.html:93
+msgid "Restricting data access to authorized personnel only"
+msgstr "تقييد الوصول إلى البيانات للموظفين المصرح لهم فقط"
+
+#: .\core\templates\core\privacy.html:94
+msgid "Performing regular data backups"
+msgstr "إجراء نسخ احتياطية منتظمة للبيانات"
+
+#: .\core\templates\core\privacy.html:95
+msgid "Monitoring systems to detect any suspicious activity"
+msgstr "مراقبة الأنظمة للكشف عن أي نشاط مشبوه"
+
+#: .\core\templates\core\privacy.html:104
+msgid "Data Sharing"
+msgstr "مشاركة البيانات"
+
+#: .\core\templates\core\privacy.html:105
+msgid ""
+"We do not sell or rent your personal information to third parties. We may "
+"share your information only in the following cases:"
+msgstr ""
+"نحن لا نبيع أو نؤجر معلوماتك الشخصية لأطراف ثالثة. قد نشارك معلوماتك في "
+"الحالات التالية فقط:"
+
+#: .\core\templates\core\privacy.html:107
+msgid "When we obtain your explicit consent"
+msgstr "عند الحصول على موافقتك الصريحة"
+
+#: .\core\templates\core\privacy.html:108
+msgid "To comply with legal requirements or court orders"
+msgstr "للامتثال للمتطلبات القانونية أو الأوامر القضائية"
+
+#: .\core\templates\core\privacy.html:109
+msgid "To protect our rights or user safety"
+msgstr "لحماية حقوقنا أو سلامة المستخدمين"
+
+#: .\core\templates\core\privacy.html:110
+msgid ""
+"With service providers who help us operate the platform (under "
+"confidentiality agreements)"
+msgstr "مع مزودي الخدمات الذين يساعدوننا في تشغيل المنصة (بموجب اتفاقيات سرية)"
+
+#: .\core\templates\core\privacy.html:119
+msgid "Cookies"
+msgstr "ملفات تعريف الارتباط (Cookies)"
+
+#: .\core\templates\core\privacy.html:120
+msgid "We use cookies to improve your experience on the platform:"
+msgstr "نستخدم ملفات تعريف الارتباط لتحسين تجربتك على المنصة:"
+
+#: .\core\templates\core\privacy.html:122
+msgid "Essential Cookies"
+msgstr "ملفات تعريف ضرورية"
+
+#: .\core\templates\core\privacy.html:122
+msgid "Required for the platform to function properly"
+msgstr "مطلوبة لتشغيل المنصة بشكل صحيح"
+
+#: .\core\templates\core\privacy.html:123
+msgid "Performance Cookies"
+msgstr "ملفات تعريف الأداء"
+
+#: .\core\templates\core\privacy.html:123
+msgid "Help us understand how the platform is used"
+msgstr "تساعدنا في فهم كيفية استخدام المنصة"
+
+#: .\core\templates\core\privacy.html:124
+msgid "Preference Cookies"
+msgstr "ملفات تعريف التفضيلات"
+
+#: .\core\templates\core\privacy.html:124
+msgid "Save your settings such as language and dark mode"
+msgstr "تحفظ إعداداتك مثل اللغة والوضع الليلي"
+
+#: .\core\templates\core\privacy.html:126
+msgid "You can control cookies through your browser settings."
+msgstr "يمكنك التحكم في ملفات تعريف الارتباط من خلال إعدادات المتصفح الخاص بك."
+
+#: .\core\templates\core\privacy.html:134
+msgid "Your Rights"
+msgstr "حقوقك"
+
+#: .\core\templates\core\privacy.html:135
+msgid "You have the following rights regarding your personal data:"
+msgstr "لديك الحقوق التالية فيما يتعلق ببياناتك الشخصية:"
+
+#: .\core\templates\core\privacy.html:137
+msgid "Access"
+msgstr "الوصول"
+
+#: .\core\templates\core\privacy.html:137
+msgid "You can request a copy of your personal data"
+msgstr "يمكنك طلب نسخة من بياناتك الشخصية"
+
+#: .\core\templates\core\privacy.html:138
+msgid "Correction"
+msgstr "التصحيح"
+
+#: .\core\templates\core\privacy.html:138
+msgid "You can update or correct your information"
+msgstr "يمكنك تحديث أو تصحيح معلوماتك"
+
+#: .\core\templates\core\privacy.html:139
+msgid "Deletion"
+msgstr "الحذف"
+
+#: .\core\templates\core\privacy.html:139
+msgid "You can request deletion of your account and data"
+msgstr "يمكنك طلب حذف حسابك وبياناتك"
+
+#: .\core\templates\core\privacy.html:140
+msgid "Objection"
+msgstr "الاعتراض"
+
+#: .\core\templates\core\privacy.html:140
+msgid "You can object to data processing in certain cases"
+msgstr "يمكنك الاعتراض على معالجة بياناتك في حالات معينة"
+
+#: .\core\templates\core\privacy.html:141
+msgid "Data Portability"
+msgstr "نقل البيانات"
+
+#: .\core\templates\core\privacy.html:141
+msgid "You can request to transfer your data to another service"
+msgstr "يمكنك طلب نقل بياناتك إلى خدمة أخرى"
+
+#: .\core\templates\core\privacy.html:143
+msgid ""
+"To exercise any of these rights, please contact us through the contact page."
+msgstr "لممارسة أي من هذه الحقوق، يرجى التواصل معنا عبر صفحة الاتصال."
+
+#: .\core\templates\core\privacy.html:151
+msgid "Children's Privacy"
+msgstr "خصوصية الأطفال"
+
+#: .\core\templates\core\privacy.html:153
+msgid ""
+"Our platform is not directed to children under 13 years of age. We do not "
+"knowingly collect personal information from children. If we learn that we "
+"have collected information from a child under 13, we will delete it "
+"immediately."
+msgstr ""
+"منصتنا غير موجهة للأطفال دون سن 13 عاماً. نحن لا نجمع عن قصد معلومات شخصية من "
+"الأطفال. إذا علمنا أننا جمعنا معلومات من طفل دون سن 13 عاماً، سنقوم بحذفها "
+"فوراً."
+
+#: .\core\templates\core\privacy.html:162
+msgid "Data Retention"
+msgstr "الاحتفاظ بالبيانات"
+
+#: .\core\templates\core\privacy.html:163
+msgid ""
+"We retain your personal information as long as your account is active or as "
+"needed to provide our services. When you delete your account:"
+msgstr ""
+"نحتفظ بمعلوماتك الشخصية طالما كان حسابك نشطاً أو حسب الحاجة لتقديم خدماتنا. "
+"عند حذف حسابك:"
+
+#: .\core\templates\core\privacy.html:165
+msgid "Your personal information will be deleted within 30 days"
+msgstr "سيتم حذف معلوماتك الشخصية خلال 30 يوماً"
+
+#: .\core\templates\core\privacy.html:166
+msgid "We may retain some data to comply with legal requirements"
+msgstr "قد نحتفظ ببعض البيانات للامتثال للمتطلبات القانونية"
+
+#: .\core\templates\core\privacy.html:167
+msgid "Public comments and ratings may remain anonymized"
+msgstr "التعليقات والتقييمات العامة قد تبقى مجهولة المصدر"
+
+#: .\core\templates\core\privacy.html:176
+msgid "Third-Party Links"
+msgstr "روابط الطرف الثالث"
+
+#: .\core\templates\core\privacy.html:178
+msgid ""
+"Our platform may contain links to other websites. We are not responsible for "
+"the privacy practices of these sites. We advise you to read the privacy "
+"policies of each site you visit."
+msgstr ""
+"قد تحتوي منصتنا على روابط لمواقع أخرى. نحن لسنا مسؤولين عن ممارسات الخصوصية "
+"لهذه المواقع. ننصحك بقراءة سياسات الخصوصية الخاصة بكل موقع تزوره."
+
+#: .\core\templates\core\privacy.html:187
+msgid "Changes to This Policy"
+msgstr "التغييرات على هذه السياسة"
+
+#: .\core\templates\core\privacy.html:189
+msgid ""
+"We may update this privacy policy from time to time. We will notify you of "
+"any material changes via email or through a prominent notice on the "
+"platform. We recommend reviewing this page periodically."
+msgstr ""
+"قد نقوم بتحديث سياسة الخصوصية من وقت لآخر. سنقوم بإشعارك بأي تغييرات جوهرية "
+"عبر البريد الإلكتروني أو من خلال إشعار بارز على المنصة. يُنصح بمراجعة هذه "
+"الصفحة بشكل دوري."
+
+#: .\core\templates\core\privacy.html:199
+msgid ""
+"If you have any questions or inquiries about the privacy policy, please "
+"contact us:"
+msgstr ""
+"إذا كان لديك أي أسئلة أو استفسارات حول سياسة الخصوصية، يرجى التواصل معنا:"
+
+#: .\core\templates\core\privacy.html:207
+msgid "Contact Page"
+msgstr "صفحة الاتصال"
+
+#: .\core\templates\core\profile.html:5
+msgid "Profile"
+msgstr ""
+
+#: .\core\templates\core\profile.html:31
+#, fuzzy
+#| msgid "Remember me"
+msgid "Member Since"
+msgstr "تذكرني"
+
+#: .\core\templates\core\profile.html:39
+#, fuzzy
+#| msgid "Login"
+msgid "Last Login"
+msgstr "تسجيل الدخول"
+
+#: .\core\templates\core\profile.html:47
+msgid "Edit Profile"
+msgstr ""
+
+#: .\core\templates\core\profile.html:59
+#, fuzzy
+#| msgid "My Favorite Crafts"
+msgid "Favorite Crafts"
+msgstr "حرفي المفضلة"
+
+#: .\core\templates\core\profile.html:65
+#: .\crafts\templates\crafts\craft_detail.html:94
+msgid "Comments"
+msgstr "التعليقات"
+
+#: .\core\templates\core\profile.html:71
+msgid "Reviews"
+msgstr ""
+
+#: .\core\templates\core\profile.html:98
+#, fuzzy
+#| msgid "Favorites"
+msgid "View All Favorites"
+msgstr "المفضلات"
+
+#: .\core\templates\core\profile.html:109
+#, fuzzy
+#| msgid "Comments"
+msgid "Recent Comments"
+msgstr "التعليقات"
+
+#: .\core\templates\core\register.html:13
+#: .\core\templates\core\register.html:83
+msgid "Create Account"
+msgstr "إنشاء حساب"
+
+#: .\core\templates\core\register.html:14
+msgid "Join our community of craft enthusiasts"
+msgstr "انضم إلى مجتمعنا من عشاق الحرف اليدوية"
+
+#: .\core\templates\core\register.html:88
+msgid "Already have an account?"
+msgstr "لديك حساب بالفعل؟"
+
+#: .\core\templates\core\register.html:88
+msgid "Login here"
+msgstr "سجل دخول هنا"
+
+#: .\crafts\forms.py:18
+msgid "Share your thoughts about this craft..."
+msgstr "شاركنا رأيك في هذه الحرفة..."
+
+#: .\crafts\forms.py:23
+msgid "Your Comment"
+msgstr "تعليقك"
+
+#: .\crafts\forms.py:36
+#, fuzzy
+#| msgid "Rate this Craft"
+msgid "Rate this craft"
+msgstr "قيّم هذه الحرفة"
+
+#: .\crafts\templates\crafts\all_crafts.html:36
+#: .\crafts\templates\crafts\includes\pagination.html:7
+msgid "First Page"
+msgstr "الصفحة الأولى"
+
+#: .\crafts\templates\crafts\all_crafts.html:39
+#: .\crafts\templates\crafts\includes\pagination.html:10
+msgid "Previous"
+msgstr "السابق"
+
+#: .\crafts\templates\crafts\all_crafts.html:60
+#: .\crafts\templates\crafts\includes\pagination.html:31
+msgid "Next"
+msgstr "التالي"
+
+#: .\crafts\templates\crafts\all_crafts.html:63
+#: .\crafts\templates\crafts\includes\pagination.html:34
+msgid "Last Page"
+msgstr "الصفحة الأخيرة"
+
+#: .\crafts\templates\crafts\all_crafts.html:77
+#: .\crafts\templates\crafts\includes\pagination.html:48
+msgid "Page"
+msgstr "صفحة"
+
+#: .\crafts\templates\crafts\all_crafts.html:77
+#: .\crafts\templates\crafts\includes\pagination.html:48
+msgid "of"
+msgstr "من"
+
+#: .\crafts\templates\crafts\all_crafts.html:79
+#: .\crafts\templates\crafts\includes\pagination.html:50
+msgid "Total"
+msgstr "المجموع"
+
+#: .\crafts\templates\crafts\all_crafts.html:79
+msgid "crafts"
+msgstr "حرفة"
+
+#: .\crafts\templates\crafts\all_crafts.html:85
+msgid "No crafts available at the moment."
+msgstr "لا توجد حرف متاحة في الوقت الحالي."
+
+#: .\crafts\templates\crafts\asir.html:9
+msgid "Asir Region Crafts"
+msgstr "حرف منطقة عسير"
+
+#: .\crafts\templates\crafts\asir.html:10
+#: .\crafts\templates\crafts\asir.html:21
+#: .\crafts\templates\crafts\eastern.html:19
+#: .\crafts\templates\crafts\madinah.html:19
+#: .\crafts\templates\crafts\makkah.html:19
+#: .\crafts\templates\crafts\qassim.html:19
+#: .\crafts\templates\crafts\region_detail.html:18
+#: .\crafts\templates\crafts\riyadh.html:21
+#: .\crafts\templates\crafts\tabuk.html:19
+msgid "Gallery"
+msgstr "معرض الصور"
+
+#: .\crafts\templates\crafts\asir.html:14
+msgid ""
+"Asir Region is one of the richest cultural regions in Saudi Arabia. Its "
+"crafts are colorful, artistic, and strongly connected to local architecture "
+"and identity."
+msgstr ""
+"منطقة عسير هي واحدة من أغنى المناطق الثقافية في المملكة العربية السعودية. "
+"حرفها ملونة وفنية ومرتبطة بقوة بالعمارة المحلية والهوية."
+
+#: .\crafts\templates\crafts\asir.html:28
+#: .\crafts\templates\crafts\eastern.html:26
+#: .\crafts\templates\crafts\madinah.html:26
+#: .\crafts\templates\crafts\makkah.html:26
+#: .\crafts\templates\crafts\qassim.html:26
+#: .\crafts\templates\crafts\riyadh.html:29
+#: .\crafts\templates\crafts\tabuk.html:26
+msgid "Famous Crafts"
+msgstr "الحرف المشهورة"
+
+#: .\crafts\templates\crafts\asir.html:35
+msgid ""
+"A famous traditional wall art known for geometric patterns and bright colors."
+msgstr "فن جداري تقليدي مشهور معروف بالأنماط الهندسية والألوان الزاهية."
+
+#: .\crafts\templates\crafts\asir.html:40
+msgid "Basket Weaving"
+msgstr "نسج السلال"
+
+#: .\crafts\templates\crafts\asir.html:42
+msgid "Handmade baskets are crafted using local natural materials."
+msgstr "تُصنع السلال اليدوية باستخدام المواد الطبيعية المحلية."
+
+#: .\crafts\templates\crafts\asir.html:47
+msgid "Traditional Clothing Decoration"
+msgstr "زخرفة الملابس التقليدية"
+
+#: .\crafts\templates\crafts\asir.html:49
+msgid ""
+"Decorative stitching and textile patterns are part of the Asiri visual "
+"identity."
+msgstr "الخياطة الزخرفية وأنماط النسيج جزء من الهوية البصرية العسيرية."
+
+#: .\crafts\templates\crafts\asir.html:57
+#: .\crafts\templates\crafts\eastern.html:54
+#: .\crafts\templates\crafts\madinah.html:55
+#: .\crafts\templates\crafts\makkah.html:55
+#: .\crafts\templates\crafts\qassim.html:54
+#: .\crafts\templates\crafts\region_detail.html:28
+#: .\crafts\templates\crafts\riyadh.html:58
+#: .\crafts\templates\crafts\tabuk.html:54
+msgid "History"
+msgstr "التاريخ"
+
+#: .\crafts\templates\crafts\asir.html:59
+msgid ""
+"Asiri crafts are strongly influenced by mountain life, local materials, and "
+"women-led artistic traditions."
+msgstr ""
+"تتأثر الحرف العسيرية بشدة بحياة الجبال والمواد المحلية والتقاليد الفنية التي "
+"تقودها النساء."
+
+#: .\crafts\templates\crafts\asir.html:65
+#: .\crafts\templates\crafts\eastern.html:61
+#: .\crafts\templates\crafts\madinah.html:63
+#: .\crafts\templates\crafts\makkah.html:63
+#: .\crafts\templates\crafts\qassim.html:61
+#: .\crafts\templates\crafts\riyadh.html:66
+#: .\crafts\templates\crafts\tabuk.html:61
+msgid "Events"
+msgstr "الفعاليات"
+
+#: .\crafts\templates\crafts\asir.html:67
+msgid "Abha cultural festivals"
+msgstr "مهرجانات أبها الثقافية"
+
+#: .\crafts\templates\crafts\asir.html:68
+msgid "Art and heritage exhibitions"
+msgstr "معارض الفن والتراث"
+
+#: .\crafts\templates\crafts\asir.html:69
+msgid "Traditional village celebrations"
+msgstr "احتفالات القرى التقليدية"
+
+#: .\crafts\templates\crafts\asir.html:75
+#: .\crafts\templates\crafts\eastern.html:71
+#: .\crafts\templates\crafts\madinah.html:73
+#: .\crafts\templates\crafts\makkah.html:73
+#: .\crafts\templates\crafts\qassim.html:71
+#: .\crafts\templates\crafts\riyadh.html:77
+#: .\crafts\templates\crafts\tabuk.html:71
+msgid "Video thumbnail"
+msgstr "صورة الفيديو المصغرة"
+
+#: .\crafts\templates\crafts\craft_detail.html:22
+msgid "ratings"
+msgstr "تقييم"
+
+#: .\crafts\templates\crafts\craft_detail.html:27
+msgid "comments"
+msgstr "تعليق"
+
+#: .\crafts\templates\crafts\craft_detail.html:49
+msgid "About this Craft"
+msgstr "عن هذه الحرفة"
+
+#: .\crafts\templates\crafts\craft_detail.html:55
+msgid "Rate this Craft"
+msgstr "قيّم هذه الحرفة"
+
+#: .\crafts\templates\crafts\craft_detail.html:73
+msgid "Submit Rating"
+msgstr "إرسال التقييم"
+
+#: .\crafts\templates\crafts\craft_detail.html:80
+msgid "You rated this craft"
+msgstr "لقد قيّمت هذه الحرفة"
+
+#: .\crafts\templates\crafts\craft_detail.html:87
+msgid "to rate this craft"
+msgstr "لتقييم هذه الحرفة"
+
+#: .\crafts\templates\crafts\craft_detail.html:110
+msgid "Post Comment"
+msgstr "نشر التعليق"
+
+#: .\crafts\templates\crafts\craft_detail.html:117
+msgid "to leave a comment"
+msgstr "لترك تعليق"
+
+#: .\crafts\templates\crafts\craft_detail.html:146
+msgid "No comments yet. Be the first to comment!"
+msgstr "لا توجد تعليقات بعد. كن أول من يعلق!"
+
+#: .\crafts\templates\crafts\eastern.html:9
+msgid "Eastern Region Crafts"
+msgstr "حرف المنطقة الشرقية"
+
+#: .\crafts\templates\crafts\eastern.html:12
+msgid ""
+"The Eastern Region combines coastal traditions with urban heritage. Its "
+"crafts reflect sea life, trade history, and diverse cultural influences."
+msgstr ""
+"تجمع المنطقة الشرقية بين التقاليد الساحلية والتراث الحضري. تعكس حرفها حياة "
+"البحر وتاريخ التجارة والتأثيرات الثقافية المتنوعة."
+
+#: .\crafts\templates\crafts\eastern.html:31
+msgid "Fishing Net Craft"
+msgstr "حرفة شباك الصيد"
+
+#: .\crafts\templates\crafts\eastern.html:33
+msgid ""
+"Coastal communities created handmade tools and nets connected to sea life "
+"and fishing."
+msgstr "أنشأت المجتمعات الساحلية أدوات وشباك يدوية مرتبطة بحياة البحر والصيد."
+
+#: .\crafts\templates\crafts\eastern.html:38
+msgid "Boat-Related Woodwork"
+msgstr "الأعمال الخشبية المتعلقة بالقوارب"
+
+#: .\crafts\templates\crafts\eastern.html:40
+msgid "Wooden craftsmanship was used in traditional boats and marine tools."
+msgstr "استخدمت الحرفة الخشبية في القوارب التقليدية والأدوات البحرية."
+
+#: .\crafts\templates\crafts\eastern.html:45
+msgid "Decorative Shell Crafts"
+msgstr "حرف الأصداف الزخرفية"
+
+#: .\crafts\templates\crafts\eastern.html:47
+msgid "Shells and sea materials inspired local decorative crafts."
+msgstr "ألهمت الأصداف والمواد البحرية الحرف الزخرفية المحلية."
+
+#: .\crafts\templates\crafts\eastern.html:56
+msgid ""
+"The Eastern Region inherited many crafts from trade ports and fishing "
+"villages, creating a unique coastal identity."
+msgstr ""
+"ورثت المنطقة الشرقية العديد من الحرف من موانئ التجارة وقرى الصيد، مما خلق "
+"هوية ساحلية فريدة."
+
+#: .\crafts\templates\crafts\eastern.html:63
+msgid "Sea heritage festivals"
+msgstr "مهرجانات التراث البحري"
+
+#: .\crafts\templates\crafts\eastern.html:64
+msgid "Traditional market exhibitions"
+msgstr "معارض الأسواق التقليدية"
+
+#: .\crafts\templates\crafts\eastern.html:65
+msgid "Craft and culture events"
+msgstr "فعاليات الحرف والثقافة"
+
+#: .\crafts\templates\crafts\madinah.html:9
+msgid "Madinah Region Crafts"
+msgstr "حرف منطقة المدينة"
+
+#: .\crafts\templates\crafts\madinah.html:12
+msgid ""
+"Madinah Region is known for its deep historical significance and beautiful "
+"traditional identity. Crafts in Madinah reflect elegance, simplicity, and "
+"cultural continuity."
+msgstr ""
+"تشتهر منطقة المدينة بأهميتها التاريخية العميقة وهويتها التقليدية الجميلة. "
+"تعكس الحرف في المدينة الأناقة والبساطة والاستمرارية الثقافية."
+
+#: .\crafts\templates\crafts\madinah.html:33
+msgid ""
+"Palm leaves are used to create baskets, mats, and daily-use items with "
+"traditional techniques."
+msgstr ""
+"تستخدم أوراق النخيل لصنع السلال والحصير والأدوات اليومية بتقنيات تقليدية."
+
+#: .\crafts\templates\crafts\madinah.html:38
+msgid "Embroidery"
+msgstr "التطريز"
+
+#: .\crafts\templates\crafts\madinah.html:40
+msgid "Traditional embroidery is used in garments and decorative textiles."
+msgstr "يستخدم التطريز التقليدي في الملابس والمنسوجات الزخرفية."
+
+#: .\crafts\templates\crafts\madinah.html:45
+msgid "Wooden Handicrafts"
+msgstr "الحرف الخشبية اليدوية"
+
+#: .\crafts\templates\crafts\madinah.html:47
+msgid ""
+"Wooden products and engraved decorative pieces are part of local artisan "
+"culture."
+msgstr ""
+"المنتجات الخشبية والقطع الزخرفية المنقوشة جزء من ثقافة الحرفيين المحليين."
+
+#: .\crafts\templates\crafts\madinah.html:57
+msgid ""
+"Madinah has preserved its heritage through generations, where practical "
+"handmade items became part of local culture."
+msgstr ""
+"حافظت المدينة على تراثها عبر الأجيال، حيث أصبحت الأدوات اليدوية العملية جزءًا "
+"من الثقافة المحلية."
+
+#: .\crafts\templates\crafts\madinah.html:65
+msgid "Local heritage festivals"
+msgstr "مهرجانات التراث المحلي"
+
+#: .\crafts\templates\crafts\madinah.html:66
+msgid "Date and palm product exhibitions"
+msgstr "معارض التمور ومنتجات النخيل"
+
+#: .\crafts\templates\crafts\madinah.html:67
+msgid "Traditional artisan markets"
+msgstr "أسواق الحرفيين التقليدية"
+
+#: .\crafts\templates\crafts\makkah.html:9
+msgid "Makkah Region Crafts"
+msgstr "حرف منطقة مكة"
+
+#: .\crafts\templates\crafts\makkah.html:12
+msgid ""
+"Makkah Region holds a rich cultural and spiritual value in Saudi Arabia. "
+"Traditional crafts in Makkah reflect history, pilgrimage traditions, and "
+"local identity."
+msgstr ""
+"تحمل منطقة مكة قيمة ثقافية وروحية غنية في المملكة العربية السعودية. تعكس "
+"الحرف التقليدية في مكة التاريخ وتقاليد الحج والهوية المحلية."
+
+#: .\crafts\templates\crafts\makkah.html:31
+msgid "Handmade Textiles"
+msgstr "المنسوجات اليدوية"
+
+#: .\crafts\templates\crafts\makkah.html:33
+msgid ""
+"Traditional fabrics and garments in Makkah represent local heritage and "
+"Islamic identity."
+msgstr ""
+"تمثل الأقمشة والملابس التقليدية في مكة التراث المحلي والهوية الإسلامية."
+
+#: .\crafts\templates\crafts\makkah.html:38
+msgid "Perfume and Incense Craft"
+msgstr "حرفة العطور والبخور"
+
+#: .\crafts\templates\crafts\makkah.html:40
+msgid ""
+"Makkah is known for traditional perfume blends and incense preparation using "
+"oud and musk."
+msgstr "تشتهر مكة بخلطات العطور التقليدية وتحضير البخور باستخدام العود والمسك."
+
+#: .\crafts\templates\crafts\makkah.html:45
+msgid "Decorative Calligraphy"
+msgstr "الخط الزخرفي"
+
+#: .\crafts\templates\crafts\makkah.html:47
+msgid ""
+"Arabic calligraphy has long been part of decorative crafts in the region."
+msgstr "كان الخط العربي منذ فترة طويلة جزءًا من الحرف الزخرفية في المنطقة."
+
+#: .\crafts\templates\crafts\makkah.html:57
+msgid ""
+"Makkah has always welcomed people from different cultures, which enriched "
+"its local crafts and artistic styles."
+msgstr ""
+"رحبت مكة دائمًا بالناس من ثقافات مختلفة، مما أثرى حرفها المحلية وأساليبها "
+"الفنية."
+
+#: .\crafts\templates\crafts\makkah.html:65
+msgid "Makkah cultural exhibitions"
+msgstr "المعارض الثقافية في مكة"
+
+#: .\crafts\templates\crafts\makkah.html:66
+msgid "Traditional heritage events"
+msgstr "فعاليات التراث التقليدي"
+
+#: .\crafts\templates\crafts\makkah.html:67
+msgid "Seasonal local markets"
+msgstr "الأسواق المحلية الموسمية"
+
+#: .\crafts\templates\crafts\qassim.html:9
+msgid "Qassim Region Crafts"
+msgstr "حرف منطقة القصيم"
+
+#: .\crafts\templates\crafts\qassim.html:12
+msgid ""
+"Qassim Region is known for agricultural heritage and traditional handmade "
+"products. Its crafts reflect daily life, natural resources, and family "
+"traditions."
+msgstr ""
+"تشتهر منطقة القصيم بالتراث الزراعي والمنتجات اليدوية التقليدية. تعكس حرفها "
+"الحياة اليومية والموارد الطبيعية والتقاليد العائلية."
+
+#: .\crafts\templates\crafts\qassim.html:31
+msgid "Palm Frond Products"
+msgstr "منتجات سعف النخيل"
+
+#: .\crafts\templates\crafts\qassim.html:33
+msgid ""
+"Palm leaves are used to make baskets, containers, and traditional household "
+"items."
+msgstr "تستخدم أوراق النخيل لصنع السلال والحاويات والأدوات المنزلية التقليدية."
+
+#: .\crafts\templates\crafts\qassim.html:38
+msgid "Clay Pottery"
+msgstr "الفخار الطيني"
+
+#: .\crafts\templates\crafts\qassim.html:40
+msgid "Pottery remains an important traditional craft in the region."
+msgstr "يظل الفخار حرفة تقليدية مهمة في المنطقة."
+
+#: .\crafts\templates\crafts\qassim.html:45
+msgid "Traditional Food Tools"
+msgstr "أدوات الطعام التقليدية"
+
+#: .\crafts\templates\crafts\qassim.html:47
+msgid "Handmade tools and wooden kitchen items are part of local culture."
+msgstr "الأدوات اليدوية وأدوات المطبخ الخشبية جزء من الثقافة المحلية."
+
+#: .\crafts\templates\crafts\qassim.html:56
+msgid ""
+"Qassim crafts developed from agricultural life and local market traditions, "
+"where handmade products served everyday needs."
+msgstr ""
+"تطورت حرف القصيم من الحياة الزراعية وتقاليد الأسواق المحلية، حيث خدمت "
+"المنتجات اليدوية الاحتياجات اليومية."
+
+#: .\crafts\templates\crafts\qassim.html:63
+msgid "Date festivals"
+msgstr "مهرجانات التمور"
+
+#: .\crafts\templates\crafts\qassim.html:64
+msgid "Traditional craft markets"
+msgstr "أسواق الحرف التقليدية"
+
+#: .\crafts\templates\crafts\qassim.html:65
+msgid "Regional heritage events"
+msgstr "فعاليات التراث الإقليمي"
+
+#: .\crafts\templates\crafts\region_detail.html:25
+msgid "Top Attraction"
+msgstr "أبرز معلم"
+
+#: .\crafts\templates\crafts\region_detail.html:31
+msgid "Major Events"
+msgstr "الفعاليات الرئيسية"
+
+#: .\crafts\templates\crafts\region_detail.html:38
+msgid "Related Crafts"
+msgstr "الحرف ذات الصلة"
+
+#: .\crafts\templates\crafts\region_detail.html:55
+msgid "Video"
+msgstr "فيديو"
+
+#: .\crafts\templates\crafts\region_detail.html:61
+msgid "Region Not Found"
+msgstr "المنطقة غير موجودة"
+
+#: .\crafts\templates\crafts\riyadh.html:9
+msgid "Riyadh Region Crafts"
+msgstr "حرف منطقة الرياض"
+
+#: .\crafts\templates\crafts\riyadh.html:12
+msgid ""
+"Riyadh is the capital of Saudi Arabia and represents the heart of Najdi "
+"culture. Traditional crafts in Riyadh reflect desert life, simplicity, and "
+"strong cultural identity."
+msgstr ""
+"الرياض هي عاصمة المملكة العربية السعودية وتمثل قلب الثقافة النجدية. تعكس "
+"الحرف التقليدية في الرياض حياة الصحراء والبساطة والهوية الثقافية القوية."
+
+#: .\crafts\templates\crafts\riyadh.html:36
+msgid ""
+"A traditional Bedouin craft used to create carpets, tents, and decorations. "
+"It uses natural wool and geometric patterns."
+msgstr ""
+"حرفة بدوية تقليدية تستخدم لصنع السجاد والخيام والزينة. تستخدم الصوف الطبيعي "
+"والأنماط الهندسية."
+
+#: .\crafts\templates\crafts\riyadh.html:41
+msgid "Pottery"
+msgstr "الفخار"
+
+#: .\crafts\templates\crafts\riyadh.html:43
+msgid ""
+"Clay pottery has been used for centuries in Riyadh for storing water and "
+"food. Handmade techniques are still preserved today."
+msgstr ""
+"تم استخدام الفخار الطيني لقرون في الرياض لتخزين الماء والطعام. لا تزال "
+"التقنيات اليدوية محفوظة حتى اليوم."
+
+#: .\crafts\templates\crafts\riyadh.html:48
+msgid "Wood Carving"
+msgstr "النقش على الخشب"
+
+#: .\crafts\templates\crafts\riyadh.html:50
+msgid ""
+"Wood carving is used in doors and furniture, showing detailed Najdi designs."
+msgstr "يستخدم النقش على الخشب في الأبواب والأثاث، ويظهر تصاميم نجدية مفصلة."
+
+#: .\crafts\templates\crafts\riyadh.html:60
+msgid ""
+"Najdi heritage is deeply connected to desert survival and simplicity. Crafts "
+"were not only decorative but also essential for daily life."
+msgstr ""
+"التراث النجدي مرتبط بعمق بالبقاء في الصحراء والبساطة. لم تكن الحرف زخرفية "
+"فقط بل كانت ضرورية للحياة اليومية."
+
+#: .\crafts\templates\crafts\riyadh.html:68
+msgid "Janadriyah Festival"
+msgstr "مهرجان الجنادرية"
+
+#: .\crafts\templates\crafts\riyadh.html:69
+msgid "Riyadh Season Heritage Areas"
+msgstr "مناطق التراث في موسم الرياض"
+
+#: .\crafts\templates\crafts\riyadh.html:70
+msgid "Traditional Markets Exhibitions"
+msgstr "معارض الأسواق التقليدية"
+
+#: .\crafts\templates\crafts\search.html:13
+msgid "Search for craft or region"
+msgstr "ابحث عن حرفة أو منطقة"
+
+#: .\crafts\templates\crafts\search.html:19
+#, python-format
+msgid "Results for \"%(query)s\""
+msgstr "نتائج البحث عن \"%(query)s\""
+
+#: .\crafts\templates\crafts\search.html:40
+msgid "View Region"
+msgstr "عرض المنطقة"
+
+#: .\crafts\templates\crafts\search.html:49
+msgid "No results found"
+msgstr "لا توجد نتائج"
+
+#: .\crafts\templates\crafts\tabuk.html:9
+msgid "Tabuk Region Crafts"
+msgstr "حرف منطقة تبوك"
+
+#: .\crafts\templates\crafts\tabuk.html:12
+msgid ""
+"Tabuk Region is known for desert and northern heritage. Traditional crafts "
+"in Tabuk are connected to Bedouin life, practical tools, and cultural "
+"expression."
+msgstr ""
+"تشتهر منطقة تبوك بالتراث الصحراوي والشمالي. ترتبط الحرف التقليدية في تبوك "
+"بالحياة البدوية والأدوات العملية والتعبير الثقافي."
+
+#: .\crafts\templates\crafts\tabuk.html:31
+msgid "Bedouin Textile Craft"
+msgstr "حرفة النسيج البدوي"
+
+#: .\crafts\templates\crafts\tabuk.html:33
+msgid ""
+"Handmade woven products were essential in desert life for tents and "
+"household use."
+msgstr ""
+"كانت المنتجات المنسوجة يدويًا ضرورية في حياة الصحراء للخيام والاستخدام "
+"المنزلي."
+
+#: .\crafts\templates\crafts\tabuk.html:38
+msgid "Leather Craft"
+msgstr "حرفة الجلود"
+
+#: .\crafts\templates\crafts\tabuk.html:40
+msgid "Leather was used for bags, tools, and riding equipment."
+msgstr "استخدم الجلد للحقائب والأدوات ومعدات الركوب."
+
+#: .\crafts\templates\crafts\tabuk.html:45
+msgid "Traditional Accessories"
+msgstr "الإكسسوارات التقليدية"
+
+#: .\crafts\templates\crafts\tabuk.html:47
+msgid ""
+"Handmade ornaments and decorative items remain part of local heritage "
+"identity."
+msgstr "تظل الزخارف اليدوية والأدوات الزخرفية جزءًا من هوية التراث المحلي."
+
+#: .\crafts\templates\crafts\tabuk.html:56
+msgid ""
+"Tabuk crafts reflect resilience, mobility, and practical Bedouin traditions "
+"shaped by the northern environment."
+msgstr ""
+"تعكس حرف تبوك المرونة والحركة والتقاليد البدوية العملية التي شكلتها البيئة "
+"الشمالية."
+
+#: .\crafts\templates\crafts\tabuk.html:63
+msgid "Heritage village events"
+msgstr "فعاليات القرى التراثية"
+
+#: .\crafts\templates\crafts\tabuk.html:64
+msgid "Traditional markets"
+msgstr "الأسواق التقليدية"
+
+#: .\crafts\templates\crafts\tabuk.html:65
+msgid "Seasonal craft activities"
+msgstr "الأنشطة الحرفية الموسمية"
+
+#~ msgid "Mode"
+#~ msgstr "الوضع"

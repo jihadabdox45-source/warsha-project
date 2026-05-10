@@ -1,0 +1,127 @@
+{% extends 'core/dashboard/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}إدارة الحرف - لوحة التحكم{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <h1 class="dashboard-title">
+        <i class="fas fa-hand-sparkles"></i>
+        {% trans "إدارة الحرف اليدوية" %}
+    </h1>
+    <p class="dashboard-subtitle">{% trans "عرض وإدارة جميع الحرف اليدوية" %}</p>
+</div>
+
+<div class="dashboard-table-wrapper">
+    <div class="table-header">
+        <h3 class="table-title">
+            <i class="fas fa-list"></i>
+            {% trans "قائمة الحرف" %} ({{ crafts.count }})
+        </h3>
+        
+        <div class="table-actions">
+            <a href="{% url 'core:dashboard_craft_add' %}" class="btn btn-success btn-sm">
+                <i class="fas fa-plus"></i>
+                {% trans "إضافة حرفة" %}
+            </a>
+            
+            <form method="get" class="search-box" style="display: flex; gap: 10px;">
+                <select name="region" style="padding: 10px 15px; border-radius: 20px; border: 2px solid rgba(212, 165, 116, 0.3); background: rgba(212, 165, 116, 0.1); color: #F5F5DC; font-size: 14px;">
+                    <option value="">{% trans "جميع المناطق" %}</option>
+                    {% for region in regions %}
+                    <option value="{{ region.slug }}" {% if region_filter == region.slug %}selected{% endif %}>
+                        {{ region.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+                
+                <input type="text" name="search" placeholder="{% trans 'البحث عن حرفة...' %}" value="{{ search_query }}">
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>{% trans "الحرفة" %}</th>
+                <th>{% trans "المنطقة" %}</th>
+                <th>{% trans "التقييم" %}</th>
+                <th>{% trans "التعليقات" %}</th>
+                <th>{% trans "المفضلات" %}</th>
+                <th>{% trans "مميزة" %}</th>
+                <th>{% trans "تاريخ الإضافة" %}</th>
+                <th>{% trans "الإجراءات" %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for craft in crafts %}
+            <tr>
+                <td>
+                    <strong>{{ craft.name }}</strong>
+                </td>
+                <td>{{ craft.region.name }}</td>
+                <td>
+                    {% if craft.avg_rating %}
+                    <span style="color: #D4AF37; font-weight: 700;">
+                        {{ craft.avg_rating|floatformat:1 }} <i class="fas fa-star"></i>
+                    </span>
+                    <span style="color: rgba(245, 245, 220, 0.6); font-size: 12px;">
+                        ({{ craft.rating_count }})
+                    </span>
+                    {% else %}
+                    <span style="color: rgba(245, 245, 220, 0.5);">—</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <span style="color: #D4AF37; font-weight: 600;">
+                        {{ craft.comments_count }}
+                    </span>
+                </td>
+                <td>
+                    <span style="color: #dc3545; font-weight: 600;">
+                        {{ craft.favorites_count }} <i class="fas fa-heart"></i>
+                    </span>
+                </td>
+                <td>
+                    {% if craft.is_featured %}
+                    <span style="color: #ffc107; font-weight: 600;">
+                        <i class="fas fa-star"></i> {% trans "نعم" %}
+                    </span>
+                    {% else %}
+                    <span style="color: rgba(245, 245, 220, 0.5);">{% trans "لا" %}</span>
+                    {% endif %}
+                </td>
+                <td>{{ craft.created_at|date:"Y-m-d" }}</td>
+                <td>
+                    <div style="display: flex; gap: 5px;">
+                        <a href="{% url 'crafts:craft_detail' craft.id %}" class="btn btn-primary btn-sm" target="_blank" title="{% trans 'عرض' %}">
+                            <i class="fas fa-eye"></i>
+                        </a>
+                        <a href="{% url 'core:dashboard_craft_edit' craft.id %}" class="btn btn-success btn-sm" title="{% trans 'تعديل' %}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <form method="post" action="{% url 'core:dashboard_craft_delete' craft.id %}" style="display: inline;" onsubmit="return confirm('{% trans 'هل أنت متأكد من حذف هذه الحرفة؟ سيتم حذف جميع التعليقات والتقييمات المرتبطة بها.' %}');">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm" title="{% trans 'حذف' %}">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8" style="text-align: center; padding: 40px;">
+                    <i class="fas fa-hand-sparkles" style="font-size: 48px; color: rgba(212, 165, 116, 0.3); margin-bottom: 15px;"></i>
+                    <p>{% trans "لا توجد حرف يدوية" %}</p>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

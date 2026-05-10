@@ -1,0 +1,91 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+
+{% block title %}{% trans "All Crafts" %} - Warsha{% endblock %}
+
+{% block content %}
+
+<div class="page-container">
+    <h1 class="region-title">{% trans "All Crafts" %}</h1>
+    
+    {% if crafts %}
+        <div class="crafts-grid">
+            {% for craft in crafts %}
+            <div class="craft-card">
+                <div class="image-wrapper">
+                    <img src="{% static craft.image %}" alt="{{ craft|get_translated_field:'name' }}" loading="lazy">
+                </div>
+                
+                <div class="craft-content">
+                    <h3>{{ craft|get_translated_field:'name' }}</h3>
+                    <p>{{ craft|get_translated_field:'description'|truncatewords:20 }}</p>
+                    <a href="{% url 'crafts:craft_detail' craft.id %}" class="craft-link">
+                        {% trans "View Details" %}
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Pagination -->
+        {% if crafts.has_other_pages %}
+        <div class="pagination-container">
+            <div class="pagination">
+                {% if crafts.has_previous %}
+                    <a href="?page=1" class="page-link" title="{% trans 'First Page' %}">
+                        <i class="fas fa-angle-double-left"></i>
+                    </a>
+                    <a href="?page={{ crafts.previous_page_number }}" class="page-link" title="{% trans 'Previous' %}">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                {% else %}
+                    <span class="page-link disabled">
+                        <i class="fas fa-angle-double-left"></i>
+                    </span>
+                    <span class="page-link disabled">
+                        <i class="fas fa-angle-left"></i>
+                    </span>
+                {% endif %}
+                
+                {% for num in crafts.paginator.page_range %}
+                    {% if crafts.number == num %}
+                        <span class="page-link active">{{ num }}</span>
+                    {% elif num > crafts.number|add:'-3' and num < crafts.number|add:'3' %}
+                        <a href="?page={{ num }}" class="page-link">{{ num }}</a>
+                    {% endif %}
+                {% endfor %}
+                
+                {% if crafts.has_next %}
+                    <a href="?page={{ crafts.next_page_number }}" class="page-link" title="{% trans 'Next' %}">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                    <a href="?page={{ crafts.paginator.num_pages }}" class="page-link" title="{% trans 'Last Page' %}">
+                        <i class="fas fa-angle-double-right"></i>
+                    </a>
+                {% else %}
+                    <span class="page-link disabled">
+                        <i class="fas fa-angle-right"></i>
+                    </span>
+                    <span class="page-link disabled">
+                        <i class="fas fa-angle-double-right"></i>
+                    </span>
+                {% endif %}
+            </div>
+            
+            <div class="pagination-info">
+                {% trans "Page" %} {{ crafts.number }} {% trans "of" %} {{ crafts.paginator.num_pages }}
+                <span class="separator">|</span>
+                {% trans "Total" %}: {{ crafts.paginator.count }} {% trans "crafts" %}
+            </div>
+        </div>
+        {% endif %}
+    {% else %}
+        <div class="no-crafts-message">
+            <p>{% trans "No crafts available at the moment." %}</p>
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

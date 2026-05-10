@@ -1,0 +1,120 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ request.LANGUAGE_CODE }}" dir="{% if request.LANGUAGE_CODE == 'ar' %}rtl{% else %}ltr{% endif %}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Warsha{% endblock %}</title>
+
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'core/css/core.css' %}">
+    <link rel="stylesheet" href="{% static 'crafts/css/crafts.css' %}">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="{% url 'core:home' %}"><i class="fas fa-gem"></i> Warsha</a>
+            </div>
+
+            <nav class="navbar">
+                <a href="{% url 'core:home' %}" class="nav-link"><i class="fas fa-home"></i> {% trans "Home" %}</a>
+                <a href="{% url 'crafts:all_crafts' %}" class="nav-link"><i class="fas fa-th-large"></i> {% trans "All Crafts" %}</a>
+                
+                <!-- قائمة منسدلة للمناطق -->
+                <div class="dropdown">
+                    <button class="dropdown-btn">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>{% trans "Regions" %}</span>
+                        <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'crafts:riyadh' %}"><i class="fas fa-map-marker-alt"></i> {% trans "Riyadh" %}</a>
+                        <a href="{% url 'crafts:makkah' %}"><i class="fas fa-map-marker-alt"></i> {% trans "Makkah" %}</a>
+                        <a href="{% url 'crafts:madinah' %}"><i class="fas fa-map-marker-alt"></i> {% trans "Madinah" %}</a>
+                        <a href="{% url 'crafts:asir' %}"><i class="fas fa-map-marker-alt"></i> {% trans "Asir" %}</a>
+                        <a href="{% url 'crafts:qassim' %}"><i class="fas fa-map-marker-alt"></i> {% trans "Qassim" %}</a>
+                        <a href="{% url 'crafts:eastern' %}"><i class="fas fa-map-marker-alt"></i> {% trans "Eastern" %}</a>
+                        <a href="{% url 'crafts:tabuk' %}"><i class="fas fa-map-marker-alt"></i> {% trans "Tabuk" %}</a>
+                    </div>
+                </div>
+
+                <a href="{% url 'crafts:search' %}" class="nav-link"><i class="fas fa-search"></i> {% trans "Search" %}</a>
+                
+                <!-- قائمة منسدلة للمزيد -->
+                <div class="dropdown">
+                    <button class="dropdown-btn">
+                        <i class="fas fa-ellipsis-h"></i>
+                        <span>{% trans "More" %}</span>
+                        <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="{% url 'core:about' %}"><i class="fas fa-info-circle"></i> {% trans "About Us" %}</a>
+                        <a href="{% url 'core:faq' %}"><i class="fas fa-question-circle"></i> {% trans "FAQ" %}</a>
+                        <a href="{% url 'core:privacy' %}"><i class="fas fa-shield-alt"></i> {% trans "Privacy Policy" %}</a>
+                        <a href="{% url 'core:contact' %}"><i class="fas fa-envelope"></i> {% trans "Contact" %}</a>
+                    </div>
+                </div>
+                
+                <!-- روابط المصادقة -->
+                {% if user.is_authenticated %}
+                    <a href="{% url 'core:profile' %}" class="nav-link"><i class="fas fa-user"></i> {{ user.username }}</a>
+                    <a href="{% url 'core:favorites' %}" class="nav-link"><i class="fas fa-heart"></i> {% trans "المفضلة" %}</a>
+                    <a href="{% url 'core:logout' %}" class="nav-link"><i class="fas fa-sign-out-alt"></i> {% trans "Logout" %}</a>
+                {% else %}
+                    <a href="{% url 'core:login' %}" class="nav-link"><i class="fas fa-sign-in-alt"></i> {% trans "Login" %}</a>
+                    <a href="{% url 'core:register' %}" class="nav-link"><i class="fas fa-user-plus"></i> {% trans "Register" %}</a>
+                {% endif %}
+            </nav>
+
+            <div class="header-buttons">
+                <button class="mode-btn" onclick="toggleMode()">
+                    <span class="mode-icon"><i class="fas fa-moon"></i></span>
+                </button>
+                
+                <!-- زر تغيير اللغة -->
+                <form action="{% url 'set_language' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <input name="next" type="hidden" value="{{ request.path }}">
+                    <select name="language" onchange="this.form.submit()" class="language-selector">
+                        {% get_current_language as CURRENT_LANGUAGE %}
+                        {% get_available_languages as LANGUAGES %}
+                        {% for lang_code, lang_name in LANGUAGES %}
+                            <option value="{{ lang_code }}" {% if lang_code == CURRENT_LANGUAGE %}selected{% endif %}>
+                                {% if lang_code == 'ar' %}العربية{% else %}English{% endif %}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="{% url 'core:about' %}">{% trans "About Us" %}</a>
+                <span class="separator">|</span>
+                <a href="{% url 'core:faq' %}">{% trans "FAQ" %}</a>
+                <span class="separator">|</span>
+                <a href="{% url 'core:privacy' %}">{% trans "Privacy Policy" %}</a>
+                <span class="separator">|</span>
+                <a href="{% url 'core:contact' %}">{% trans "Contact" %}</a>
+            </div>
+            <p><i class="fas fa-gem"></i> {% trans "Warsha - Saudi Crafts Heritage Project" %} <i class="fas fa-gem"></i></p>
+        </div>
+    </footer>
+
+    <script src="{% static 'core/js/core.js' %}"></script>
+    <script src="{% static 'crafts/js/crafts.js' %}"></script>
+</body>
+</html>

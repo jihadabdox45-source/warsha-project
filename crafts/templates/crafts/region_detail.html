@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load translation_extras %}
+{% load video_tags %}
+
+{% block content %}
+
+<div class="page-container">
+    {% if region %}
+        <h1 class="region-title">{{ region.name }}</h1>
+        <p class="region-intro">{{ region.brief }}</p>
+
+        <div class="main-image">
+            {% if region.images.first %}
+                <img src="{% static region.images.first.image %}" alt="{{ region.name }}">
+            {% endif %}
+        </div>
+
+        <h2 class="section-title">{% trans "Gallery" %}</h2>
+        <div class="gallery">
+            {% for image in region.images.all %}
+                <img src="{% static image.image %}" alt="{{ region.name }}">
+            {% endfor %}
+        </div>
+
+        <h2 class="section-title">{% trans "Top Attraction" %}</h2>
+        <p>{{ region.top_attraction }}</p>
+
+        <h2 class="section-title">{% trans "History" %}</h2>
+        <p>{{ region.history }}</p>
+
+        <h2 class="section-title">{% trans "Major Events" %}</h2>
+        <ul>
+            {% for event in region.events.all %}
+                <li>{{ event.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2 class="section-title">{% trans "Related Crafts" %}</h2>
+        <div class="crafts-grid">
+            {% for craft in related_crafts %}
+            <div class="craft-card">
+                <img src="{% static craft.image %}" alt="{{ craft.name }}">
+                <div class="craft-content">
+                    <h3>{{ craft.name }}</h3>
+                    <p>{{ craft.description }}</p>
+                    <a href="{% url 'crafts:craft_detail' craft.id %}" class="craft-link">
+                        {% trans "View Details" %}
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        {% if region.video_url %}
+        <h2 class="section-title">{% trans "Video" %}</h2>
+        {% video_player region.video_url region.name %}
+        {% endif %}
+    {% else %}
+        <h1 class="region-title">{% trans "Region Not Found" %}</h1>
+    {% endif %}
+</div>
+
+{% endblock %}

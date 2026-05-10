@@ -1,0 +1,283 @@
+{% extends 'core/dashboard/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+{% if action == 'add' %}
+{% trans "إضافة حرفة جديدة" %}
+{% else %}
+{% trans "تعديل حرفة" %}
+{% endif %}
+- لوحة التحكم
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-header">
+    <h1 class="dashboard-title">
+        <i class="fas fa-{% if action == 'add' %}plus{% else %}edit{% endif %}"></i>
+        {% if action == 'add' %}
+        {% trans "إضافة حرفة جديدة" %}
+        {% else %}
+        {% trans "تعديل حرفة" %}
+        {% endif %}
+    </h1>
+    <p class="dashboard-subtitle">
+        {% if action == 'add' %}
+        {% trans "أضف حرفة يدوية جديدة للمنصة" %}
+        {% else %}
+        {% trans "قم بتعديل معلومات الحرفة" %}
+        {% endif %}
+    </p>
+</div>
+
+<div class="dashboard-table-wrapper">
+    <form method="post" class="craft-form">
+        {% csrf_token %}
+        
+        <div class="form-row-grid">
+            <div class="form-group">
+                <label for="name">
+                    <i class="fas fa-tag"></i>
+                    {% trans "اسم الحرفة" %} *
+                </label>
+                <input type="text" id="name" name="name" class="form-control" 
+                       value="{% if craft %}{{ craft.name }}{% endif %}" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="slug">
+                    <i class="fas fa-link"></i>
+                    {% trans "الرابط (Slug)" %} *
+                </label>
+                <input type="text" id="slug" name="slug" class="form-control" 
+                       value="{% if craft %}{{ craft.slug }}{% endif %}" required>
+                <small class="form-hint">{% trans "استخدم أحرف إنجليزية صغيرة وشرطات فقط (مثال: leather-craft)" %}</small>
+            </div>
+        </div>
+        
+        <div class="form-row-grid">
+            <div class="form-group">
+                <label for="region">
+                    <i class="fas fa-map-marked-alt"></i>
+                    {% trans "المنطقة" %} *
+                </label>
+                <select id="region" name="region" class="form-control" required>
+                    <option value="">{% trans "اختر المنطقة" %}</option>
+                    {% for region in regions %}
+                    <option value="{{ region.id }}" {% if craft and craft.region.id == region.id %}selected{% endif %}>
+                        {{ region.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="image">
+                    <i class="fas fa-image"></i>
+                    {% trans "مسار الصورة" %} *
+                </label>
+                <input type="text" id="image" name="image" class="form-control" 
+                       value="{% if craft %}{{ craft.image }}{% endif %}" required>
+                <small class="form-hint">{% trans "مثال: /static/crafts/images/riyadh/1.jpg" %}</small>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">
+                <i class="fas fa-align-left"></i>
+                {% trans "الوصف" %} *
+            </label>
+            <textarea id="description" name="description" class="form-control" rows="6" required>{% if craft %}{{ craft.description }}{% endif %}</textarea>
+        </div>
+        
+        <div class="form-group">
+            <label class="checkbox-label">
+                <input type="checkbox" name="is_featured" {% if craft and craft.is_featured %}checked{% endif %}>
+                <span>
+                    <i class="fas fa-star"></i>
+                    {% trans "حرفة مميزة" %}
+                </span>
+            </label>
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i>
+                {% if action == 'add' %}
+                {% trans "إضافة الحرفة" %}
+                {% else %}
+                {% trans "حفظ التعديلات" %}
+                {% endif %}
+            </button>
+            <a href="{% url 'core:dashboard_crafts' %}" class="btn btn-secondary">
+                <i class="fas fa-times"></i>
+                {% trans "إلغاء" %}
+            </a>
+        </div>
+    </form>
+</div>
+
+<style>
+    .craft-form {
+        max-width: 900px;
+    }
+    
+    .form-row-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .form-group {
+        margin-bottom: 25px;
+    }
+    
+    .form-group label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 15px;
+        color: #D4A574;
+    }
+    
+    body.light .form-group label {
+        color: #8B6F47;
+    }
+    
+    .form-group label i {
+        font-size: 14px;
+    }
+    
+    .form-control {
+        width: 100%;
+        padding: 12px 18px;
+        border-radius: 10px;
+        border: 2px solid rgba(212, 165, 116, 0.3);
+        font-size: 15px;
+        background: rgba(212, 165, 116, 0.1);
+        color: #F5F5DC;
+        transition: all 0.3s ease;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body.light .form-control {
+        background: rgba(139, 111, 71, 0.08);
+        color: #2c2416;
+        border-color: rgba(139, 111, 71, 0.3);
+    }
+    
+    .form-control:focus {
+        outline: none;
+        border-color: #D4AF37;
+        box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.15);
+        transform: translateY(-2px);
+    }
+    
+    body.light .form-control:focus {
+        border-color: #8B6F47;
+        box-shadow: 0 0 0 4px rgba(139, 111, 71, 0.15);
+    }
+    
+    textarea.form-control {
+        resize: vertical;
+        min-height: 150px;
+    }
+    
+    .form-hint {
+        display: block;
+        margin-top: 6px;
+        font-size: 12px;
+        color: rgba(245, 245, 220, 0.6);
+        font-style: italic;
+    }
+    
+    body.light .form-hint {
+        color: rgba(44, 36, 22, 0.6);
+    }
+    
+    .checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        padding: 12px 18px;
+        background: rgba(212, 165, 116, 0.05);
+        border-radius: 10px;
+        border: 2px solid rgba(212, 165, 116, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    body.light .checkbox-label {
+        background: rgba(139, 111, 71, 0.05);
+        border-color: rgba(139, 111, 71, 0.2);
+    }
+    
+    .checkbox-label:hover {
+        background: rgba(212, 165, 116, 0.1);
+        border-color: rgba(212, 165, 116, 0.4);
+    }
+    
+    body.light .checkbox-label:hover {
+        background: rgba(139, 111, 71, 0.1);
+        border-color: rgba(139, 111, 71, 0.4);
+    }
+    
+    .checkbox-label input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        accent-color: #D4AF37;
+    }
+    
+    .checkbox-label span {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: rgba(245, 245, 220, 0.9);
+        font-weight: 600;
+    }
+    
+    body.light .checkbox-label span {
+        color: rgba(44, 36, 22, 0.9);
+    }
+    
+    .form-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        padding-top: 30px;
+        border-top: 2px solid rgba(212, 165, 116, 0.2);
+    }
+    
+    body.light .form-actions {
+        border-top-color: rgba(139, 111, 71, 0.2);
+    }
+    
+    .btn-secondary {
+        background: rgba(108, 117, 125, 0.2);
+        color: rgba(245, 245, 220, 0.8);
+        border: 2px solid rgba(108, 117, 125, 0.3);
+    }
+    
+    body.light .btn-secondary {
+        background: rgba(108, 117, 125, 0.1);
+        color: rgba(44, 36, 22, 0.8);
+    }
+    
+    .btn-secondary:hover {
+        background: #6c757d;
+        color: white;
+        border-color: #6c757d;
+    }
+    
+    @media (max-width: 768px) {
+        .form-row-grid {
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+    }
+</style>
+{% endblock %}

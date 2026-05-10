@@ -1,0 +1,410 @@
+{% extends "admin/base.html" %}
+{% load static %}
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | Warsha Admin{% endblock %}
+
+{% block branding %}
+<div class="warsha-branding">
+    <h1 id="site-name">
+        <a href="{% url 'admin:index' %}">
+            <i class="fas fa-gem"></i>
+            <span>Warsha</span>
+            <small>لوحة التحكم</small>
+        </a>
+    </h1>
+</div>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+    /* ===== الألوان الأساسية ===== */
+    :root {
+        --primary-color: #D4AF37;
+        --primary-dark: #B8860B;
+        --secondary-color: #8B6F47;
+        --bg-dark: #1a1410;
+        --bg-light: #F5F5DC;
+        --text-light: #F5F5DC;
+        --border-color: rgba(212, 165, 116, 0.3);
+    }
+
+    /* ===== الخلفية العامة ===== */
+    body {
+        background: linear-gradient(135deg, #1a1410 0%, #2c2416 100%);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text-light);
+    }
+
+    /* ===== الهيدر ===== */
+    #header {
+        background: linear-gradient(135deg, rgba(26, 20, 16, 0.98) 0%, rgba(139, 111, 71, 0.95) 100%);
+        backdrop-filter: blur(10px);
+        border-bottom: 3px solid var(--primary-color);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        padding: 15px 20px;
+    }
+
+    /* ===== العلامة التجارية ===== */
+    .warsha-branding {
+        padding: 10px 0;
+    }
+
+    #site-name a {
+        color: var(--primary-color) !important;
+        font-size: 32px;
+        font-weight: 900;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        transition: all 0.3s ease;
+    }
+
+    #site-name a:hover {
+        color: var(--primary-dark) !important;
+        transform: translateX(5px);
+    }
+
+    #site-name i {
+        font-size: 36px;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+    }
+
+    #site-name small {
+        font-size: 14px;
+        color: rgba(245, 245, 220, 0.7);
+        font-weight: 400;
+    }
+
+    /* ===== معلومات المستخدم ===== */
+    #user-tools {
+        background: rgba(212, 165, 116, 0.1);
+        padding: 10px 20px;
+        border-radius: 25px;
+        border: 1px solid var(--border-color);
+        color: var(--text-light);
+        font-weight: 600;
+    }
+
+    #user-tools a {
+        color: var(--primary-color) !important;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    #user-tools a:hover {
+        color: var(--primary-dark) !important;
+        text-decoration: underline;
+    }
+
+    /* ===== المحتوى الرئيسي ===== */
+    #content {
+        background: rgba(212, 165, 116, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 2px solid var(--border-color);
+        padding: 30px;
+        margin: 20px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* ===== العناوين ===== */
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--primary-color) !important;
+        font-weight: 700;
+    }
+
+    .module h2, .module caption {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        color: var(--bg-dark) !important;
+        padding: 12px 20px;
+        border-radius: 10px 10px 0 0;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    /* ===== الجداول ===== */
+    table {
+        background: rgba(212, 165, 116, 0.05);
+        border: 2px solid var(--border-color);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    thead th {
+        background: linear-gradient(135deg, rgba(212, 165, 116, 0.2) 0%, rgba(139, 111, 71, 0.2) 100%);
+        color: var(--primary-color) !important;
+        font-weight: 700;
+        padding: 15px;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    tbody tr {
+        background: rgba(212, 165, 116, 0.03);
+        transition: all 0.3s ease;
+    }
+
+    tbody tr:hover {
+        background: rgba(212, 165, 116, 0.1);
+        transform: translateX(5px);
+    }
+
+    tbody td {
+        color: var(--text-light);
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+    }
+
+    /* ===== الروابط ===== */
+    a {
+        color: var(--primary-color) !important;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    a:hover {
+        color: var(--primary-dark) !important;
+        text-decoration: underline;
+    }
+
+    /* ===== الأزرار ===== */
+    .button, input[type="submit"], input[type="button"], .submit-row input {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+        color: var(--bg-dark) !important;
+        border: none !important;
+        padding: 12px 25px !important;
+        border-radius: 25px !important;
+        font-weight: 700 !important;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    }
+
+    .button.default, input[type="submit"].default {
+        background: linear-gradient(135deg, var(--secondary-color) 0%, #6B5435 100%) !important;
+    }
+
+    /* ===== النماذج ===== */
+    .form-row {
+        background: rgba(212, 165, 116, 0.05);
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        border: 1px solid var(--border-color);
+    }
+
+    input[type="text"], input[type="password"], input[type="email"], 
+    input[type="url"], input[type="number"], textarea, select {
+        background: rgba(212, 165, 116, 0.1) !important;
+        border: 2px solid var(--border-color) !important;
+        color: var(--text-light) !important;
+        padding: 10px 15px !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: var(--primary-color) !important;
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2) !important;
+        outline: none !important;
+    }
+
+    /* ===== القوائم الجانبية ===== */
+    .module {
+        background: rgba(212, 165, 116, 0.05);
+        border: 2px solid var(--border-color);
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* ===== الرسائل ===== */
+    .messagelist {
+        padding: 0;
+        margin: 0 0 20px 0;
+    }
+
+    .messagelist li {
+        background: rgba(212, 165, 116, 0.1);
+        border-left: 5px solid var(--primary-color);
+        padding: 15px 20px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        color: var(--text-light);
+    }
+
+    .messagelist .success {
+        border-left-color: #4CAF50;
+        background: rgba(76, 175, 80, 0.1);
+    }
+
+    .messagelist .error {
+        border-left-color: #f44336;
+        background: rgba(244, 67, 54, 0.1);
+    }
+
+    .messagelist .warning {
+        border-left-color: #ff9800;
+        background: rgba(255, 152, 0, 0.1);
+    }
+
+    /* ===== البحث ===== */
+    #changelist-search {
+        background: rgba(212, 165, 116, 0.05);
+        padding: 20px;
+        border-radius: 15px;
+        border: 2px solid var(--border-color);
+        margin-bottom: 20px;
+    }
+
+    #searchbar {
+        background: rgba(212, 165, 116, 0.1) !important;
+        border: 2px solid var(--border-color) !important;
+        color: var(--text-light) !important;
+        padding: 12px 20px !important;
+        border-radius: 25px !important;
+        width: 100% !important;
+    }
+
+    /* ===== الفلاتر ===== */
+    #changelist-filter {
+        background: rgba(212, 165, 116, 0.05);
+        border: 2px solid var(--border-color);
+        border-radius: 15px;
+        padding: 20px;
+    }
+
+    #changelist-filter h2 {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        color: var(--bg-dark) !important;
+        padding: 10px 15px;
+        border-radius: 8px;
+        margin: 0 0 15px 0;
+    }
+
+    #changelist-filter h3 {
+        color: var(--primary-color) !important;
+        font-size: 14px;
+        margin: 15px 0 10px 0;
+    }
+
+    #changelist-filter li {
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+    }
+
+    #changelist-filter li.selected a {
+        color: var(--primary-color) !important;
+        font-weight: 700;
+    }
+
+    /* ===== التذييل ===== */
+    #footer {
+        background: rgba(26, 20, 16, 0.95);
+        border-top: 2px solid var(--primary-color);
+        padding: 15px;
+        text-align: center;
+        color: rgba(245, 245, 220, 0.7);
+        margin-top: 30px;
+    }
+
+    /* ===== الصفحة الرئيسية ===== */
+    #content-main {
+        width: 100%;
+    }
+
+    .dashboard .module {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .dashboard .module table {
+        width: 100%;
+    }
+
+    /* ===== تحسينات إضافية ===== */
+    .breadcrumbs {
+        background: rgba(212, 165, 116, 0.1);
+        padding: 12px 20px;
+        border-radius: 25px;
+        border: 1px solid var(--border-color);
+        margin-bottom: 20px;
+    }
+
+    .breadcrumbs a {
+        color: var(--primary-color) !important;
+    }
+
+    .object-tools {
+        margin-bottom: 20px;
+    }
+
+    .object-tools a {
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+        color: var(--bg-dark) !important;
+        padding: 10px 20px !important;
+        border-radius: 20px !important;
+        font-weight: 600 !important;
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    }
+
+    .object-tools a:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+    }
+
+    /* ===== Pagination ===== */
+    .paginator {
+        background: rgba(212, 165, 116, 0.05);
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+        margin-top: 20px;
+    }
+
+    .paginator a {
+        background: rgba(212, 165, 116, 0.1);
+        padding: 8px 15px;
+        border-radius: 8px;
+        margin: 0 5px;
+        display: inline-block;
+    }
+
+    .paginator a:hover {
+        background: rgba(212, 165, 116, 0.2);
+    }
+
+    /* ===== تحسينات للموبايل ===== */
+    @media (max-width: 768px) {
+        #site-name a {
+            font-size: 24px;
+        }
+
+        #content {
+            margin: 10px;
+            padding: 15px;
+        }
+
+        .module h2 {
+            font-size: 14px;
+            padding: 10px 15px;
+        }
+    }
+</style>
+{% endblock %}
