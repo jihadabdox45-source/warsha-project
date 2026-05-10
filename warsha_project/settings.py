@@ -156,6 +156,12 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000  # 1 year
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+    
+    # CSRF settings for Railway
+    CSRF_TRUSTED_ORIGINS = [
+        'https://web-production-89801.up.railway.app',
+        'https://*.railway.app',
+    ]
 
 
 # Authentication Settings
