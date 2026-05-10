@@ -1,0 +1,670 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "email": "admin@warsha.com",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "date_joined": "2026-04-25T20:58:00.627224+00:00"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "username": "atheer",
+      "email": "atheer@gmail.com",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "date_joined": "2026-04-25T21:27:34.725635+00:00"
+    }
+  },
+  {
+    "model": "crafts.region",
+    "pk": 4,
+    "fields": {
+      "name": "Asir",
+      "slug": "asir",
+      "tagline": "Colorful heritage and mountain identity",
+      "brief": "Asir Region is one of the richest cultural regions in Saudi Arabia.",
+      "top_attraction": "Al Qatt Al Asiri traditional art",
+      "history": "Asiri crafts reflect mountain life and strong artistic identity.",
+      "video_url": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+      "created_at": "2026-04-25T20:58:17.846274+00:00",
+      "updated_at": "2026-04-25T21:25:03.477007+00:00"
+    }
+  },
+  {
+    "model": "crafts.region",
+    "pk": 6,
+    "fields": {
+      "name": "Eastern Region",
+      "slug": "eastern",
+      "tagline": "Coastal heritage and maritime crafts",
+      "brief": "The Eastern Region combines coastal traditions with trade and sea heritage.",
+      "top_attraction": "Marine tools and boat-related heritage",
+      "history": "Its crafts reflect fishing life, port trade, and coastal communities.",
+      "video_url": "https://www.youtube-nocookie.com/embed/kJQP7kiw5Fk",
+      "created_at": "2026-04-25T20:58:17.960276+00:00",
+      "updated_at": "2026-04-25T21:25:03.493568+00:00"
+    }
+  },
+  {
+    "model": "crafts.region",
+    "pk": 3,
+    "fields": {
+      "name": "Madinah",
+      "slug": "madinah",
+      "tagline": "A region of elegance, heritage, and handmade traditions",
+      "brief": "Madinah Region is known for its historical value and refined local traditions.",
+      "top_attraction": "Palm-based traditional products",
+      "history": "Crafts in Madinah grew around palm resources, textile decoration, and local artisan work.",
+      "video_url": "https://www.youtube-nocookie.com/embed/OPf0YbXqDm0",
+      "created_at": "2026-04-25T20:58:17.789283+00:00",
+      "updated_at": "2026-04-25T21:25:03.469007+00:00"
+    }
+  },
+  {
+    "model": "crafts.region",
+    "pk": 2,
+    "fields": {
+      "name": "Makkah",
+      "slug": "makkah",
+      "tagline": "Spiritual heritage and local handicrafts",
+      "brief": "Makkah Region is known for its deep cultural and spiritual importance in Saudi Arabia.",
+      "top_attraction": "Traditional markets and handmade products",
+      "history": "Crafts in Makkah developed through trade, pilgrimage, and local urban culture.",
+      "video_url": "https://www.youtube-nocookie.com/embed/jNQXAC9IVRw",
+      "created_at": "2026-04-25T20:58:17.726282+00:00",
+      "updated_at": "2026-04-25T21:25:03.461041+00:00"
+    }
+  },
+  {
+    "model": "crafts.region",
+    "pk": 5,
+    "fields": {
+      "name": "Qassim",
+      "slug": "qassim",
+      "tagline": "Palm heritage and practical traditional crafts",
+      "brief": "Qassim Region is strongly connected to agriculture and family craft traditions.",
+      "top_attraction": "Palm leaf products and clay pottery",
+      "history": "Crafts in Qassim were shaped by agriculture, dates, and local market culture.",
+      "video_url": "https://www.youtube-nocookie.com/embed/9bZkp7q19f0",
+      "created_at": "2026-04-25T20:58:17.903277+00:00",
+      "updated_at": "2026-04-25T21:25:03.485005+00:00"
+    }
+  },
+  {
+    "model": "crafts.region",
+    "pk": 1,
+    "fields": {
+      "name": "Riyadh",
+      "slug": "riyadh",
+      "tagline": "Najdi heritage and traditional craftsmanship",
+      "brief": "Riyadh Region reflects the heart of Najdi culture and traditional Saudi crafts.",
+      "top_attraction": "Najdi Crafts and Heritage Markets",
+      "history": "Traditional crafts in Riyadh were shaped by desert life, trade, and local daily needs.",
+      "video_url": "https://www.youtube-nocookie.com/embed/M7lc1UVf-VE",
+      "created_at": "2026-04-25T20:58:17.657276+00:00",
+      "updated_at": "2026-04-25T21:25:03.452009+00:00"
+    }
+  },
+  {
+    "model": "crafts.region",
+    "pk": 7,
+    "fields": {
+      "name": "Tabuk",
+      "slug": "tabuk",
+      "tagline": "Northern heritage and Bedouin traditions",
+      "brief": "Tabuk Region reflects desert heritage and practical Bedouin crafts.",
+      "top_attraction": "Bedouin weaving and leather craft",
+      "history": "Traditional crafts in Tabuk came from travel, mobility, and desert life.",
+      "video_url": "https://www.youtube-nocookie.com/embed/YQHsXMglC9A",
+      "created_at": "2026-04-25T20:58:18.008277+00:00",
+      "updated_at": "2026-04-25T21:25:03.502672+00:00"
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 10,
+    "fields": {
+      "region": 4,
+      "name": "Abha cultural festivals",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 4,
+    "fields": {
+      "region": 2,
+      "name": "Cultural exhibitions",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 13,
+    "fields": {
+      "region": 5,
+      "name": "Date festivals",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 19,
+    "fields": {
+      "region": 7,
+      "name": "Heritage village events",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 1,
+    "fields": {
+      "region": 1,
+      "name": "Janadriyah Festival",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 7,
+    "fields": {
+      "region": 3,
+      "name": "Local heritage festivals",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 16,
+    "fields": {
+      "region": 6,
+      "name": "Sea heritage festivals",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 11,
+    "fields": {
+      "region": 4,
+      "name": "Art exhibitions",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 5,
+    "fields": {
+      "region": 2,
+      "name": "Heritage markets",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 8,
+    "fields": {
+      "region": 3,
+      "name": "Palm product exhibitions",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 2,
+    "fields": {
+      "region": 1,
+      "name": "Riyadh Season Heritage Events",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 14,
+    "fields": {
+      "region": 5,
+      "name": "Traditional craft markets",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 17,
+    "fields": {
+      "region": 6,
+      "name": "Traditional market exhibitions",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 20,
+    "fields": {
+      "region": 7,
+      "name": "Traditional markets",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 18,
+    "fields": {
+      "region": 6,
+      "name": "Craft and culture events",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 12,
+    "fields": {
+      "region": 4,
+      "name": "Heritage village celebrations",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 15,
+    "fields": {
+      "region": 5,
+      "name": "Regional heritage events",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 21,
+    "fields": {
+      "region": 7,
+      "name": "Seasonal craft activities",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 6,
+    "fields": {
+      "region": 2,
+      "name": "Seasonal events",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 3,
+    "fields": {
+      "region": 1,
+      "name": "Traditional Markets",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionevent",
+    "pk": 9,
+    "fields": {
+      "region": 3,
+      "name": "Traditional artisan gatherings",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 1,
+    "fields": {
+      "region": 1,
+      "image": "crafts/images/riyadh/1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 5,
+    "fields": {
+      "region": 2,
+      "image": "crafts/images/makkah/1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 9,
+    "fields": {
+      "region": 3,
+      "image": "crafts/images/madinah/1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 13,
+    "fields": {
+      "region": 4,
+      "image": "crafts/images/asir/1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 17,
+    "fields": {
+      "region": 5,
+      "image": "crafts/images/qassim/1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 21,
+    "fields": {
+      "region": 6,
+      "image": "crafts/images/eastern/1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 25,
+    "fields": {
+      "region": 7,
+      "image": "crafts/images/tabuk/1.jpg",
+      "order": 1
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 2,
+    "fields": {
+      "region": 1,
+      "image": "crafts/images/riyadh/2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 6,
+    "fields": {
+      "region": 2,
+      "image": "crafts/images/makkah/2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 10,
+    "fields": {
+      "region": 3,
+      "image": "crafts/images/madinah/2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 14,
+    "fields": {
+      "region": 4,
+      "image": "crafts/images/asir/2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 18,
+    "fields": {
+      "region": 5,
+      "image": "crafts/images/qassim/2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 22,
+    "fields": {
+      "region": 6,
+      "image": "crafts/images/eastern/2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 26,
+    "fields": {
+      "region": 7,
+      "image": "crafts/images/tabuk/2.jpg",
+      "order": 2
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 3,
+    "fields": {
+      "region": 1,
+      "image": "crafts/images/riyadh/3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 7,
+    "fields": {
+      "region": 2,
+      "image": "crafts/images/makkah/3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 11,
+    "fields": {
+      "region": 3,
+      "image": "crafts/images/madinah/3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 15,
+    "fields": {
+      "region": 4,
+      "image": "crafts/images/asir/3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 19,
+    "fields": {
+      "region": 5,
+      "image": "crafts/images/qassim/3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 23,
+    "fields": {
+      "region": 6,
+      "image": "crafts/images/eastern/3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 27,
+    "fields": {
+      "region": 7,
+      "image": "crafts/images/tabuk/3.jpg",
+      "order": 3
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 4,
+    "fields": {
+      "region": 1,
+      "image": "crafts/images/riyadh/4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 8,
+    "fields": {
+      "region": 2,
+      "image": "crafts/images/makkah/4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 12,
+    "fields": {
+      "region": 3,
+      "image": "crafts/images/madinah/4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 16,
+    "fields": {
+      "region": 4,
+      "image": "crafts/images/asir/4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 20,
+    "fields": {
+      "region": 5,
+      "image": "crafts/images/qassim/4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 24,
+    "fields": {
+      "region": 6,
+      "image": "crafts/images/eastern/4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "crafts.regionimage",
+    "pk": 28,
+    "fields": {
+      "region": 7,
+      "image": "crafts/images/tabuk/4.jpg",
+      "order": 4
+    }
+  },
+  {
+    "model": "crafts.craft",
+    "pk": 7,
+    "fields": {
+      "name": "Leather Craft",
+      "slug": "leather-craft",
+      "region": 7,
+      "description": "Traditional leather products used in bags, tools, and accessories.",
+      "image": "crafts/images/tabuk/2.jpg",
+      "is_featured": false,
+      "created_at": "2026-04-25T20:58:18.095281+00:00",
+      "updated_at": "2026-04-25T20:59:15.893855+00:00"
+    }
+  },
+  {
+    "model": "crafts.craft",
+    "pk": 6,
+    "fields": {
+      "name": "Fishing Net Craft",
+      "slug": "fishing-net-craft",
+      "region": 6,
+      "description": "Handmade fishing tools and nets connected to sea life and coastal heritage.",
+      "image": "crafts/images/eastern/2.jpg",
+      "is_featured": false,
+      "created_at": "2026-04-25T20:58:18.089274+00:00",
+      "updated_at": "2026-04-25T20:59:15.885856+00:00"
+    }
+  },
+  {
+    "model": "crafts.craft",
+    "pk": 5,
+    "fields": {
+      "name": "Clay Pottery",
+      "slug": "clay-pottery",
+      "region": 5,
+      "description": "Traditional pottery products used for storage and decoration.",
+      "image": "crafts/images/qassim/2.jpg",
+      "is_featured": false,
+      "created_at": "2026-04-25T20:58:18.083277+00:00",
+      "updated_at": "2026-04-25T20:59:15.876869+00:00"
+    }
+  },
+  {
+    "model": "crafts.craft",
+    "pk": 4,
+    "fields": {
+      "name": "Perfume and Incense Craft",
+      "slug": "perfume-and-incense-craft",
+      "region": 2,
+      "description": "Traditional perfume blends and incense preparation using oud and musk.",
+      "image": "crafts/images/makkah/2.jpg",
+      "is_featured": false,
+      "created_at": "2026-04-25T20:58:18.076275+00:00",
+      "updated_at": "2026-04-25T20:59:15.868878+00:00"
+    }
+  },
+  {
+    "model": "crafts.craft",
+    "pk": 3,
+    "fields": {
+      "name": "Palm Leaf Crafts",
+      "slug": "palm-leaf-crafts",
+      "region": 3,
+      "description": "Handmade baskets and daily-use items created from palm leaves.",
+      "image": "crafts/images/madinah/2.jpg",
+      "is_featured": true,
+      "created_at": "2026-04-25T20:58:18.069276+00:00",
+      "updated_at": "2026-04-25T20:59:15.860857+00:00"
+    }
+  },
+  {
+    "model": "crafts.craft",
+    "pk": 2,
+    "fields": {
+      "name": "Al Qatt Al Asiri",
+      "slug": "al-qatt-al-asiri",
+      "region": 4,
+      "description": "A famous traditional wall art known for geometric patterns and bright colors.",
+      "image": "crafts/images/asir/2.jpg",
+      "is_featured": true,
+      "created_at": "2026-04-25T20:58:18.062271+00:00",
+      "updated_at": "2026-04-25T20:59:15.851889+00:00"
+    }
+  },
+  {
+    "model": "crafts.craft",
+    "pk": 1,
+    "fields": {
+      "name": "Sadu Weaving",
+      "slug": "sadu-weaving",
+      "region": 1,
+      "description": "Traditional Bedouin weaving used for carpets, tents, and decorative pieces.",
+      "image": "crafts/images/riyadh/2.jpg",
+      "is_featured": true,
+      "created_at": "2026-04-25T20:58:18.056274+00:00",
+      "updated_at": "2026-04-25T20:59:15.843872+00:00"
+    }
+  }
+]
